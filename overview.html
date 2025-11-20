@@ -105,7 +105,7 @@
 </nav>
 </div>
 
- <h2>Site Overview</h2>
+ <h2>Site Overview xxx</h2>
       <div class="metric-row">
         <div class="metric-card">
           <h3>NN</h3>
@@ -133,67 +133,132 @@
       <input type="text" placeholder="Search by meter, meter number, serial number" />
     </div>
 
-    <table class="new-table">
-      <thead>
-        <tr>
-          <th><span class="material-symbols-outlined">filter_list</span> Utility</th>
-          <th>Meter Name</th>
-          <th>Top Line MPAN</th>
-          <th>Core MPAN/MPRN</th>
-          <th>Supplier</th>
-          <th>Meter Usage<br>YTD (HH)</th>
-          <th>Contract<br>Details</th>
-          <th></th>
-        </tr>
-      </thead>
+<table class="site-table">
+  <thead>
+    <tr>
+      <th>Sites</th>
+      <th>
+        <span class="material-symbols-outlined">filter_list</span>
+        Site Meters
+      </th>
+      <th>Site Usage YTD (HH Only)</th>
+      <th>
+        <span class="material-symbols-outlined">filter_list</span>
+        Tags
+      </th>
+      <th>Contract Status</th>
+      <th></th>
+    </tr>
+  </thead>
 
-      <tbody>
+  <tbody>
+    <!-- ROW 1 -->
+    <tr>
+      <td>21, Cintra</td>
+      <td>
+        3
+        <span class="chip meter-chip gas"><span class="material-symbols-outlined">local_fire_department</span> Gas 1</span>
+        <span class="chip meter-chip hh"><span class="material-symbols-outlined">flash_on</span> HH 2</span>
+      </td>
+      <td>2,993,672 kWh</td>
+      <td>
+        <span class="chip tag-chip">High Usage</span>
+      </td>
+      <td><span class="contract-alert material-symbols-outlined">warning</span></td>
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
 
-        <tr>
-          <td><span class="material-symbols-outlined" style="color:#CA3D76 !important">offline_bolt</span></td>
-          <td>Reception</td>
-          <td>00 | 0000 | H04</td>
-          <td>1470001278441</td>
-          <td>TotalEnergies Gas & Power Limited</td>
-          <td>0</td>
-          <td>
-            Fixed<br>
-            <span class="date">31/05/2036</span>
-          </td>
-          <td><span class="material-symbols-outlined more">more_vert</span></td>
-        </tr>
+    <!-- ROW 2 -->
+    <tr>
+      <td>65 EWC test</td>
+      <td>
+        2
+        <span class="chip meter-chip gas"><span class="material-symbols-outlined">local_fire_department</span> Gas 1</span>
+        <span class="chip meter-chip hh"><span class="material-symbols-outlined">flash_on</span> HH 1</span>
+      </td>
+      <td>331,306 kWh</td>
+      <td><span class="chip tag-chip">Data Gaps</span></td>
+      <td><span class="contract-alert material-symbols-outlined">warning</span></td>
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
 
-        <tr>
-          <td><span class="material-symbols-outlined" style="color:#CA3D76 !important">offline_bolt</span></td>
-          <td>Office</td>
-          <td>00 | 0000 | M02</td>
-          <td>1300035386046</td>
-          <td>TotalEnergies Gas & Power Limited</td>
-          <td>1,976,662</td>
-          <td>
-            Fixed<br>
-            <span class="date">14/07/2027</span>
-          </td>
-          <td><span class="material-symbols-outlined more">more_vert</span></td>
-        </tr>
+    <!-- ROW 3 -->
+    <tr>
+      <td>7, Redworth Way</td>
+      <td>
+        1
+        <span class="chip meter-chip gas"><span class="material-symbols-outlined">local_fire_department</span> Gas 1</span>
+      </td>
+      <td></td>
+      <td><span class="chip tag-chip">Net Zero</span></td>
+      <td><span class="contract-alert material-symbols-outlined">warning</span></td>
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
 
-        <tr>
-          <td><span class="material-symbols-outlined" style="color:#CA3D76 !important">offline_bolt</span></td>
-          <td>Factory</td>
-          <td>00 | 0000 | M02</td>
-          <td>8876163202</td>
-          <td>British Gas Business</td>
-          <td></td>
-          <td>
-            Fixed<br>
-            <span class="date warning">22/11/2025</span>
-          </td>
-          <td><span class="material-symbols-outlined more">more_vert</span></td>
-        </tr>
+    <!-- ROW 4 -->
+    <tr>
+      <td>Bluestone Holiday Centre</td>
+      <td>
+        2
+        <span class="chip meter-chip nhh"><span class="material-symbols-outlined">bolt</span> nHH 1</span>
+        <span class="chip meter-chip hh"><span class="material-symbols-outlined">flash_on</span> HH 1</span>
+      </td>
+      <td>3,169,143 kWh</td>
+      <td><span class="chip tag-chip">Retail</span></td>
+      <td><span class="contract-alert material-symbols-outlined">warning</span></td>
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
 
-      </tbody>
-    </table>
+    <!-- ROW 5 -->
+    <tr>
+      <td>EOF test for Lisa H</td>
+      <td>
+        3
+        <span class="chip meter-chip gas"><span class="material-symbols-outlined">local_fire_department</span> Gas 3</span>
+      </td>
+      <td></td>
+      <td><span class="chip tag-chip">Manufacturing</span></td>
+      <td></td>
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
 
+    <!-- ROW 6 -->
+    <tr>
+      <td>FS meter short HHD</td>
+      <td>0</td>
+      <td></td>
+      <td><span class="chip tag-chip">High Usage</span></td>
+      <td></td>
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
+
+    <!-- ROW 7 -->
+    <tr>
+      <td>New Site</td>
+      <td>0</td>
+      <td></td>
+      <td><span class="chip tag-chip">Retail</span></td>
+      <td></td>
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
+
+    <!-- ROW 8 -->
+    <tr>
+      <td>Office Site</td>
+      <td>
+        1
+        <span class="chip meter-chip hh"><span class="material-symbols-outlined">flash_on</span> HH 1</span>
+      </td>
+      <td>22,860 kWh</td>
+      <td>
+        <span class="chip tag-chip">Retail</span>
+        <span class="chip tag-chip">+1</span>
+      </td>
+      <td><span class="contract-alert material-symbols-outlined">warning</span></td>
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
+  </tbody>
+</table>
     <!-- Pagination -->
     <div class="new-pagination">
       <span>Rows per page:</span>
