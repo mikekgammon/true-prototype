@@ -1,0 +1,655 @@
+:root {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  --bg: #ffffff;
+  --border-subtle: #e4e4e7;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --highlight: #F5F5F5;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-main);
+}
+
+/* MATERIAL ICONS */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+/* ---------------------------
+   TOP HEADER
+----------------------------*/
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #000;
+  color: #fff;
+  padding: 14px 28px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* ---------------------------
+   BREADCRUMBS
+----------------------------*/
+.breadcrumbs {
+  padding: 12px 28px 0 28px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ---------------------------
+   PAGE TITLE
+----------------------------*/
+.page-title {
+  padding: 12px 28px 4px 28px;
+}
+
+.page-title h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.location-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* ---------------------------
+   MAIN LAYOUT
+----------------------------*/
+.layout-wrapper {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 20px;
+  padding: 18px 28px 28px 28px;
+}
+
+/* ---------------------------
+   SIDEBAR (Tree Navigation)
+----------------------------*/
+.sidebar {
+  border: 1px solid #d4d4d8;
+  border-radius: 6px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.25s ease, min-width 0.25s ease;
+  width: 320px;
+  min-width: 220px;
+  overflow: hidden;
+}
+
+.sidebar.collapsed {
+  width: 56px;
+  min-width: 56px;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.collapse-btn {
+  border: none;
+  background: transparent;
+  padding: 2px;
+  cursor: pointer;
+  border-radius: 999px;
+}
+
+.sidebar.collapsed .tree-card {
+  display: none;
+}
+
+.sidebar.collapsed .sidebar-header h2 {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ---------------------------
+   MAIN CONTENT
+----------------------------*/
+.main-content {
+  border: 1px solid #d4d4d8;
+  border-radius: 6px;
+  padding: 18px 20px;
+  flex: 1;
+  min-width: 0;
+}
+
+.metric-row {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.metric-card {
+  flex: 1;
+  border: 1px solid #d4d4d8;
+  border-radius: 8px;
+  padding: 20px;
+  background: #fff;
+}
+
+.metric-card .value {
+  margin-top: 8px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+/* ---------------------------
+   CONTENT TOP MENU (TABS)
+----------------------------*/
+.content-top-menu {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.content-top-menu nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.tab-link {
+  text-decoration: none;
+  color: #555;
+  font-size: 15px;
+  padding-bottom: 4px;
+}
+
+.tab-link:hover {
+  color: #000;
+}
+
+.tab-link.landed {
+  font-weight: 600;
+  color: #000;
+  border-bottom: 2px solid #000;
+  padding-bottom: 3px;
+}
+
+.more-menu {
+  font-size: 20px;
+  cursor: pointer;
+  color: #777;
+}
+
+/* ============================================================
+   GOOGLE-STYLE NAV RAIL — FINAL CENTERED ICON VERSION
+============================================================ */
+
+/* Collapsed (default): narrow column */
+.nav-rail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: #ffffff;
+  border-right: 1px solid #e4e4e7;
+  display: flex;
+  flex-direction: column;
+  width: 64px;
+  overflow: hidden;
+  z-index: 2000;
+  transition: width 0.35s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.nav-rail.expanded {
+  width: 200px;
+}
+
+
+/* Toggle button */
+.nav-rail-top {
+  position: relative;
+  height: 48px;
+}
+
+.nav-rail-toggle {
+  position: absolute;
+  left: 12px;
+  top: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+/* -----------------------------
+   NAV RAIL LINKS (FINAL)
+------------------------------ */
+.nav-rail-links {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0 6px;
+}
+
+.nav-rail-links a {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  align-items: center;
+  padding: 10px 12px;
+  margin: 2px 0;
+  text-decoration: none;
+  color: #111;
+  border-radius: 8px;
+  transition: background 0.25s ease, padding 0.25s ease;
+}
+
+.nav-rail-links a:hover {
+  background: #f3f4f6;
+}
+
+/* center icon */
+.nav-rail-links a .material-symbols-outlined {
+  justify-self: center;
+}
+
+/* label fade */
+.nav-rail .label {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.nav-rail.expanded .label {
+  opacity: 1;
+}
+
+/* collapsed: icon-only mode */
+.nav-rail.collapsed .nav-rail-links a {
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.nav-rail.collapsed .label {
+  display: none;
+}
+
+/* landed / active */
+.nav-rail-links a.landed {
+  background: #e5e7eb;
+  font-weight: 600;
+  color: #000;
+  padding: 12px 14px;
+  margin: 4px 0;
+}
+
+.nav-rail-links a.landed .material-symbols-outlined {
+  color: #000;
+}
+
+/* SHIFT CONTENT */
+body.nav-rail-collapsed .layout-wrapper,
+body.nav-rail-collapsed header,
+body.nav-rail-collapsed .breadcrumbs,
+body.nav-rail-collapsed .page-title {
+  margin-left: 64px;
+}
+
+body.nav-rail-expanded .layout-wrapper,
+body.nav-rail-expanded header,
+body.nav-rail-expanded .breadcrumbs,
+body.nav-rail-expanded .page-title {
+  margin-left: 200px;
+}
+
+/* ============================================================
+   NEW TABLE STYLE
+============================================================ */
+.meters-table-wrapper.new-style {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.new-table-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #e5e5e5;
+  border-radius: 50px;
+  padding: 12px 18px;
+  font-size: 15px;
+  margin-bottom: 18px;
+}
+
+.new-table-search input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 15px;
+}
+
+.new-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.new-table thead th {
+  text-align: left;
+  padding-bottom: 12px;
+  font-weight: 600;
+}
+
+.new-table tbody tr {
+  border-top: 1px solid #eee;
+}
+
+.new-table td {
+  padding: 22px 0;
+}
+
+/* icons */
+.utility-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.utility-icon.elec {
+  background: #d946ef;
+}
+
+.utility-icon.gas {
+  background: #6d28d9;
+}
+
+.date {
+  color: #444;
+}
+
+.date.warning {
+  color: #e11d48;
+  font-weight: 600;
+}
+
+.new-pagination {
+  margin-top: 20px;
+  display: flex;
+  gap: 14px;
+  justify-content: flex-end;
+}
+
+/* Ensures sidebar and content never overlap */
+.layout-wrapper {
+  display: flex;
+  gap: 24px;       /* space between sidebar + content */
+}
+
+/* Sidebar always stays on the left */
+#treeContainer {
+  flex-shrink: 0;
+  width: 260px;    /* or whatever you prefer */
+}
+
+/* Content takes remaining space */
+.content-wrapper,
+#contentArea {
+  flex: 1;
+  min-width: 0;    /* prevents overflow */
+}
+
+/* Main layout must be flex */
+.layout-wrapper {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* SIDEBAR behaviour */
+.sidebar {
+  width: 260px;
+  transition: width 0.25s ease;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* collapsed width */
+.sidebar.collapsed {
+  width: 48px;
+}
+
+/* content inside sidebar */
+.sidebar-content {
+  transition: opacity 0.2s ease;
+}
+
+.sidebar.collapsed .sidebar-content {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* collapse button */
+.collapse-btn {
+  position: absolute;
+  top: 8px;
+  right: -12px;
+  z-index: 10;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  padding: 4px;
+  cursor: pointer;
+}
+
+/* flip arrow when collapsed */
+.sidebar.collapsed #collapseIcon {
+  transform: rotate(180deg);
+}
+
+/* main content fill space */
+.main-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Sidebar container */
+.sidebar {
+  width: 280px;
+  transition: width 0.25s ease;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Collapsed */
+.sidebar.collapsed {
+  width: 48px !important;
+}
+
+/* Sidebar content fades out when collapsed */
+.sidebar-content {
+  transition: opacity 0.25s ease;
+}
+.sidebar.collapsed .sidebar-content {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Collapse/expand toggle button */
+.sidebar-toggle {
+  position: absolute;
+  top: 16px;
+  right: -16px;      /* visually OUTSIDE, technically INSIDE */
+  z-index: 50;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  padding: 4px;
+  cursor: pointer;
+  height: 32px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Rotate when collapsed */
+.sidebar.collapsed #collapseIcon {
+  transform: rotate(180deg);
+}
+
+/* ===========================
+   BASE TABLE STYLES
+=========================== */
+
+.site-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.site-table thead th {
+  text-align: left;
+  padding: 14px 0;
+  font-weight: 600;
+  color: #111827;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.site-table tbody td {
+  padding: 18px 0;
+  vertical-align: middle;
+  color: #111827;
+  border-bottom: 1px solid #ececec;
+  font-size: 15px;
+}
+
+.site-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Align last column (kebab menu) */
+.site-table td:last-child {
+  text-align: right;
+  padding-right: 8px;
+}
+
+/* ===========================
+   METER CHIPS
+=========================== */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  margin-left: 6px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.chip .material-symbols-outlined {
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+/* Gas chip */
+.meter-chip.gas {
+  background: #f3e2ff;
+  color: #6b1fa9;
+}
+
+/* HH chip */
+.meter-chip.hh {
+  background: #fde8f0;
+  color: #ca3d76;
+}
+
+/* nHH chip */
+.meter-chip.nhh {
+  background: #e6f2ff;
+  color: #004c97;
+}
+
+/* ===========================
+   TAG CHIPS (right column)
+=========================== */
+
+.tag-chip {
+  background: #000;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 25px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-left: 6px;
+  display: inline-block;
+}
+
+/* ===========================
+   CONTRACT WARNING ICON
+=========================== */
+
+.contract-alert {
+  color: #e74c3c;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+/* ===========================
+   KEbab Menu
+=========================== */
+
+.more {
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.more:hover {
+  color: #111827;
+}
+
+/* ===========================
+   COLUMN SPACING
+=========================== */
+
+.site-table tbody td:nth-child(1) {
+  padding-left: 0;
+}
+
+.site-table tbody td:nth-child(2) {
+  white-space: nowrap;
+}
+
+.site-table tbody td:nth-child(3) {
+  white-space: nowrap;
+}
+
+.site-table tbody td:nth-child(4) {
+  white-space: nowrap;
+}
+
+.site-table th span.material-symbols-outlined {
+  font-size: 18px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+
+
