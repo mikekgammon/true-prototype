@@ -1,0 +1,158 @@
+/* Tree navigation styles */
+
+.tree-card {
+  width: 100%;
+}
+
+.tree-search {
+  padding: 0 0 8px 0;
+}
+
+.tree-search input {
+  width: 100%;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #e4e4e7;
+  font-size: 13px;
+}
+
+.tree-container {
+  max-height: 520px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* Core row */
+.tree-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.tree-row:hover {
+  background: #f3f4f6;
+}
+
+/* Selected state */
+.tree-row.selected {
+  background: #F5F5F5;
+}
+
+/* Left section */
+.tree-row-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Right section (kebab) */
+.tree-row-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Folder icons */
+.tree-row-icon {
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  color: #444;
+}
+
+/* Label */
+.tree-row-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Child indentation */
+.tree-children {
+  margin-left: 18px;
+  border-left: 1px solid #e5e7eb;
+  padding-left: 8px;
+}
+
+/* Top-level folders (Portfolio, Sustainability, etc.) */
+.tree-row.depth-0 .tree-row-label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #111;
+}
+
+.tree-row.depth-0 .tree-row-icon {
+  color: #111;
+}
+
+/* Sub-folders (Overview, Targets, etc.) */
+.tree-row.depth-1 .tree-row-label {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.tree-row.depth-1 .tree-row-icon {
+  width: 0;   /* remove icon gap */
+}
+
+/* Child of child (if needed in future) */
+.tree-row.depth-2 .tree-row-label {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.tree-row.selected {
+  background: #e9ebef;
+  border-radius: 10px;
+  padding: 12px;
+}
+.tree-children {
+  border-left: 1px solid #e4e4e7;
+  padding-left: 18px;
+  margin-top: 6px;
+}
+
+
+/* Favourite & kebab buttons */
+.tree-kebab {
+  cursor: pointer;
+  opacity: 0.6;
+  padding: 3px;
+}
+
+.tree-kebab:hover {
+  opacity: 1;
+}
+
+/* Context menu */
+.context-menu {
+  position: fixed;
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  display: none;
+  min-width: 170px;
+  z-index: 9999;
+}
+
+.context-item {
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.context-item:hover {
+  background: #f3f4f6;
+}
+
+.context-item.danger {
+  color: #b91c1c;
+}
+
+

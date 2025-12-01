@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>True Energy Platform</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet" href="assets/layout.css" />
+  <link rel="stylesheet" href="assets/tree.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allerta&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body class="nav-rail-collapsed">
+
+ <!-- GOOGLE-STYLE NAV RAIL -->
+ <aside id="navRail" class="nav-rail collapsed">
+
+  <div class="nav-rail-top">
+    <button id="navRailToggle" class="nav-rail-toggle">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+
+  <nav class="nav-rail-links">
+
+    <a href="home.html">
+      <span class="material-symbols-outlined">home</span>
+      <span class="label">Home</span>
+    </a>
+
+    <a href="index.html" class="landed">
+      <span class="material-symbols-outlined">folder</span>
+      <span class="label">Portfolio</span>
+    </a>
+
+    <a href="sustainability.html">
+      <span class="material-symbols-outlined">eco</span>
+      <span class="label">Sustainability</span>
+    </a>
+
+    <a href="trading.html">
+      <span class="material-symbols-outlined">trending_up</span>
+      <span class="label">Trading</span>
+    </a>
+
+    <a href="bill_validation.html">
+      <span class="material-symbols-outlined">receipt_long</span>
+      <span class="label">Bill Validation</span>
+    </a>
+
+    <a href="procurement.html">
+      <span class="material-symbols-outlined">bucket_check</span>
+      <span class="label">Procurement</span>
+    </a>
+
+  </nav>
+
+</aside>
+
+  <!-- TOP HEADER -->
+  <header class="top-header">
+    <div class="logo">true Energy Platform</div>
+  </header>
+
+ <!-- BREADCRUMBS -->
+  <div class="breadcrumbs">
+    <span>Home</span> /
+    <span><a href="index.html">Acme Company Ltd</a></span> /
+    <strong>Barnston Beach</strong>
+  </div>
+
+  <!-- PAGE TITLE -->
+<section class="page-title">
+
+  <div class="title-left">
+    <h1>Barnston Beach</h1>
+
+    <!-- ADDRESS UNDER TITLE -->
+    <div class="location-row">
+      <span class="material-symbols-outlined">location_on</span>
+      Hastings, Kent
+    </div>
+  </div>
+
+  <!-- AI BUTTON -->
+  <button id="aiToggleBtn" class="ai-button">
+    <span class="material-symbols-outlined">auto_awesome</span>
+    AI
+  </button>
+
+</section>
+
+  <!-- MAIN LAYOUT -->
+  <div class="layout-wrapper">
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+      <div class="content-top-menu">
+        <nav>
+          <a href="site-overview.html" class="tab-link">Overview</a>
+          <a href="site-budget.html" class="tab-link">Budget &amp; Forecast</a>
+          <a href="site-emissions.html" class="tab-link">Emissions</a>
+          <a href="site-reports.html" class="tab-link">Reports</a>
+          <a href="site-projects.html" class="tab-link">Projects</a>
+          <a href="site-contracts.html" class="tab-link">Contracts</a>
+          <a href="site-max-demand.html" class="tab-link landed">Max Demand</a>
+          <span class="material-symbols-outlined more-menu">more_vert</span>
+        </nav>
+      </div>
+
+      <!-- METRIC ROW -->
+      <div class="metric-row">
+
+        <div class="metric-card">
+          <h3>CURRENT COST</h3>
+          <div class="value">£11,986</div>
+        </div>
+
+        <div class="metric-card">
+          <h3>REDUCE CAPACITY</h3>
+          <div class="value">£10,743</div>
+        </div>
+
+        <div class="metric-card">
+          <h3>% CHANGE</h3>
+          <div class="value">-3%</div>
+        </div>
+
+      </div>
+
+      <!-- CHART IMAGE -->
+      <img src="images/max-demand-chart.png" alt="Power Consumption Chart" class="chart-img">
+
+      <!-- EXCEEDED DEMAND LIST -->
+      <div class="demand-list">
+
+        <div class="demand-item">
+          <a href="#" class="meter-link">
+            <span class="material-symbols-outlined">bolt</span>
+            Meter 12A – 14% Over Capacity
+          </a>
+        </div>
+
+        <div class="demand-item">
+          <span class="material-symbols-outlined">bolt</span>
+          Meter 7B – 9% Over Capacity
+        </div>
+
+        <div class="demand-item">
+          <span class="material-symbols-outlined">bolt</span>
+          Main Incoming Supply – 5% Over Capacity
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <div class="context-menu" id="contextMenu"></div>
+
+  <!-- SCRIPTS -->
+  <script src="assets/tree.js"></script>
+  <script src="assets/layout.js"></script>
+
+  <!-- AI RIGHT PANEL -->
+<aside id="aiPanel" class="ai-panel">
+  <div class="ai-panel-header">
+    <h2>AI Insights</h2>
+    <button id="aiCloseBtn" class="ai-close-btn">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+
+  <div class="ai-panel-content">
+    <!-- unchanged -->
+  </div>
+</aside>
+
+</body>
+</html>
