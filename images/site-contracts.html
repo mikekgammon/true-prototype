@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>True Energy Platform</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet" href="assets/layout.css" />
+  <link rel="stylesheet" href="assets/tree.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allerta&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body class="nav-rail-collapsed">
+
+  <!-- GOOGLE-STYLE NAV RAIL -->
+  <aside id="navRail" class="nav-rail collapsed">
+
+    <div class="nav-rail-top">
+      <button id="navRailToggle" class="nav-rail-toggle">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+
+    <nav class="nav-rail-links">
+
+      <a href="home.html">
+        <span class="material-symbols-outlined">home</span>
+        <span class="label">Home</span>
+      </a>
+
+      <a href="index.html" class="landed">
+        <span class="material-symbols-outlined">folder</span>
+        <span class="label">Portfolio</span>
+      </a>
+
+      <a href="sustainability.html">
+        <span class="material-symbols-outlined">eco</span>
+        <span class="label">Sustainability</span>
+      </a>
+
+      <a href="trading.html">
+        <span class="material-symbols-outlined">trending_up</span>
+        <span class="label">Trading</span>
+      </a>
+
+      <a href="bill_validation.html">
+        <span class="material-symbols-outlined">receipt_long</span>
+        <span class="label">Bill Validation</span>
+      </a>
+
+      <a href="procurement.html">
+        <span class="material-symbols-outlined">bucket_check</span>
+        <span class="label">Procurement</span>
+      </a>
+
+    </nav>
+
+  </aside>
+
+  <!-- TOP HEADER -->
+  <header class="top-header">
+    <div class="logo">true Energy Platform</div>
+  </header>
+
+  <!-- BREADCRUMBS -->
+  <div class="breadcrumbs">
+    <span>Home</span> /
+    <span><a href="index.html">Acme Company Ltd</a></span> /
+    <strong>Barnston Beach</strong>
+  </div>
+
+  <!-- PAGE TITLE -->
+  <section class="page-title">
+
+    <div class="title-left">
+      <h1>Barnston Beach</h1>
+
+      <!-- ADDRESS UNDER TITLE -->
+      <div class="location-row">
+        <span class="material-symbols-outlined">location_on</span>
+        Hastings, Kent
+      </div>
+    </div>
+
+    <!-- AI BUTTON -->
+    <button id="aiToggleBtn" class="ai-button">
+      <span class="material-symbols-outlined">auto_awesome</span>
+      AI
+    </button>
+
+  </section>
+
+  <!-- MAIN LAYOUT -->
+  <div class="layout-wrapper">
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+      <!-- TABS -->
+      <div class="content-top-menu">
+        <nav>
+          <a href="site-overview.html" class="tab-link">Overview</a>
+          <a href="site-budget.html" class="tab-link">Budget &amp; Forecast</a>
+          <a href="site-emissions.html" class="tab-link">Emissions</a>
+          <a href="site-reports.html" class="tab-link">Reports</a>
+          <a href="site-projects.html" class="tab-link">Projects</a>
+          <a href="site-contracts.html" class="tab-link landed">Contracts</a>
+          <a href="site-max-demand.html" class="tab-link">Max Demand</a>
+          <span class="material-symbols-outlined more-menu">more_vert</span>
+        </nav>
+      </div>
+
+      <!-- CONTRACTS WRAPPER -->
+      <div class="contracts-wrapper">
+
+<!-- Contract 1 -->
+<div class="contract-card">
+  <div class="contract-header">
+    <div class="header-left">
+      <h3>Test Supplier A</h3>
+      <span class="contract-type">Fixed</span>
+      <span class="contract-current">Current Contract</span>
+    </div>
+  </div>
+
+  <div class="contract-body">
+    <div class="contract-col">
+      <p><strong>Contract Start:</strong> 01 January 2050</p>
+      <p><strong>Date Signed:</strong> 01 August 2025</p>
+      <p><strong>Day Rate:</strong> 2.2 (p/kWh)</p>
+      <p><strong>Standing Charge:</strong> 1 (p/Day)</p>
+    </div>
+
+    <div class="contract-col">
+      <p><strong>Contract End:</strong> 31 December 2051</p>
+      <p><strong>Annual Consumption:</strong> 666.0 (kWh)</p>
+      <p class="contract-note">*Consumption the contract was based on.</p>
+      <p><strong>Night Rate:</strong> 2.2 (p/kWh)</p>
+      <p><strong>Capacity Charge:</strong> 1 (p/kVA/Day)</p>
+    </div>
+  </div>
+
+  <div class="contract-footer">
+    <button class="pdf-btn">
+      <span class="material-symbols-outlined">picture_as_pdf</span>
+      View Contract PDF
+    </button>
+  </div>
+</div>
+
+
+<!-- Contract 2 -->
+<div class="contract-card">
+  <div class="contract-header">
+    <div class="header-left">
+      <h3>EnergyCo Plus</h3>
+      <span class="contract-type">Variable</span>
+    </div>
+  </div>
+
+  <div class="contract-body">
+    <div class="contract-col">
+      <p><strong>Contract Start:</strong> 10 March 2044</p>
+      <p><strong>Date Signed:</strong> 17 February 2044</p>
+      <p><strong>Day Rate:</strong> 3.5 (p/kWh)</p>
+      <p><strong>Standing Charge:</strong> 1.2 (p/Day)</p>
+    </div>
+
+    <div class="contract-col">
+      <p><strong>Contract End:</strong> 10 March 2045</p>
+      <p><strong>Annual Consumption:</strong> 540.0 (kWh)</p>
+      <p class="contract-note">*Based on prior year usage.</p>
+      <p><strong>Night Rate:</strong> 1.8 (p/kWh)</p>
+      <p><strong>Capacity Charge:</strong> 0.8 (p/kVA/Day)</p>
+    </div>
+  </div>
+
+  <div class="contract-footer">
+    <button class="pdf-btn">
+      <span class="material-symbols-outlined">picture_as_pdf</span>
+      View Contract PDF
+    </button>
+  </div>
+</div>
+
+
+        <!-- Contract 3 -->
+        <div class="contract-card">
+          <div class="contract-header">
+            <h3>GreenSpark Energy</h3>
+            <span class="contract-type">Flex</span>
+          </div>
+
+          <div class="contract-body">
+            <div class="contract-col">
+              <p><strong>Contract Start:</strong> 01 May 2042</p>
+              <p><strong>Date Signed:</strong> 14 April 2042</p>
+              <p><strong>Day Rate:</strong> 2.9 (p/kWh)</p>
+              <p><strong>Standing Charge:</strong> 0.9 (p/Day)</p>
+            </div>
+
+            <div class="contract-col">
+              <p><strong>Contract End:</strong> 01 May 2043</p>
+              <p><strong>Annual Consumption:</strong> 720.0 (kWh)</p>
+              <p class="contract-note">*Estimated via smart meter data.</p>
+              <p><strong>Night Rate:</strong> 2.1 (p/kWh)</p>
+              <p><strong>Capacity Charge:</strong> 1.1 (p/kVA/Day)</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+
+  <!-- SCRIPTS -->
+  <script src="assets/tree.js"></script>
+  <script src="assets/layout.js"></script>
+
+  <!-- AI PANEL -->
+  <aside id="aiPanel" class="ai-panel">
+    <div class="ai-panel-header">
+      <h2>AI Insights</h2>
+      <button id="aiCloseBtn" class="ai-close-btn">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <div class="ai-panel-content">
+      <!-- AI content unchanged -->
+    </div>
+
+  </aside>
+
+</body>
+</html>
