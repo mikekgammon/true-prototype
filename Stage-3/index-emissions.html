@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>True Energy Platform</title>
+
+  <!-- MATERIAL ICONS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:FILL@1" />
+
+  <!-- LAYOUT & TREE CSS -->
+  <link rel="stylesheet" href="assets/layout.css" />
+  <link rel="stylesheet" href="assets/tree.css" />
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allerta&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body class="nav-rail-collapsed">
+
+  <!-- GOOGLE-STYLE NAV RAIL -->
+  <aside id="navRail" class="nav-rail collapsed">
+
+  <div class="nav-rail-top">
+    <button id="navRailToggle" class="nav-rail-toggle">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+
+  <nav class="nav-rail-links">
+
+      <!-- HOME -->
+    <a href="home.html">
+      <span class="material-symbols-outlined">home</span>
+      <span class="label">Home</span>
+    </a>
+
+    <a href="index.html" class="landed">
+      <span class="material-symbols-outlined">folder</span>
+      <span class="label">Portfolio</span>
+    </a>
+
+    <a href="sustainability.html">
+      <span class="material-symbols-outlined">eco</span>
+      <span class="label">Sustainability</span>
+    </a>
+
+    <a href="trading.html">
+      <span class="material-symbols-outlined">trending_up</span>
+      <span class="label">Trading</span>
+    </a>
+
+    <a href="bill_validation.html">
+      <span class="material-symbols-outlined">receipt_long</span>
+      <span class="label">Bill Validation</span>
+    </a>
+
+    <a href="procurement.html">
+      <span class="material-symbols-outlined">bucket_check</span>
+      <span class="label">Procurement</span>
+    </a>
+
+  </nav>
+
+</aside>
+
+  <!-- TOP HEADER -->
+  <header class="top-header">
+    <div class="logo">true Energy Platform</div>
+  </header>
+
+  <!-- BREADCRUMBS -->
+  <div class="breadcrumbs">
+    <span>Home</span> /
+    <span><a href="company-overview.html">Fuller's Pubs & Hotels</a></span> /
+    <strong>Portfolio</strong>
+  </div>
+
+  <!-- PAGE TITLE -->
+<section class="page-title">
+
+  <div class="title-left">
+    <h1>Fuller's Pubs & Hotels</h1>
+
+    <!-- ADDRESS UNDER TITLE -->
+    <div class="location-row">
+      <span class="material-symbols-outlined">location_on</span>
+      Chiswick, London W4 3NN
+    </div>
+  </div>
+
+  <!-- AI BUTTON -->
+  <button id="aiToggleBtn" class="ai-button">
+    <span class="material-symbols-outlined">auto_awesome</span>
+    AI
+  </button>
+
+</section>
+
+  <!-- MAIN LAYOUT -->
+  <div class="layout-wrapper">
+
+    <!-- LEFT SIDEBAR (TREE NAVIGATION) -->
+    <aside id="sidebar" class="sidebar">
+      <button id="collapseBtn" class="sidebar-toggle">
+        <span class="material-symbols-outlined" id="collapseIcon">chevron_left</span>
+      </button>
+
+      <div class="sidebar-content">
+        <h2>Portfolio</h2>
+
+        <div class="tree-card">
+          <div class="tree-search">
+            <input type="search" placeholder="Search by site, meter and number" disabled />
+          </div>
+          <div class="tree-container" id="treeContainer"></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+      <!-- CONTENT TOP MENU -->
+      <div class="content-top-menu">
+        <div class="menu-left">
+          <a href="index-overview.html" class="tab-link">Overview</a>
+          <a href="index-budget.html" class="tab-link">Budget &amp; Forecast</a>
+          <a href="index-emissions.html" class="tab-link landed">Emissions</a>
+          <a href="index-reports.html" class="tab-link">Reports</a>
+          <a href="index-projects.html" class="tab-link">Projects</a>
+        </div>
+
+        <span class="material-symbols-outlined more-menu">more_vert</span>
+      </div>
+
+<!-- PROJECT METRIC HIGHLIGHTS -->
+<div class="report-metrics-row">
+
+  <div class="report-metric-card">
+    <span class="material-symbols-outlined metric-icon">cloud</span>
+    <div class="metric-label">Total Portfolio Emissions</div>
+    <div class="metric-value">702 kgCO₂e</div>
+  </div>
+
+  <div class="report-metric-card">
+    <span class="material-symbols-outlined metric-icon">trending_down</span>
+    <div class="metric-label">Change vs Last Year</div>
+    <div class="metric-value">−8.4%</div>
+  </div>
+
+  <div class="report-metric-card">
+    <span class="material-symbols-outlined metric-icon">flag</span>
+    <div class="metric-label">Sites Above Baseline</div>
+    <div class="metric-value">5</div>
+  </div>
+
+</div>
+
+
+
+      <!-- MAIN EMISSIONS CONTENT -->
+      <div class="emissions-wrapper">
+
+        <!-- BASELINE YEAR -->
+        <h2>Baseline Year</h2>
+
+        <table class="emissions-table">
+          <thead>
+            <tr>
+              <th>Period</th>
+              <th>Emissions</th>
+              <th>Confirmed</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr class="expandable">
+              <td>
+                <span class="material-symbols-outlined">expand_more</span>
+                22/05/2023 – 21/05/2024
+              </td>
+              <td>702 kgCO₂e</td>
+              <td><span class="material-symbols-rounded confirmed">check_circle</span></td>
+              <td><span class="material-symbols-outlined more">more_vert</span></td>
+            </tr>
+
+            <tr class="scope-row">
+              <td class="scope-label">Scope 1</td>
+              <td>123 kgCO₂e</td>
+              <td>
+                <div class="bar-row">
+                  <div class="bar bar-s1" style="width:17.52%;"></div>
+                  <span class="percent">17.52%</span>
+                </div>
+              </td>
+              <td></td>
+            </tr>
+
+            <tr class="scope-row">
+              <td class="scope-label">Scope 2</td>
+              <td>234 kgCO₂e</td>
+              <td>
+                <div class="bar-row">
+                  <div class="bar bar-s2" style="width:33.33%;"></div>
+                  <span class="percent">33.33%</span>
+                </div>
+              </td>
+              <td></td>
+            </tr>
+
+            <tr class="scope-row">
+              <td class="scope-label">Scope 3</td>
+              <td>345 kgCO₂e</td>
+              <td>
+                <div class="bar-row">
+                  <div class="bar bar-s3" style="width:49.15%;"></div>
+                  <span class="percent">49.15%</span>
+                </div>
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- REPORTING PERIODS -->
+        <h2>Reporting Periods</h2>
+
+        <table class="emissions-table">
+          <thead>
+            <tr>
+              <th>Period</th>
+              <th>Emissions</th>
+              <th>Confirmed</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr class="expandable">
+              <td>
+                <span class="material-symbols-outlined">chevron_right</span>
+                01/05/2022 – 30/04/2023
+              </td>
+              <td>4,007,000 kgCO₂e</td>
+              <td><span class="material-symbols-rounded warning-icon">warning</span></td>
+              <td><span class="material-symbols-outlined more">more_vert</span></td>
+            </tr>
+
+            <tr class="expandable">
+              <td>
+                <span class="material-symbols-outlined">chevron_right</span>
+                01/04/2022 – 31/03/2023
+              </td>
+              <td>37,990 kgCO₂e</td>
+              <td><span class="material-symbols-rounded warning-icon">warning</span></td>
+              <td><span class="material-symbols-outlined more">more_vert</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <div class="context-menu" id="contextMenu"></div>
+
+  <script src="assets/tree.js"></script>
+  <script src="assets/layout.js"></script>
+
+</body>
+</html>

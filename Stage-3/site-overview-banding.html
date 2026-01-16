@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>True Energy Platform</title>
+
+  <!-- MATERIAL SYMBOLS: Outlined + Rounded -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+
+  <!-- TRUE Layout + Components -->
+  <link rel="stylesheet" href="assets/layout.css" />
+  <link rel="stylesheet" href="assets/tree.css" />
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<!-- MATERIAL SYMBOLS: Outlined + Rounded -->
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+
+</head>
+
+
+
+
+<body>
+
+
+
+  <!-- TOP HEADER -->
+  <header class="top-header">
+    <div class="logo">true Energy Platform</div>
+  </header>
+
+ <!-- BREADCRUMBS -->
+  <div class="breadcrumbs">
+    <span>Home</span> /
+   <span><a href="company-overview.html">Fuller's Pubs & Hotels</a></span> /
+    <strong>The Admiralty</strong>
+  </div>
+
+<!-- PAGE TITLE -->
+<section class="page-title">
+  <div class="page-title-inner">
+    <div class="title-left">
+      <h1>The Admiralty</h1>
+
+      <div class="location-row">
+        <span class="material-symbols-outlined">location_on</span>
+        Trafalgar Square, London
+      </div>
+    </div>
+  </div>
+    <div class="page-actions">
+  <button class="kebab-btn" id="pageKebabBtn" aria-label="Page actions" aria-haspopup="true" aria-expanded="false">
+    <span class="material-symbols-outlined">more_vert</span>
+  </button>
+
+  <div class="kebab-menu" id="pageKebabMenu" role="menu" aria-label="Page actions">
+    <button class="kebab-item" role="menuitem" type="button">Company Preferences</button>
+    <button class="kebab-item" role="menuitem" type="button">Download Company Consumption</button>
+  </div>
+</div>
+
+</section>
+
+
+
+<!-- PAGE TABS -->
+<div class="page-tabs-wrapper" style="max-width: 1260px;">
+  <div class="page-tabs">
+    <a href="site-overview.html" class="page-tab">Site Consumption</a>
+    <a href="site-overview-max-demand.html" class="page-tab">Max Demand</a>
+<a href="site-overview-max-demand.html" class="page-tab active">Energy Banding</a>
+    <a href="site-page-data-completeness.html" class="page-tab">Data Completeness</a>
+  </div>
+</div>
+
+   <div class="layout-wrapper"  style=" max-width: 1200px;
+  margin: 0 auto;
+">
+
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+ 
+<div class="chart-header">
+
+
+  <div class="chart-filters">
+
+    <div class="filter-dropdown">
+  <button class="filter-pill">
+    Last 12 Months 
+    <span class="material-symbols-outlined">expand_more</span>
+  </button>
+
+  <div class="dropdown-menu">
+    <div class="dropdown-title">Select Range</div>
+    <button class="dropdown-item">This Month</button>
+    <button class="dropdown-item">Last 3 Months</button>
+    <button class="dropdown-item">Year to Date</button>
+    <button class="dropdown-item">Last 12 Months</button>
+    <button class="dropdown-item">Custom Range</button>
+  </div>
+</div>
+
+
+
+
+
+  </div>
+
+<div class="chart-actions">
+
+
+
+  <!-- Kebab menu -->
+<div class="kebab-wrapper">
+  <button class="view-btn kebab-btn chart-kebab-btn" title="More actions" aria-haspopup="true" aria-expanded="false">
+    <span class="material-symbols-rounded">more_vert</span>
+  </button>
+
+  <div class="dropdown-menu kebab-menu chart-kebab-menu">
+    <button class="dropdown-item" type="button">
+      <span class="material-symbols-rounded">table_view</span>
+      Download Excel
+    </button>
+    <button class="dropdown-item" type="button">
+      <span class="material-symbols-rounded">image</span>
+      Download Chart
+    </button>
+  </div>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+ <div class="chart-date-range" style="margin-top: 20px; margin-bottom: 20px;">
+  <span class="material-symbols-outlined">calendar_month</span>
+  <span>Data range: <strong>1 Jan 2025 – 1 Jan 2026</strong></span>
+</div>
+<div class="report-metrics-row">
+
+  <!-- 1️⃣ Headline outcome -->
+  <div class="report-metric-card">
+    <div class="metric-label">POTENTIAL BAND REDUCTION</div>
+    <div class="metric-value">Band 3 → Band 2</div>
+    <div class="metric-subtext">If peak drivers are controlled</div>
+  </div>
+
+  <!-- 2️⃣ Technical feasibility -->
+  <div class="report-metric-card">
+    <div class="metric-label">HEADROOM TO LOWER BAND</div>
+    <div class="metric-value">38 kW</div>
+    <div class="metric-subtext">Typical peaks sit below Band 3 threshold</div>
+  </div>
+
+  <!-- 3️⃣ Confidence / readiness -->
+  <div class="report-metric-card">
+    <div class="metric-label">DOWNGRADE READINESS</div>
+    <div class="metric-value">Medium</div>
+    <div class="metric-subtext">3 spike-days above Band 2 in last 30 days</div>
+  </div>
+
+</div>
+
+
+
+<!-- TOP SUB-NAV FOR MAX DEMAND PAGE
+<div class="sub-nav-row">
+
+  <div class="sub-nav-left">
+    <a href="site-overview-max-demand.html" class="sub-nav-pill">
+      <span class="material-symbols-outlined">radio_button_checked</span>
+      Max Demand
+    </a>
+    <a href="site-overview-banding.html" class="sub-nav-pill active">
+      <span class="material-symbols-outlined">radio_button_unchecked</span>
+      Energy Banding
+    </a>
+  </div>
+
+
+
+
+
+</div> -->
+
+<div class="banding-meter-list">
+
+  <!-- Meter 1 -->
+  <div class="exceeded-meter-card">
+    <div class="exceeded-meter-top">
+      <div class="exceeded-meter-title">
+         <span class="material-symbols-rounded alert-ic" style="color: #ba4975;">offline_bolt</span>
+        Main HH Supply <span class="muted">• 00 | 026 | N24</span>
+      </div>
+
+      <span class="risk-pill risk-pill--high">
+        <span class="material-symbols-rounded">warning</span>
+        High banding risk
+      </span>
+    </div>
+
+    <div class="exceeded-meter-stats">
+      <div class="stat">
+        <div class="label">Current band</div>
+        <div class="value">Band 3</div>
+      </div>
+
+      <div class="stat">
+        <div class="label">Peak demand</div>
+        <div class="value">221 kW</div>
+      </div>
+
+      <div class="stat">
+        <div class="label">Band threshold</div>
+        <div class="value">200–250 kW</div>
+      </div>
+
+      <div class="stat">
+        <div class="label">Last peak</div>
+        <div class="value">06 Jan 2026</div>
+      </div>
+    </div>
+
+    <div class="exceeded-meter-bottom">
+      <div class="note">
+        Peak demand places this meter firmly in Band 3. Sustained peaks may push it into the next band.
+      </div>
+
+      <a class="exceeded-meter-link" href="meter-page-banding.html">
+        View banding details
+        <span class="material-symbols-rounded">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+
+
+  <!-- Meter 2 -->
+  <div class="exceeded-meter-card">
+    <div class="exceeded-meter-top">
+      <div class="exceeded-meter-title">
+        <span class="material-symbols-rounded alert-ic" style="color: #ba4975;">offline_bolt</span>
+        Kitchen / Plant <span class="muted">• 00 | 027 | N24</span>
+      </div>
+
+      <span class="risk-pill risk-pill--med">
+        <span class="material-symbols-rounded">error</span>
+        Medium banding risk
+      </span>
+    </div>
+
+    <div class="exceeded-meter-stats">
+      <div class="stat">
+        <div class="label">Current band</div>
+        <div class="value">Band 2</div>
+      </div>
+
+      <div class="stat">
+        <div class="label">Peak demand</div>
+        <div class="value">168 kW</div>
+      </div>
+
+      <div class="stat">
+        <div class="label">Band threshold</div>
+        <div class="value">150–200 kW</div>
+      </div>
+
+      <div class="stat">
+        <div class="label">Last peak</div>
+        <div class="value">22 Dec 2025</div>
+      </div>
+    </div>
+
+    <div class="exceeded-meter-bottom">
+      <div class="note">
+        Operating close to the upper limit of Band 2. Seasonal demand could trigger a higher band.
+      </div>
+
+      <a class="exceeded-meter-link" href="meter-page-banding.html">
+        View banding details
+        <span class="material-symbols-rounded">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+
+
+  <!-- Meter 3 -->
+  <div class="exceeded-meter-card">
+    <div class="exceeded-meter-top">
+      <div class="exceeded-meter-title">
+         <span class="material-symbols-rounded alert-ic" style="color: #ba4975;">offline_bolt</span>
+        Bar &amp; Cellar <span class="muted">• 00 | 028 | N24</span>
+      </div>
+
+      <span class="risk-pill risk-pill--low">
+        <span class="material-symbols-rounded">info</span>
+        Low banding risk
+      </span>
+    </div>
+
+    <div class="exceeded-meter-stats">
+      <div class="stat">
+        <div class="label">Current band</div>
+        <div class="value">Band 1</div>
+      </div>
+
+      <div class="stat">
+        <div class="label">Peak demand</div>
+        <div class="value">122 kW</div>
+      </div>
+
+      <div class="stat">
+        <div class="label">Band threshold</div>
+        <div class="value">0–150 kW</div>
+      </div>
+
+      <div class="stat">
+        <div class="label">Last peak</div>
+        <div class="value">14 Nov 2025</div>
+      </div>
+    </div>
+
+    <div class="exceeded-meter-bottom">
+      <div class="note">
+        Well within Band 1. Unlikely to change without a sustained increase in demand.
+      </div>
+
+      <a class="exceeded-meter-link" href="meter-page-banding.html">
+        View banding details
+        <span class="material-symbols-rounded">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+
+
+  <div class="context-menu" id="contextMenu"></div>
+
+ <!-- SCRIPTS -->
+<script src="assets/tree.js"></script>
+<script src="assets/layout.js"></script>
+
+
+
+<!-- ===============================
+     UNIVERSAL DROPDOWN LOGIC
+================================ -->
+<script>
+document.querySelectorAll('.filter-dropdown').forEach(drop => {
+  const button = drop.querySelector('.filter-pill');
+
+  button.addEventListener('click', e => {
+    e.stopPropagation();
+    // Close all others
+    document.querySelectorAll('.filter-dropdown.open').forEach(d => {
+      if (d !== drop) d.classList.remove('open');
+    });
+    drop.classList.toggle('open');
+  });
+
+  // Close on outside click
+  document.addEventListener('click', () => {
+    drop.classList.remove('open');
+  });
+});
+</script>
+
+<!-- ===============================
+     COMPARE DROPDOWN LOGIC
+================================ -->
+<script>
+const compareBtn = document.getElementById("compareBtn");
+const compareLabel = document.getElementById("compareLabel");
+
+document.querySelectorAll(".compare-option").forEach(option => {
+  option.addEventListener("click", () => {
+    compareLabel.textContent = option.dataset.value;
+    compareBtn.parentElement.classList.remove("open");
+  });
+});
+</script>
+
+<!-- ===============================
+     CHART TYPE SELECTOR LOGIC
+================================ -->
+<script>
+
+// Elements
+const chartTypeLabel = document.getElementById("chartTypeLabel");
+
+// All dropdowns inside chart-filters
+const chartFilters = document.querySelector(".chart-filters");
+const filterDropdowns = chartFilters.querySelectorAll(".filter-dropdown");
+
+// Filter indices (ordered in your HTML)
+const rangeFilter   = filterDropdowns[1]; // Date range (Year to Date)
+const groupFilter   = filterDropdowns[2]; // Group by Day / Week / Month
+const timeFilter    = filterDropdowns[3]; // Time Range selector
+const compareFilter = document.querySelector(".compare-dropdown");
+
+// Chart image placeholder
+const chartImg = document.querySelector(".chart-img");
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>True Energy Platform</title>
+
+  <!-- MATERIAL SYMBOLS: Outlined + Rounded -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+
+  <!-- TRUE Layout + Components -->
+  <link rel="stylesheet" href="assets/layout.css" />
+  <link rel="stylesheet" href="assets/tree.css" />
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<!-- MATERIAL SYMBOLS: Outlined + Rounded -->
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+
+</head>
+
+
+<body class="nav-rail-collapsed">
+
+  <!-- GOOGLE-STYLE NAV RAIL -->
+  <aside id="navRail" class="nav-rail collapsed">
+
+    <div class="nav-rail-top">
+      <button id="navRailToggle" class="nav-rail-toggle">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+
+    <nav class="nav-rail-links">
+      <a href="home.html">
+        <span class="material-symbols-outlined">home</span>
+        <span class="label">Home</span>
+      </a>
+
+      <a href="index.html" class="landed">
+        <span class="material-symbols-outlined">folder</span>
+        <span class="label">Portfolio</span>
+      </a>
+
+      <a href="sustainability.html">
+        <span class="material-symbols-outlined">eco</span>
+        <span class="label">Sustainability</span>
+      </a>
+
+      <a href="trading.html">
+        <span class="material-symbols-outlined">trending_up</span>
+        <span class="label">Trading</span>
+      </a>
+
+      <a href="bill_validation.html">
+        <span class="material-symbols-outlined">receipt_long</span>
+        <span class="label">Bill Validation</span>
+      </a>
+
+      <a href="procurement.html">
+        <span class="material-symbols-outlined">bucket_check</span>
+        <span class="label">Procurement</span>
+      </a>
+    </nav>
+
+  </aside>
+
+  <!-- TOP HEADER -->
+  <header class="top-header">
+    <div class="logo">true Energy Platform</div>
+  </header>
+
+  <!-- BREADCRUMBS -->
+  <div class="breadcrumbs">
+    <span>Home</span> /
+   <span><a href="company-overview.html">Fuller's Pubs & Hotels</a></span> /
+    <strong>The Admiralty</strong>
+  </div>
+
+  <!-- PAGE TITLE -->
+  <section class="page-title">
+    <div class="title-left">
+      <h1>The Admiralty</h1>
+
+      <!-- ADDRESS UNDER TITLE -->
+      <div class="location-row">
+        <span class="material-symbols-outlined">location_on</span>
+        Trafalgar Square, London
+      </div>
+    </div>
+
+    <!-- AI BUTTON -->
+    <button id="aiToggleBtn" class="ai-button">
+      <span class="material-symbols-outlined">auto_awesome</span>
+      AI
+    </button>
+  </section>
+
+  <!-- MAIN LAYOUT -->
+  <div class="layout-wrapper">
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+      <!-- CONTENT TOP MENU -->
+      <div class="content-top-menu">
+        <div class="menu-left">
+          <a href="site-overview.html" class="tab-link">Overview</a>
+          <a href="site-budget.html" class="tab-link">Budget &amp; Forecast</a>
+          <a href="site-emissions.html" class="tab-link">Emissions</a>
+          <a href="site-reports.html" class="tab-link">Reports</a>
+          <a href="site-projects.html" class="tab-link landed">Projects</a>
+          <a href="site-contracts.html" class="tab-link">Contracts</a>
+          <a href="site-data-completeness.html" class="tab-link">Data Completeness</a>
+          <a href="site-max-demand.html" class="tab-link">Max Demand/Banding</a>
+
+        </div>
+
+        <span class="material-symbols-outlined more-menu">more_vert</span>
+      </div>
+
+      <!-- PROJECT METRICS -->
+
+      <div class="report-metrics-row">
+
+  <div class="report-metric-card">
+    <span class="material-symbols-rounded metric-icon">construction</span>
+    <div class="metric-label">Active Projects</div>
+    <div class="metric-value">4</div>
+  </div>
+
+  <div class="report-metric-card">
+    <span class="material-symbols-outlined metric-icon">savings</span>
+    <div class="metric-label">Forecast Savings</div>
+    <div class="metric-value">£128k</div>
+  </div>
+
+  <div class="report-metric-card">
+    <span class="material-symbols-rounded">forest</span>
+    <div class="metric-label">CO₂ Reduction (t)</div>
+    <div class="metric-value">32</div>
+  </div>
+
+</div>
+
+
+
+      <!-- MAIN PROJECTS CONTENT -->
+      <div id="contentArea">
+<h2>Site Projects</h2>
+<p class="subtext">Projects improving energy performance, reducing cost, and supporting Net Zero goals at Barnston Beach.</p>
+
+<table class="true-table">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Category</th>
+      <th>Expected Savings</th>
+      <th>Status</th>
+      <th>Owner</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>LED Lighting Upgrade</td>
+      <td>Efficiency</td>
+      <td>£32,000 / yr</td>
+      <td><span class="chip status in-progress">In Progress</span></td>
+      <td>Facilities Team</td>
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
+
+    <tr>
+      <td>Boiler Optimisation</td>
+      <td>Heating</td>
+      <td>£18,500 / yr</td>
+      <td><span class="chip status proposed">Proposed</span></td>
+      <td>Energy Manager</td>
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
+
+    <tr>
+      <td>Solar PV Feasibility Study</td>
+      <td>Generation</td>
+      <td>£54,000 / yr</td>
+      <td><span class="chip status in-progress">In Progress</span></td>
+      <td>Net Zero Team</td>
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
+
+    <tr>
+      <td>HVAC Control Upgrade</td>
+      <td>Controls</td>
+      <td>£23,000 / yr</td>
+      <td><span class="chip status completed">Completed</span></td>
+      <td>Engineering</td>
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
+  </tbody>
+</table>
+
+
+      </div>
+
+      <!-- Pagination -->
+      <div class="new-pagination">
+        <span>Rows per page:</span>
+        <select>
+          <option>10</option>
+          <option>25</option>
+          <option>50</option>
+        </select>
+
+        <span class="page-count">1–4 of 4</span>
+
+        <span class="material-symbols-outlined disabled">first_page</span>
+        <span class="material-symbols-outlined disabled">chevron_left</span>
+        <span class="material-symbols-outlined">chevron_right</span>
+        <span class="material-symbols-outlined">last_page</span>
+      </div>
+<!-- SUGGESTED PROJECTS -->
+<section class="suggested-projects">
+  <h2>Suggested Projects</h2>
+  <p class="subtext">
+    Recommended opportunities based on your site's consumption patterns, cost trends, and project history.
+  </p>
+
+  <div class="suggested-projects-grid">
+
+    <div class="suggested-card">
+      <span class="material-symbols-outlined suggested-icon">lightbulb</span>
+      <h3>Demand Management Review</h3>
+      <p>Review peak electricity usage to reduce banding penalties and improve load balancing.</p>
+      <button class="btn-primary">View Recommendation</button>
+    </div>
+
+    <div class="suggested-card">
+      <span class="material-symbols-outlined suggested-icon">solar_power</span>
+      <h3>Solar PV Sizing Update</h3>
+      <p>Based on recent daytime usage patterns, an updated PV assessment may unlock further savings.</p>
+      <button class="btn-primary">Run Updated Analysis</button>
+    </div>
+
+    <div class="suggested-card">
+      <span class="material-symbols-outlined suggested-icon">device_thermostat</span>
+      <h3>Heating Controls Optimisation</h3>
+      <p>Consumption spikes indicate an opportunity to optimise boiler/HVAC runtime schedules.</p>
+      <button class="btn-primary">View Insight</button>
+    </div>
+
+  </div>
+</section>
+
+    </main>
+
+  </div>
+
+  <div class="context-menu" id="contextMenu"></div>
+
+  <!-- SCRIPTS -->
+  <script src="assets/tree.js"></script>
+  <script src="assets/layout.js"></script>
+
+  <!-- AI RIGHT PANEL -->
+  <aside id="aiPanel" class="ai-panel">
+    <div class="ai-panel-header">
+      <h2>AI Insights</h2>
+      <button id="aiCloseBtn" class="ai-close-btn">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <div class="ai-panel-content">
+      <p><strong>The Admiralty</strong> summary and opportunities identified by AI:</p>
+
+      <ul class="ai-insights-list">
+        <li>Energy usage is 12% above expected baseline this month.</li>
+        <li>Two projects show extended timelines.</li>
+        <li>Recommended next action: update forecast inputs.</li>
+      </ul>
+
+      <div class="ai-actions">
+        <button class="ai-action-btn">Generate Report</button>
+        <button class="ai-action-btn">Suggest Improvements</button>
+        <button class="ai-action-btn secondary">Export Insights</button>
+      </div>
+    </div>
+  </aside>
+
+</body>
+</html>

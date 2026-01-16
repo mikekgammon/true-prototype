@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>True Energy Platform</title>
+
+  <!-- MATERIAL SYMBOLS -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+
+  <!-- TRUE Layout + Components -->
+  <link rel="stylesheet" href="assets/layout.css" />
+  <link rel="stylesheet" href="assets/tree.css" />
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allerta&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="nav-rail-collapsed">
+
+
+
+  <!-- GOOGLE-STYLE NAV RAIL -->
+  <aside id="navRail" class="nav-rail collapsed">
+
+  <div class="nav-rail-top">
+    <button id="navRailToggle" class="nav-rail-toggle">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+
+  <nav class="nav-rail-links">
+
+      <!-- HOME -->
+    <a href="home.html">
+      <span class="material-symbols-outlined">home</span>
+      <span class="label">Home</span>
+    </a>
+
+    <a href="index.html" class="landed">
+      <span class="material-symbols-outlined">folder</span>
+      <span class="label">Portfolio</span>
+    </a>
+
+    <a href="sustainability.html">
+      <span class="material-symbols-outlined">eco</span>
+      <span class="label">Sustainability</span>
+    </a>
+
+    <a href="trading.html">
+      <span class="material-symbols-outlined">trending_up</span>
+      <span class="label">Trading</span>
+    </a>
+
+    <a href="bill_validation.html">
+      <span class="material-symbols-outlined">receipt_long</span>
+      <span class="label">Bill Validation</span>
+    </a>
+
+    <a href="procurement.html">
+      <span class="material-symbols-outlined">bucket_check</span>
+      <span class="label">Procurement</span>
+    </a>
+
+  </nav>
+
+</aside>
+
+
+  <!-- TOP HEADER -->
+  <header class="top-header">
+    <div class="logo">true Energy Platform</div>
+  </header>
+
+ <!-- BREADCRUMBS -->
+  <div class="breadcrumbs">
+    <span>Home</span> /
+    <span><a href="company-overview.html">Fuller's Pubs & Hotels</a></span> /
+    <strong>Portfolio</strong>
+  </div>
+
+  <!-- PAGE TITLE -->
+<section class="page-title">
+
+  <div class="title-left">
+    <h1>Fuller's Pubs & Hotels</h1>
+
+    <!-- ADDRESS UNDER TITLE -->
+    <div class="location-row">
+      <span class="material-symbols-outlined">location_on</span>
+      Chiswick, London W4 3NN
+    </div>
+  </div>
+
+  <!-- AI BUTTON -->
+  <button id="aiToggleBtn" class="ai-button">
+    <span class="material-symbols-outlined">auto_awesome</span>
+    AI
+  </button>
+
+</section>
+
+  <!-- MAIN LAYOUT -->
+  <div class="layout-wrapper">
+
+    <!-- LEFT SIDEBAR (Tree Navigation) -->
+    <aside id="sidebar" class="sidebar">
+
+      <button id="collapseBtn" class="sidebar-toggle">
+        <span class="material-symbols-outlined" id="collapseIcon">chevron_left</span>
+      </button>
+
+      <div class="sidebar-content">
+        <h2>Portfolio</h2>
+
+        <div class="tree-card">
+          <div class="tree-search">
+            <input type="search" placeholder="Search by site, meter and number" disabled />
+          </div>
+          <div class="tree-container" id="treeContainer"></div>
+        </div>
+      </div>
+
+    </aside>
+
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+     <div class="content-top-menu">
+  <div class="menu-left">
+    <a href="index-overview.html" class="tab-link">Overview</a>
+    <a href="index-budget.html" class="tab-link landed">Budget &amp; Forecast</a>
+    <a href="index-emissions.html" class="tab-link">Emissions</a>
+    <a href="index-reports.html" class="tab-link">Reports</a>
+    <a href="index-projects.html" class="tab-link">Projects</a>
+
+  </div>
+
+  <span class="material-symbols-outlined more-menu">more_vert</span>
+</div>
+
+<div class="report-metrics-row">
+
+  <div class="report-metric-card">
+    <span class="material-symbols-outlined metric-icon">cloud</span>
+    <div class="metric-label">Total Portfolio Emissions</div>
+    <div class="metric-value">702 kgCO₂e</div>
+  </div>
+
+  <div class="report-metric-card">
+    <span class="material-symbols-outlined metric-icon">trending_down</span>
+    <div class="metric-label">Change vs Last Year</div>
+    <div class="metric-value">−8.4%</div>
+  </div>
+
+  <div class="report-metric-card">
+    <span class="material-symbols-outlined metric-icon">flag</span>
+    <div class="metric-label">Sites Above Baseline</div>
+    <div class="metric-value">5</div>
+  </div>
+
+</div>
+
+
+  <div class="meters-table-wrapper new-style">
+
+    
+<div class="scheme-selector">
+  <span class="selector-label">Apply Scheme:</span>
+
+  <button class="scheme-btn active">
+    <span class="material-symbols-outlined">verified</span>
+    EII Scheme
+  </button>
+
+  <button class="scheme-btn">
+    <span class="material-symbols-outlined">eco</span>
+    CCL Exemption
+  </button>
+
+  <button class="scheme-btn">
+    <span class="material-symbols-outlined">bolt</span>
+    REGO Backed Supply
+  </button>
+</div>
+
+<div class="forecast-table-wrapper">
+  <table class="energy-table">
+
+    <!-- HEADER MONTHS -->
+<thead>
+  <tr class="months">
+    <th class="month-cell">Year</th>
+    <th class="month-cell">Jan</th>
+    <th class="month-cell">Feb</th>
+    <th class="month-cell">Mar</th>
+    <th class="month-cell">Apr</th>
+    <th class="month-cell">May</th>
+    <th class="month-cell">Jun</th>
+    <th class="month-cell">Jul</th>
+    <th class="month-cell">Aug</th>
+
+    <!-- FORECAST COLUMNS -->
+    <th class="forecast-col">Sep (F)</th>
+    <th class="forecast-col">Oct (F)</th>
+    <th class="forecast-col">Nov (F)</th>
+    <th class="forecast-col">Dec (F)</th>
+  </tr>
+</thead>
+
+
+    <tbody>
+
+      <!-- Row group -->
+      <tr class="section-title">
+        <td colspan="13">Energy Inputs</td>
+      </tr>
+
+      <tr>
+        <td>Cost of Electricity (£/MWh)</td>
+        <td>92.1</td><td>91.4</td><td>89.8</td><td>90.2</td><td>88.9</td><td>87.5</td><td>88.0</td><td>89.3</td>
+        <td class="forecast-col">93.5</td><td class="forecast-col">95.2</td><td class="forecast-col">98.1</td><td class="forecast-col">100.6</td>
+      </tr>
+
+      <tr>
+        <td>Contract Related Fees (£/MWh)</td>
+        <td>12.4</td><td>12.4</td><td>12.4</td><td>12.4</td><td>12.4</td><td>12.4</td><td>12.4</td><td>12.4</td>
+        <td class="forecast-col">12.8</td><td class="forecast-col">12.8</td><td class="forecast-col">12.8</td><td class="forecast-col">12.8</td>
+      </tr>
+
+      <tr>
+        <td>Renewable Energy (£/MWh)</td>
+        <td>4.8</td><td>4.6</td><td>4.9</td><td>4.7</td><td>4.6</td><td>4.5</td><td>4.5</td><td>4.6</td>
+        <td class="forecast-col">4.9</td><td class="forecast-col">4.9</td><td class="forecast-col">5.0</td><td class="forecast-col">5.0</td>
+      </tr>
+
+      <!-- Row group -->
+      <tr class="section-title">
+        <td colspan="13">Volume & Cost</td>
+      </tr>
+
+      <tr>
+        <td>Volume (kWh)</td>
+        <td>310,000</td><td>295,000</td><td>300,500</td><td>285,600</td><td>278,200</td><td>260,000</td><td>255,000</td><td>266,400</td>
+        <td class="forecast-col">280,000</td><td class="forecast-col">310,000</td><td class="forecast-col">345,000</td><td class="forecast-col">360,000</td>
+      </tr>
+
+      <tr>
+        <td>Total Energy Cost</td>
+        <td>£28,450</td><td>£27,980</td><td>£27,640</td><td>£25,930</td><td>£24,820</td><td>£23,720</td><td>£23,910</td><td>£25,110</td>
+        <td class="forecast-col">£29,430</td><td class="forecast-col">£33,280</td><td class="forecast-col">£38,920</td><td class="forecast-col">£42,780</td>
+      </tr>
+
+      <!-- Row group -->
+      <tr class="section-title">
+        <td colspan="13">Non-Commodity Charges</td>
+      </tr>
+
+      <tr><td>DUoS Standing Charge</td><td colspan="8">£6,430</td><td class="forecast-col" colspan="4">£6,850</td></tr>
+      <tr><td>DUoS Capacity Charge</td><td colspan="8">£4,220</td><td class="forecast-col" colspan="4">£4,520</td></tr>
+      <tr><td>DUoS Red</td><td colspan="8">£1,680</td><td class="forecast-col" colspan="4">£1,920</td></tr>
+      <tr><td>DUoS Amber</td><td colspan="8">£3,410</td><td class="forecast-col" colspan="4">£3,680</td></tr>
+      <tr><td>DUoS Green</td><td colspan="8">£980</td><td class="forecast-col" colspan="4">£1,050</td></tr>
+      <tr><td>Transmission Losses</td><td colspan="8">£1,220</td><td class="forecast-col" colspan="4">£1,330</td></tr>
+      <tr><td>TNUoS Cost</td><td colspan="8">£9,280</td><td class="forecast-col" colspan="4">£10,150</td></tr>
+      <tr><td>FiT Cost</td><td colspan="8">£830</td><td class="forecast-col" colspan="4">£860</td></tr>
+      <tr><td>RO Cost</td><td colspan="8">£3,920</td><td class="forecast-col" colspan="4">£4,180</td></tr>
+      <tr><td>CM Cost</td><td colspan="8">£2,110</td><td class="forecast-col" colspan="4">£2,340</td></tr>
+      <tr><td>Other Charges</td><td colspan="8">£1,980</td><td class="forecast-col" colspan="4">£2,120</td></tr>
+
+      <!-- Row group -->
+      <tr class="section-title">
+        <td colspan="13">Summary</td>
+      </tr>
+
+      <tr>
+        <td>Energy Rate (incl. Charges)</td>
+        <td>£0.108</td><td>£0.109</td><td>£0.108</td><td>£0.106</td><td>£0.104</td><td>£0.103</td><td>£0.105</td><td>£0.106</td>
+        <td class="forecast-col">£0.112</td><td class="forecast-col">£0.118</td><td class="forecast-col">£0.124</td><td class="forecast-col">£0.127</td>
+      </tr>
+
+      <tr>
+        <td>Average PPU</td>
+        <td>10.8p</td><td>10.6p</td><td>10.4p</td><td>10.2p</td><td>10.1p</td><td>9.9p</td><td>10.2p</td><td>10.4p</td>
+        <td class="forecast-col">11.1p</td><td class="forecast-col">11.8p</td><td class="forecast-col">12.5p</td><td class="forecast-col">12.9p</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+
+
+  </div>
+   <!-- ========================= -->
+
+
+
+    </main>
+
+  </div>
+
+  <div class="context-menu" id="contextMenu"></div>
+
+  <script src="assets/tree.js"></script>
+  <script src="assets/layout.js"></script>
+
+</body>
+</html>

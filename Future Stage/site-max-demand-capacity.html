@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>True Energy Platform</title>
+
+  <!-- MATERIAL SYMBOLS: Outlined + Rounded -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+
+  <!-- TRUE Layout + Components -->
+  <link rel="stylesheet" href="assets/layout.css" />
+  <link rel="stylesheet" href="assets/tree.css" />
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- MATERIAL SYMBOLS: Outlined + Rounded -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+
+</head>
+
+<body class="nav-rail-collapsed">
+
+ <!-- GOOGLE-STYLE NAV RAIL -->
+ <aside id="navRail" class="nav-rail collapsed">
+
+  <div class="nav-rail-top">
+    <button id="navRailToggle" class="nav-rail-toggle">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+
+  <nav class="nav-rail-links">
+
+    <a href="home.html">
+      <span class="material-symbols-outlined">home</span>
+      <span class="label">Home</span>
+    </a>
+
+    <a href="index.html" class="landed">
+      <span class="material-symbols-outlined">folder</span>
+      <span class="label">Portfolio</span>
+    </a>
+
+    <a href="sustainability.html">
+      <span class="material-symbols-outlined">eco</span>
+      <span class="label">Sustainability</span>
+    </a>
+
+    <a href="trading.html">
+      <span class="material-symbols-outlined">trending_up</span>
+      <span class="label">Trading</span>
+    </a>
+
+    <a href="bill_validation.html">
+      <span class="material-symbols-outlined">receipt_long</span>
+      <span class="label">Bill Validation</span>
+    </a>
+
+    <a href="procurement.html">
+      <span class="material-symbols-outlined">bucket_check</span>
+      <span class="label">Procurement</span>
+    </a>
+
+  </nav>
+
+</aside>
+
+  <!-- TOP HEADER -->
+  <header class="top-header">
+    <div class="logo">true Energy Platform</div>
+  </header>
+
+ <!-- BREADCRUMBS -->
+  <div class="breadcrumbs">
+    <span>Home</span> /
+   <span><a href="company-overview.html">Fuller's Pubs & Hotels</a></span> /
+    <strong>The Admiralty</strong>
+  </div>
+
+  <!-- PAGE TITLE -->
+<section class="page-title">
+
+  <div class="title-left">
+    <h1>The Admiralty</h1>
+
+       <!-- ADDRESS UNDER TITLE -->
+      <div class="location-row">
+        <span class="material-symbols-outlined">location_on</span>
+        Trafalgar Square, London
+      </div>
+    </div>
+
+  <!-- AI BUTTON -->
+  <button id="aiToggleBtn" class="ai-button">
+    <span class="material-symbols-outlined">auto_awesome</span>
+    AI
+  </button>
+
+</section>
+
+  <!-- MAIN LAYOUT -->
+  <div class="layout-wrapper">
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+      <!-- CONTENT TOP MENU -->
+      <div class="content-top-menu">
+        <div class="menu-left">
+          <a href="site-overview.html" class="tab-link">Overview</a>
+          <a href="site-budget.html" class="tab-link">Budget &amp; Forecast</a>
+          <a href="site-emissions.html" class="tab-link">Emissions</a>
+          <a href="site-reports.html" class="tab-link">Reports</a>
+          <a href="site-projects.html" class="tab-link">Projects</a>
+          <a href="site-contracts.html" class="tab-link">Contracts</a>
+          <a href="site-data-completeness.html" class="tab-link">Data Completeness</a>
+                    <a href="site-max-demand.html" class="tab-link landed">Max Demand/Banding</a>
+
+        </div>
+
+        <span class="material-symbols-outlined more-menu">more_vert</span>
+      </div>
+
+      <!-- METRIC ROW -->
+<div class="report-metrics-row">
+
+  <div class="report-metric-card">
+    <span class="material-symbols-rounded metric-icon">savings</span>
+    <div class="metric-label">Total Potential Savings</div>
+    <div class="metric-value">£14,927</div>
+  </div>
+
+  <div class="report-metric-card">
+    <span class="material-symbols-rounded metric-icon">warning</span>
+    <div class="metric-label">Meters Over Capacity</div>
+    <div class="metric-value">2</div>
+  </div>
+
+  <div class="report-metric-card">
+    <span class="material-symbols-rounded metric-icon">trending_down</span>
+    <div class="metric-label">Avoidable Annual Cost</div>
+    <div class="metric-value">£17,840</div>
+  </div>
+
+</div>
+
+<!-- TOP SUB-NAV FOR MAX DEMAND PAGE -->
+<div class="sub-nav-row">
+
+  <div class="sub-nav-left">
+
+    <a href="site-max-demand.html" class="sub-nav-pill">
+      <span class="material-symbols-outlined">radio_button_unchecked</span>
+      Energy Banding
+    </a>
+
+    <a href="site-max-demand-capacity.html" class="sub-nav-pill active"">
+      <span class="material-symbols-outlined">radio_button_checked</span>
+      Max Demand
+    </a>
+
+  </div>
+
+  <div class="sub-nav-right">
+    <button class="range-selector">
+      Last 12 Months
+      <span class="material-symbols-outlined">arrow_drop_down</span>
+    </button>
+  </div>
+
+</div>
+
+
+
+      <!-- EXCEEDED DEMAND LIST -->
+<div class="meter-alerts">
+  <h3>3 meters on this site have exceed their max demand</h3>
+
+<div class="meter-card">
+
+<img src="images/capacity.png" alt="Meter Icon" class="meter-circles" />
+
+</div>
+<div class="meter-card">
+
+<img src="images/capacity.png" alt="Meter Icon" class="meter-circles" />
+
+</div>
+
+
+
+
+</div> <!-- end .meter-alerts -->
+
+    </main>
+
+  </div>
+
+  <div class="context-menu" id="contextMenu"></div>
+
+  <!-- SCRIPTS -->
+  <script src="assets/tree.js"></script>
+  <script src="assets/layout.js"></script>
+
+  <!-- AI RIGHT PANEL -->
+<aside id="aiPanel" class="ai-panel">
+  <div class="ai-panel-header">
+    <h2>AI Insights</h2>
+    <button id="aiCloseBtn" class="ai-close-btn">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+
+  <div class="ai-panel-content">
+    <!-- unchanged -->
+  </div>
+</aside>
+
+</body>
+</html>

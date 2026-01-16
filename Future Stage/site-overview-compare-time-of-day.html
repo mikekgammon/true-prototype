@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>True Energy Platform</title>
+
+  <!-- MATERIAL SYMBOLS: Outlined + Rounded -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+
+  <!-- TRUE Layout + Components -->
+  <link rel="stylesheet" href="assets/layout.css" />
+  <link rel="stylesheet" href="assets/tree.css" />
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<!-- MATERIAL SYMBOLS: Outlined + Rounded -->
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+
+</head>
+
+
+
+
+<body class="nav-rail-collapsed">
+
+ <!-- GOOGLE-STYLE NAV RAIL -->
+ <aside id="navRail" class="nav-rail collapsed">
+
+  <div class="nav-rail-top">
+    <button id="navRailToggle" class="nav-rail-toggle">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+
+  <nav class="nav-rail-links">
+
+    <a href="home.html">
+      <span class="material-symbols-outlined">home</span>
+      <span class="label">Home</span>
+    </a>
+
+    <a href="index.html" class="landed">
+      <span class="material-symbols-outlined">folder</span>
+      <span class="label">Portfolio</span>
+    </a>
+
+    <a href="sustainability.html">
+      <span class="material-symbols-outlined">eco</span>
+      <span class="label">Sustainability</span>
+    </a>
+
+    <a href="trading.html">
+      <span class="material-symbols-outlined">trending_up</span>
+      <span class="label">Trading</span>
+    </a>
+
+    <a href="bill_validation.html">
+      <span class="material-symbols-outlined">receipt_long</span>
+      <span class="label">Bill Validation</span>
+    </a>
+
+    <a href="procurement.html">
+      <span class="material-symbols-outlined">bucket_check</span>
+      <span class="label">Procurement</span>
+    </a>
+
+  </nav>
+
+</aside>
+
+  <!-- TOP HEADER -->
+  <header class="top-header">
+    <div class="logo">true Energy Platform</div>
+  </header>
+
+ <!-- BREADCRUMBS -->
+  <div class="breadcrumbs">
+    <span>Home</span> /
+   <span><a href="company-overview.html">Fuller's Pubs & Hotels</a></span> /
+    <strong>The Admiralty</strong>
+  </div>
+
+<!-- PAGE TITLE -->
+  <section class="page-title">
+    <div class="title-left">
+      <h1>The Admiralty</h1>
+
+      <!-- ADDRESS UNDER TITLE -->
+      <div class="location-row">
+        <span class="material-symbols-outlined">location_on</span>
+        Chiswick, London W4 3NN
+      </div>
+    </div>
+
+    <!-- AI BUTTON -->
+    <button id="aiToggleBtn" class="ai-button">
+      <span class="material-symbols-outlined">auto_awesome</span>
+      AI
+    </button>
+  </section>
+
+
+
+
+  <!-- MAIN LAYOUT -->
+  <div class="layout-wrapper">
+
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+      <div class="content-top-menu">
+        <div class="menu-left">
+          <a href="site-overview.html" class="tab-link landed">Overview</a>
+          <a href="site-budget.html" class="tab-link">Budget &amp; Forecast</a>
+          <a href="site-emissions.html" class="tab-link">Emissions</a>
+          <a href="site-reports.html" class="tab-link">Reports</a>
+          <a href="site-projects.html" class="tab-link">Projects</a>
+          <a href="site-contracts.html" class="tab-link">Contracts</a>
+          <a href="site-data-completeness.html" class="tab-link">Data Completeness</a>
+          <a href="site-max-demand.html" class="tab-link">Max Demand/Banding</a>
+
+        </div>
+
+        <span class="material-symbols-outlined more-menu">more_vert</span>
+      </div>
+
+<div class="report-metrics-row">
+
+  <div class="report-metric-card">
+    <span class="material-symbols-rounded metric-icon" style="color: #ba4975;">charger</span>
+    <div class="metric-label">HH Meters</div>
+    <div class="metric-value">12</div>
+  </div>
+
+  <div class="report-metric-card">
+    <span class="material-symbols-outlined metric-icon" style="color: #ba4975;">charger</span>
+    <div class="metric-label">NHH Meters</div>
+    <div class="metric-value">34</div>
+  </div>
+
+  <div class="report-metric-card">
+    <span class="material-symbols-rounded" style="color: #3f2a95;">local_fire_department</span>
+    <div class="metric-label">Gas Meters</div>
+    <div class="metric-value">3</div>
+  </div>
+
+</div>
+
+
+<div class="chart-section">
+
+<div class="chart-header">
+  <h2>Power Consumption (HH)</h2>
+
+  <div class="chart-filters">
+
+    <div class="filter-dropdown chart-type-dropdown">
+  <button id="chartTypeBtn" class="filter-pill">
+    <span class="material-symbols-outlined">insights</span>
+    <span id="chartTypeLabel">Compare by Time of Day</span>
+    <span class="material-symbols-outlined">expand_more</span>
+  </button>
+
+<div id="chartTypeMenu" class="dropdown-menu">
+  <div class="dropdown-title">Chart Type</div>
+
+  <a href="site-overview.html" class="dropdown-item">Compare Off</a>
+  <a href="site-overview-compare-date-range.html" class="dropdown-item">Compare By Date Range</a>
+  <a href="site-overview-compare-time-of-day.html" class="dropdown-item">Time of Day</a>
+  <a href="site-overview-compare-day-of-week.html" class="dropdown-item">Day of Week Comparison</a>
+</div>
+
+</div>
+
+<div class="filter-dropdown compare-dropdown">
+  <button class="filter-pill" id="compareRangeBtn">
+    <span id="compareRangeLabel">Same Day Last Week</span>
+    <span class="material-symbols-outlined">expand_more</span>
+  </button>
+
+  <div class="dropdown-menu" id="compareRangeMenu">
+    <button class="dropdown-item" data-label="Yesterday">Yesterday</button>
+    <button class="dropdown-item" data-label="Same Day Last Week">Same Day Last Week</button>
+    <button class="dropdown-item" data-label="Last Month (Average)">Same Day Last Month</button>
+    <button class="dropdown-item" data-label="Last Month (Average)">Same Day Last Year</button>
+  </div>
+</div>
+</div>
+
+  <div class="chart-actions">
+    <div class="view-toggle">
+      <button class="view-btn active"><span class="material-symbols-rounded">insert_chart</span></button>
+      <button class="view-btn"><span class="material-symbols-rounded">list</span></button>
+    </div>
+
+    <div class="utility-toggle">
+      <button class="utility-btn active">Power</button>
+      <button class="utility-btn">Gas</button>
+    </div>
+  </div>
+</div>
+
+
+  <div class="chart-wrapper">
+    <!-- Replace with your Chart.js canvas -->
+    <div class="chart-placeholder">
+      <img src="images/time-of-day.png" alt="Power Consumption Chart" class="chart-img">
+    </div>
+  </div>
+
+  <div class="chart-legend">
+    <div class="legend-item">
+      <span class="legend-dot magenta"></span> Average Consumption
+    </div>
+    <div class="legend-item">
+      <span class="legend-dot pale"></span> Average Last Month
+    </div>
+  </div>
+
+</div>
+
+
+       <div class="meters-table-wrapper new-style">
+
+    <!-- Search bar -->
+    <div class="new-table-search">
+      <span class="material-symbols-outlined search-icon">search</span>
+      <input type="text" placeholder="Search by meter, meter number, serial number" />
+    </div>
+
+<table class="new-table compact-table">
+<thead>
+  <tr>
+    <th><span class="material-symbols-outlined">filter_list</span> Utility</th>
+    <th>Meter Name</th>
+    <th>Top Line MPAN</th>
+    <th>Core MPAN/MPRN</th>
+    <th>Supplier</th>
+
+    <!-- ⭐ ADDED FILTER ICON HERE -->
+    <th>
+      <span class="material-symbols-outlined">filter_list</span>
+      Meter Usage
+    </th>
+
+    <th>Contract<br>Details</th>
+    <th>AMR</th>
+    <th>Capacity</th>
+    <th></th>
+  </tr>
+</thead>
+
+
+  <tbody>
+
+    <tr>
+      <td><span class="chip meter-chip hh"><span class="material-symbols-rounded">charger</span> HH</span></td>
+      <td>Reception</td>
+      <td>00 | 0000 | H04</td>
+      <td>1470001278441</td>
+      <td>TotalEnergies Gas & Power Limited</td>
+      <td>2,430,000 kWh</td>
+      <td>Fixed<br><span class="date">31/05/2036</span></td>
+
+      <!-- AMR -->
+      <td>
+        <span class="material-symbols-rounded" style="color:#22c55e;">task_alt</span>
+      </td>
+
+      <!-- Capacity -->
+      <td>
+        <span class="material-symbols-rounded" style="color:#111827;">donut_large</span>
+      </td>
+
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
+
+    <tr>
+      <td>
+      <span class="chip meter-chip nhh"><span class="material-symbols-outlined">charger</span> nHH</span></td>
+      <td>Office</td>
+      <td>00 | 0000 | M02</td>
+      <td>1300035386046</td>
+      <td>TotalEnergies Gas & Power Limited</td>
+      <td>1,976,662 kWh</td>
+      <td>Fixed<br><span class="date">14/07/2027</span></td>
+
+      <!-- AMR -->
+      <td>
+        <span class="material-symbols-rounded" style="color:#22c55e;">task_alt</span>
+      </td>
+
+      <!-- Capacity -->
+      <td>
+        <span class="material-symbols-rounded" style="color:#111827;">donut_large</span>
+      </td>
+
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
+
+    <tr>
+      <td> <span class="chip meter-chip gas"><span class="material-symbols-rounded">local_fire_department</span> Gas</span></td>
+
+      
+
+
+      <td>Factory</td>
+      <td>00 | 0000 | M02</td>
+      <td>8876163202</td>
+      <td>British Gas Business</td>
+      <td>2,430,000 kWh</td>
+      <td>Fixed<br><span>22/11/2025</span></td>
+
+      <!-- AMR -->
+      <td>
+        <span class="material-symbols-rounded" style="color:#22c55e;">task_alt</span>
+      </td>
+
+      <!-- Capacity -->
+      <td>
+        <span class="material-symbols-rounded" style="color:#111827;">donut_large</span>
+      </td>
+
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
+
+        <tr>
+      <td> <span class="chip meter-chip water"><span class="material-symbols-rounded">water_drop</span> Water</span></td>
+
+      
+
+
+      <td>Factory</td>
+      <td>00 | 0000 | M02</td>
+      <td>8876163202</td>
+      <td>Southern Water</td>
+      <td>37,997 L</td>
+      <td>Fixed<br><span>22/11/2025</span></td>
+
+      <!-- AMR -->
+      <td>
+        <span class="material-symbols-rounded" style="color:#22c55e;">task_alt</span>
+      </td>
+
+      <!-- Capacity -->
+      <td>
+        <span class="material-symbols-rounded" style="color:#111827;">donut_large</span>
+      </td>
+
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
+
+  </tbody>
+</table>
+
+    <!-- Pagination -->
+
+
+  </div></div>
+
+      <!-- Pagination -->
+      <div class="new-pagination">
+        <span>Rows per page:</span>
+        <select>
+          <option>10</option>
+          <option>25</option>
+          <option>50</option>
+        </select>
+
+        <span class="page-count">1–3 of 3</span>
+
+        <span class="material-symbols-outlined disabled">first_page</span>
+        <span class="material-symbols-outlined disabled">chevron_left</span>
+        <span class="material-symbols-outlined">chevron_right</span>
+        <span class="material-symbols-outlined">last_page</span>
+      </div>
+
+    </main>
+
+  </div>
+
+  <div class="context-menu" id="contextMenu"></div>
+
+ <!-- SCRIPTS -->
+<script src="assets/tree.js"></script>
+<script src="assets/layout.js"></script>
+
+<!-- AI RIGHT PANEL -->
+<aside id="aiPanel" class="ai-panel">
+  <div class="ai-panel-header">
+    <h2>AI Insights</h2>
+    <button id="aiCloseBtn" class="ai-close-btn">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+
+  <div class="ai-panel-content">
+    <p><strong>The Admiralty</strong> summary and opportunities identified by AI:</p>
+
+    <ul class="ai-insights-list">
+      <li>Energy usage is 12% above expected baseline this month.</li>
+      <li>Two projects show extended timelines.</li>
+      <li>Recommended next action: update forecast inputs.</li>
+    </ul>
+
+    <div class="ai-actions">
+      <button class="ai-action-btn">Generate Report</button>
+      <button class="ai-action-btn">Suggest Improvements</button>
+      <button class="ai-action-btn secondary">Export Insights</button>
+    </div>
+  </div>
+</aside>
+
+<!-- ===============================
+     UNIVERSAL DROPDOWN LOGIC
+================================ -->
+<script>
+document.querySelectorAll('.filter-dropdown').forEach(drop => {
+  const button = drop.querySelector('.filter-pill');
+
+  button.addEventListener('click', e => {
+    e.stopPropagation();
+    // Close all others
+    document.querySelectorAll('.filter-dropdown.open').forEach(d => {
+      if (d !== drop) d.classList.remove('open');
+    });
+    drop.classList.toggle('open');
+  });
+
+  // Close on outside click
+  document.addEventListener('click', () => {
+    drop.classList.remove('open');
+  });
+});
+</script>
+
+<!-- ===============================
+     COMPARE DROPDOWN LOGIC
+================================ -->
+<script>
+const compareBtn = document.getElementById("compareBtn");
+const compareLabel = document.getElementById("compareLabel");
+
+document.querySelectorAll(".compare-option").forEach(option => {
+  option.addEventListener("click", () => {
+    compareLabel.textContent = option.dataset.value;
+    compareBtn.parentElement.classList.remove("open");
+  });
+});
+</script>
+
+<!-- ===============================
+     CHART TYPE SELECTOR LOGIC
+================================ -->
+<script>
+
+// Elements
+const chartTypeLabel = document.getElementById("chartTypeLabel");
+
+// All dropdowns inside chart-filters
+const chartFilters = document.querySelector(".chart-filters");
+const filterDropdowns = chartFilters.querySelectorAll(".filter-dropdown");
+
+// Filter indices (ordered in your HTML)
+const rangeFilter   = filterDropdowns[1]; // Date range (Year to Date)
+const groupFilter   = filterDropdowns[2]; // Group by Day / Week / Month
+const timeFilter    = filterDropdowns[3]; // Time Range selector
+const compareFilter = document.querySelector(".compare-dropdown");
+
+// Chart image placeholder
+const chartImg = document.querySelector(".chart-img");
+
+
+</script>
+<script>
+  const compareBtn = document.getElementById('compareRangeBtn');
+  const compareMenu = document.getElementById('compareRangeMenu');
+
+  // Open / close on button click
+  compareBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    compareMenu.classList.toggle('open');
+  });
+
+  // Click on an option → update button label + close
+  compareMenu.addEventListener('click', (e) => {
+    const item = e.target.closest('.dropdown-item');
+    if (!item) return;
+
+    const newLabel = item.dataset.label || item.textContent.trim();
+    // Replace the text node before the icon
+    const spanIcon = compareBtn.querySelector('.material-symbols-outlined');
+    compareBtn.firstChild.textContent = newLabel + ' ';
+    compareMenu.classList.remove('open');
+
+    // TODO: trigger your chart update here based on newLabel
+  });
+
+  // Close when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!compareMenu.contains(e.target) && !compareBtn.contains(e.target)) {
+      compareMenu.classList.remove('open');
+    }
+  });
+</script>
+
+
+</body>
+</html>
