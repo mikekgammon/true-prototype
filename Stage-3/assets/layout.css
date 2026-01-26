@@ -870,7 +870,7 @@ body.nav-rail-expanded .page-title {
 
 .chart-date-range {
   margin-bottom:20px;
-  margin-top:20px;
+  margin-top:0 !important;
 }
 
 .chart-header h2 {
