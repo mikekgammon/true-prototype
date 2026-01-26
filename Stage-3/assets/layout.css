@@ -855,7 +855,7 @@ body.nav-rail-expanded .page-title {
 .chart-section {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 0;
   padding: 0;
 }
 
@@ -866,6 +866,10 @@ body.nav-rail-expanded .page-title {
   gap: 16px;
   margin-bottom: 20px;
   flex-wrap: nowrap;
+}
+
+.chart-date-range {
+  margin-bottom:20px;
 }
 
 .chart-header h2 {
@@ -4917,4 +4921,202 @@ h2 {
 .filters-btn__text {
   line-height: 1;
   flex-shrink: 0;
+}
+/* ================================
+   ESTIMATED DATA INDICATORS
+   ================================ */
+
+/* ---- Estimated pill ---- */
+
+/* ================================
+   ESTIMATED DATA WARNING PILL
+   ================================ */
+
+.estimate-pill{
+  display: inline-flex;
+  align-items: center;
+  margin-left: 8px;
+  padding: 4px 10px;
+
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.02em;
+
+  color: #000;              /* dark amber text */
+  background: #ff9800;         /* soft orange background */
+  border: 1px solid #ff9800;   /* subtle orange border */
+  border-radius: 999px;
+
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+
+/* ---- Legend layout ---- */
+.chart-legend{
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.legend-item{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* ---- Legend dots ---- */
+.legend-dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Existing series colour */
+.legend-dot.magenta{
+  background: #ba4975;
+}
+
+/* Estimated variant */
+.legend-dot.estimated{
+  background: transparent;
+  border: 2px dashed #ba4975;
+  opacity: 0.45;
+}
+.estimate-wrap{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* orange pill (your current) */
+/* ================================
+   ESTIMATED DATA PILL (WITH ICON)
+   ================================ */
+
+.estimate-pill-wrap{
+  display: inline-flex;
+  align-items: center;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* pill */
+.estimate-pill{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.02em;
+
+  color: #000;
+  background: #ff9800;
+  border: 1px solid #ff9800;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* icon inside pill */
+.estimate-pill-icon{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: #ff9800;
+  cursor: help;
+  outline: none;
+}
+
+.estimate-pill-icon .material-symbols-outlined{
+  font-size: 14px;
+  line-height: 1;
+  color: #000;
+}
+
+/* tooltip */
+.estimate-tooltip{
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 50;
+
+  width: 280px;
+  padding: 10px 12px;
+  border-radius: 10px;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+
+  font-size: 12px;
+  color: #111827;
+  line-height: 1.4;
+
+  opacity: 0;
+  transform: translateY(-4px);
+  pointer-events: none;
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+
+.estimate-tooltip strong{
+  font-weight: 700;
+}
+
+.estimate-tooltip-link{
+  display: inline-block;
+  margin-top: 6px;
+  font-weight: 600;
+  color: #000;
+}
+
+/* show tooltip */
+.estimate-pill-icon:hover .estimate-tooltip,
+.estimate-pill-icon:focus .estimate-tooltip{
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.dq-pill{
+  background: var(--highlight); /* default fallback */
+  color: #000;
+  border: none;
+}
+
+/* force solid + black icons */
+.dq-pill .material-symbols-rounded{
+  color: #000;
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 500,
+    'GRAD' 0,
+    'opsz' 20;
+}
+
+/* GOOD */
+.dq-pill--good{
+  background: #9be37a; /* soft green */
+}
+
+/* ESTIMATED */
+.dq-pill--est{
+  background: #f3a33c; /* amber */
+}
+
+/* MISSING */
+.dq-pill--missing{
+  background: #e74c3c; /* red */
 }
