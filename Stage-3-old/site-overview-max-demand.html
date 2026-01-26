@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>True Energy Platform</title>
+
+  <!-- MATERIAL SYMBOLS: Outlined + Rounded -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+
+  <!-- TRUE Layout + Components -->
+  <link rel="stylesheet" href="assets/layout.css" />
+  <link rel="stylesheet" href="assets/tree.css" />
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<!-- MATERIAL SYMBOLS: Outlined + Rounded -->
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+
+</head>
+
+
+
+
+<body>
+
+
+
+  <!-- TOP HEADER -->
+  <header class="top-header">
+    <div class="logo">true Energy Platform</div>
+  </header>
+
+ <!-- BREADCRUMBS -->
+  <div class="breadcrumbs">
+    <span>Home</span> /
+   <span><a href="company-overview.html">Fuller's Pubs & Hotels</a></span> /
+    <strong>The Admiralty</strong>
+  </div>
+
+<!-- PAGE TITLE -->
+<section class="page-title">
+  <div class="page-title-inner">
+    <div class="title-left">
+      <h1>The Admiralty</h1>
+
+      <div class="location-row">
+        <span class="material-symbols-outlined">location_on</span>
+        Trafalgar Square, London
+      </div>
+    </div>
+  </div>
+    <div class="page-actions">
+  <button class="kebab-btn" id="pageKebabBtn" aria-label="Page actions" aria-haspopup="true" aria-expanded="false">
+    <span class="material-symbols-outlined">more_vert</span>
+  </button>
+
+  <div class="kebab-menu" id="pageKebabMenu" role="menu" aria-label="Page actions">
+    <button class="kebab-item" role="menuitem" type="button">Company Preferences</button>
+    <button class="kebab-item" role="menuitem" type="button">Download Company Consumption</button>
+  </div>
+</div>
+
+</section>
+
+
+
+<!-- PAGE TABS -->
+<div class="page-tabs-wrapper" style="max-width: 1260px;">
+  <div class="page-tabs">
+    <a href="site-overview.html" class="page-tab">Site Consumption</a>
+    <a href="site-overview-max-demand.html" class="page-tab active">Max Demand</a>
+    <a href="site-overview-banding.html" class="page-tab">Energy Banding</a>
+    <a href="site-page-data-completeness.html" class="page-tab">Data Completeness</a>
+  </div>
+</div>
+
+   <div class="layout-wrapper"  style=" max-width: 1200px;
+  margin: 0 auto;
+">
+
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+ 
+<div class="chart-header">
+
+
+  <div class="chart-filters">
+
+    <div class="filter-dropdown">
+  <button class="filter-pill">
+    Last 12 Months 
+    <span class="material-symbols-outlined">expand_more</span>
+  </button>
+
+  <div class="dropdown-menu">
+    <div class="dropdown-title">Select Range</div>
+    <button class="dropdown-item">This Month</button>
+    <button class="dropdown-item">Last 3 Months</button>
+    <button class="dropdown-item">Year to Date</button>
+    <button class="dropdown-item">Last 12 Months</button>
+    <button class="dropdown-item">Custom Range</button>
+  </div>
+</div>
+
+
+
+
+
+  </div>
+
+<div class="chart-actions">
+
+
+
+  <!-- Kebab menu -->
+<div class="kebab-wrapper">
+  <button class="view-btn kebab-btn chart-kebab-btn" title="More actions" aria-haspopup="true" aria-expanded="false">
+    <span class="material-symbols-rounded">more_vert</span>
+  </button>
+
+  <div class="dropdown-menu kebab-menu chart-kebab-menu">
+    <button class="dropdown-item" type="button">
+      <span class="material-symbols-rounded">table_view</span>
+      Download Excel
+    </button>
+    <button class="dropdown-item" type="button">
+      <span class="material-symbols-rounded">image</span>
+      Download Chart
+    </button>
+  </div>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+ <div class="chart-date-range" style="margin-top: 20px; margin-bottom: 20px;">
+  <span class="material-symbols-outlined">calendar_month</span>
+  <span>Data range: <strong>1 Jan 2025 – 1 Jan 2026</strong></span>
+</div>
+<div class="report-metrics-row">
+
+  <!-- 1) Scope -->
+  <div class="report-metric-card">
+    <div class="metric-label">METERS EXCEEDING DEMAND</div>
+    <div class="metric-value">3</div>
+    <div class="metric-subtext">Require investigation</div>
+  </div>
+
+  <!-- 2) Recency / urgency -->
+  <div class="report-metric-card">
+    <div class="metric-label">MOST RECENT BREACH</div>
+    <div class="metric-value">06 Jan 2026</div>
+    <div class="metric-subtext">Main HH Supply</div>
+  </div>
+
+  <!-- 3) Severity -->
+  <div class="report-metric-card">
+    <div class="metric-label">WORST BREACH (LAST 12M)</div>
+    <div class="metric-value">+10.5%</div>
+    <div class="metric-subtext">Main HH Supply • 221 kW vs 200 kW</div>
+  </div>
+
+</div>
+
+
+<!-- TOP SUB-NAV FOR MAX DEMAND PAGE
+<div class="sub-nav-row">
+
+  <div class="sub-nav-left">
+    <a href="site-overview-max-demand.html" class="sub-nav-pill">
+      <span class="material-symbols-outlined">radio_button_checked</span>
+      Max Demand
+    </a>
+    <a href="site-overview-banding.html" class="sub-nav-pill active">
+      <span class="material-symbols-outlined">radio_button_unchecked</span>
+      Energy Banding
+    </a>
+  </div>
+
+
+
+
+
+</div> -->
+
+<div class="exceeded-meter-list">
+
+  <!-- Card 1 -->
+  <div class="exceeded-meter-card">
+    <div class="exceeded-meter-top">
+      <div>
+        <div class="exceeded-meter-title">
+          <span class="material-symbols-rounded alert-ic" style="color: #ba4975;">offline_bolt</span>
+          Main HH Supply
+          <span class="muted">• 00 | 026 | N24</span>
+        </div>
+        <div class="exceeded-meter-subtitle">
+          Demand went above your agreed limit.
+        </div>
+      </div>
+
+      <span class="risk-pill risk-pill--high">
+        <span class="material-symbols-rounded">warning</span>
+        Needs attention
+      </span>
+    </div>
+
+    <div class="exceeded-meter-stats">
+      <div class="stat">
+        <div class="label">Highest demand</div>
+        <div class="value">221 kW</div>
+      </div>
+
+      <div class="stat">
+        <div class="label">Agreed limit</div>
+        <div class="value">200 kW</div>
+      </div>
+
+      <div class="stat">
+        <div class="label">Exceeded by</div>
+        <div class="value over">+10.5%</div>
+      </div>
+
+      <div class="stat">
+        <div class="label">Peak demand period</div>
+        <div class="value">
+          06 Jan 2026 <span class="muted">•</span>
+          <span class="js-breach-window" data-breach-start="15:30" data-breach-periods="3">—</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exceeded-meter-bottom">
+      <div class="note">
+        Running above your agreed limit may increase charges.
+        Check what was running during this time and whether demand can be staggered.
+      </div>
+
+      <a class="exceeded-meter-link" href="meter-page-max-demand.html">
+        View meter max demand
+        <span class="material-symbols-rounded">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="exceeded-meter-card">
+    <div class="exceeded-meter-top">
+      <div>
+        <div class="exceeded-meter-title">
+          <span class="material-symbols-rounded alert-ic" style="color: #ba4975;">offline_bolt</span>
+          Kitchen / Plant
+          <span class="muted">• 00 | 027 | N24</span>
+        </div>
+        <div class="exceeded-meter-subtitle">
+          Demand went above your agreed limit.
+        </div>
+      </div>
+
+      <span class="risk-pill risk-pill--med">
+        <span class="material-symbols-rounded">error</span>
+        Watch closely
+      </span>
+    </div>
+
+    <div class="exceeded-meter-stats">
+      <div class="stat">
+        <div class="label">Highest demand</div>
+        <div class="value">168 kW</div>
+      </div>
+
+      <div class="stat">
+        <div class="label">Agreed limit</div>
+        <div class="value">160 kW</div>
+      </div>
+
+      <div class="stat">
+        <div class="label">Exceeded by</div>
+        <div class="value over">+5.0%</div>
+      </div>
+
+      <div class="stat">
+        <div class="label">Peak demand period</div>
+        <div class="value">
+          22 Dec 2025 <span class="muted">•</span>
+          <span class="js-breach-window" data-breach-start="16:00" data-breach-periods="1">—</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exceeded-meter-bottom">
+      <div class="note">
+        Repeated exceedances can still increase charges.
+        If this happens often, consider spreading larger loads across the day.
+      </div>
+
+      <a class="exceeded-meter-link" href="meter-page-max-demand.html">
+        View meter max demand
+        <span class="material-symbols-rounded">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="exceeded-meter-card">
+    <div class="exceeded-meter-top">
+      <div>
+        <div class="exceeded-meter-title">
+          <span class="material-symbols-rounded alert-ic" style="color: #ba4975;">offline_bolt</span>
+          Bar &amp; Cellar
+          <span class="muted">• 00 | 028 | N24</span>
+        </div>
+        <div class="exceeded-meter-subtitle">
+          Demand went above your agreed limit.
+        </div>
+      </div>
+
+      <span class="risk-pill risk-pill--low">
+        <span class="material-symbols-rounded">info</span>
+        Minor
+      </span>
+    </div>
+
+    <div class="exceeded-meter-stats">
+      <div class="stat">
+        <div class="label">Highest demand</div>
+        <div class="value">122 kW</div>
+      </div>
+
+      <div class="stat">
+        <div class="label">Agreed limit</div>
+        <div class="value">120 kW</div>
+      </div>
+
+      <div class="stat">
+        <div class="label">Exceeded by</div>
+        <div class="value over">+1.7%</div>
+      </div>
+
+      <div class="stat">
+        <div class="label">Peak demand period</div>
+        <div class="value">
+          14 Nov 2025 <span class="muted">•</span>
+          <span class="js-breach-window" data-breach-start="14:30" data-breach-periods="2">—</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exceeded-meter-bottom">
+      <div class="note">
+        This looks minor and infrequent.
+        Keep an eye on it if you start seeing it more regularly.
+      </div>
+
+      <a class="exceeded-meter-link" href="meter-page-max-demand.html">
+        View meter max demand
+        <span class="material-symbols-rounded">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+
+  <div class="context-menu" id="contextMenu"></div>
+
+ <!-- SCRIPTS -->
+<script src="assets/tree.js"></script>
+<script src="assets/layout.js"></script>
+
+
+
+<!-- ===============================
+     UNIVERSAL DROPDOWN LOGIC
+================================ -->
+<script>
+document.querySelectorAll('.filter-dropdown').forEach(drop => {
+  const button = drop.querySelector('.filter-pill');
+
+  button.addEventListener('click', e => {
+    e.stopPropagation();
+    // Close all others
+    document.querySelectorAll('.filter-dropdown.open').forEach(d => {
+      if (d !== drop) d.classList.remove('open');
+    });
+    drop.classList.toggle('open');
+  });
+
+  // Close on outside click
+  document.addEventListener('click', () => {
+    drop.classList.remove('open');
+  });
+});
+</script>
+
+<!-- ===============================
+     COMPARE DROPDOWN LOGIC
+================================ -->
+<script>
+const compareBtn = document.getElementById("compareBtn");
+const compareLabel = document.getElementById("compareLabel");
+
+document.querySelectorAll(".compare-option").forEach(option => {
+  option.addEventListener("click", () => {
+    compareLabel.textContent = option.dataset.value;
+    compareBtn.parentElement.classList.remove("open");
+  });
+});
+</script>
+
+<!-- ===============================
+     CHART TYPE SELECTOR LOGIC
+================================ -->
+<script>
+
+// Elements
+const chartTypeLabel = document.getElementById("chartTypeLabel");
+
+// All dropdowns inside chart-filters
+const chartFilters = document.querySelector(".chart-filters");
+const filterDropdowns = chartFilters.querySelectorAll(".filter-dropdown");
+
+// Filter indices (ordered in your HTML)
+const rangeFilter   = filterDropdowns[1]; // Date range (Year to Date)
+const groupFilter   = filterDropdowns[2]; // Group by Day / Week / Month
+const timeFilter    = filterDropdowns[3]; // Time Range selector
+const compareFilter = document.querySelector(".compare-dropdown");
+
+// Chart image placeholder
+const chartImg = document.querySelector(".chart-img");
+
+
+</script>
+<script>
+  function parseHHMM(str) {
+    const [h, m] = String(str).split(":").map(n => parseInt(n, 10));
+    return (h * 60) + m;
+  }
+
+  function formatHHMM(totalMins) {
+    totalMins = ((totalMins % 1440) + 1440) % 1440;
+    const h = Math.floor(totalMins / 60);
+    const m = totalMins % 60;
+    return String(h).padStart(2, "0") + ":" + String(m).padStart(2, "0");
+  }
+
+  function breachWindowText(startHHMM, periods) {
+    const start = parseHHMM(startHHMM);
+    const p = Math.max(1, parseInt(periods, 10) || 1);
+    const end = start + (p * 30);
+    return `${formatHHMM(start)}–${formatHHMM(end)}`;
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".js-breach-window").forEach(el => {
+      const start = el.dataset.breachStart;
+      const periods = el.dataset.breachPeriods;
+      el.textContent = start ? breachWindowText(start, periods) : "—";
+    });
+  });
+</script>
+
+
+</body>
+</html>
