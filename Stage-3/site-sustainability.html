@@ -26,7 +26,7 @@
 
   <nav class="nav-rail-links">
 
-    <a href="home.html">
+    <a href="company-overview.html">
       <span class="material-symbols-outlined">home</span>
       <span class="label">Home</span>
     </a>
@@ -62,14 +62,18 @@
 
   <!-- TOP HEADER -->
   <header class="top-header">
-    <div class="logo">true Energy Platform</div>
+     <div class="logo">
+    <img src="images/true-logo.svg" alt="True" />
+  </div>
+
   </header>
 
  <!-- BREADCRUMBS -->
   <div class="breadcrumbs">
-    <span>Home</span> /
-   <span><a href="company-overview.html">Fuller's Pubs & Hotels</a></span> /
-    <span><a href="site-overview.html"><strong>The Admiralty</strong></a></span> 
+    <span><a href="company-overview.html"></a>Home</a></span> /
+   <span><a href="company-overview.html">Sample Company Ltd</a></span> /
+      <span><a href="sustainability.html">Sustainability</a></span> /
+    <span><a href="site-overview.html"><strong>Industrial Site</strong></a></span> 
   </div>
 
   <!-- PAGE TITLE -->
@@ -136,16 +140,32 @@
 
       </div>
 
-
-
-
-
-
-      
-
       <div id="contentArea"><p>Assess and compare sustainability projects to develop emission reduction strategies, view emissions to understand your environmental impact, and set targets to reduce emissions in order to achieve Net Zero.</p>
       
      <div class="sust-section">
+<!-- Filter chips (True prototype style) -->
+<div class="chip-row" role="group" aria-label="Filters">
+  <button type="button" class="chip" data-chip="all" aria-pressed="false">
+    <span class="chip__label">All</span>
+  </button>
+
+  <button type="button" class="chip is-selected" data-chip="projects" aria-pressed="true">
+    <span class="chip__icon material-symbols-outlined" aria-hidden="true">check</span>
+    <span class="chip__label">Projects (1)</span>
+  </button>
+
+  <button type="button" class="chip" data-chip="comparisons" aria-pressed="false">
+    <span class="chip__label">Comparisons (0)</span>
+  </button>
+
+  <button type="button" class="chip" data-chip="strategy" aria-pressed="false">
+    <span class="chip__label">Strategy (0)</span>
+  </button>
+
+  <button type="button" class="chip" data-chip="schemes" aria-pressed="false">
+    <span class="chip__label">Schemes (0)</span>
+  </button>
+</div>
 
   <h2>What you can do here</h2>
   <p>
@@ -217,7 +237,7 @@
   </div>
 
   <div class="ai-panel-content">
-    <p><strong>The Admiralty</strong> summary and opportunities identified by AI:</p>
+    <p><strong>Industrial Site</strong> summary and opportunities identified by AI:</p>
 
     <ul class="ai-insights-list">
       <li>Energy usage is 12% above expected baseline this month.</li>

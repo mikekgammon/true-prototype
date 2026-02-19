@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>True Energy Platform</title>
+
+  <!-- MATERIAL SYMBOLS: Outlined + Rounded -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+
+  <!-- TRUE Layout + Components -->
+  <link rel="stylesheet" href="assets/layout.css" />
+  <link rel="stylesheet" href="assets/tree.css" />
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<!-- MATERIAL SYMBOLS: Outlined + Rounded -->
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+
+</head>
+
+
+
+
+<body>
+
+
+
+  <!-- TOP HEADER -->
+  <header class="top-header">
+     <div class="logo">
+    <img src="images/true-logo.svg" alt="True" />
+  </div>
+
+  </header>
+
+ <!-- BREADCRUMBS -->
+  <div class="breadcrumbs">
+    <span>Home</span> /
+   <span><a href="company-overview.html">Sample Company Ltd</a></span> /
+    <strong>Industrial Site</strong>
+  </div>
+
+<!-- PAGE TITLE -->
+<section class="page-title">
+  <div class="page-title-inner">
+    <div class="title-left">
+      <h1>Industrial Site</h1>
+
+      <div class="location-row">
+        <span class="material-symbols-outlined">location_on</span>
+        Main Road, Brighton
+      </div>
+    </div>
+  </div>
+    <div class="page-actions">
+  <button class="kebab-btn" id="pageKebabBtn" aria-label="Page actions" aria-haspopup="true" aria-expanded="false">
+    <span class="material-symbols-outlined">more_vert</span>
+  </button>
+
+  <div class="kebab-menu" id="pageKebabMenu" role="menu" aria-label="Page actions">
+    <button class="kebab-item" role="menuitem" type="button">Company Preferences</button>
+    <button class="kebab-item" role="menuitem" type="button">Download Company Consumption</button>
+  </div>
+</div>
+
+</section>
+
+
+
+<!-- PAGE TABS -->
+<div class="page-tabs-wrapper" style="max-width: 1260px;">
+  <div class="page-tabs">
+    <a href="site-overview.html" class="page-tab">Site Consumption</a>
+        <a href="site-overview.html" class="page-tab active">Site Normalisation</a>
+    <a href="site-overview-max-demand.html" class="page-tab">Max Demand</a>
+    <a href="site-overview-max-demand.html" class="page-tab">Energy Banding</a>
+    <a href="site-page-data-completeness.html" class="page-tab">Data Completeness</a>
+  </div>
+</div>
+
+
+
+
+  <!-- MAIN LAYOUT -->
+  <div class="layout-wrapper">
+
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <div class="chart-header">
+
+
+  <div class="chart-filters">
+
+ 
+
+    <div class="filter-dropdown">
+  <button class="filter-pill">
+    Last 12 Months 
+    <span class="material-symbols-outlined">expand_more</span>
+  </button>
+
+  <div class="dropdown-menu">
+    <div class="dropdown-title">Select Range</div>
+    <button class="dropdown-item">Last Months</button>
+    <button class="dropdown-item">Last 6 Months</button>
+    <button class="dropdown-item">Last 12 Months</button>
+  </div>
+</div>
+
+  </div>
+
+  
+
+<div class="chart-actions">
+
+
+
+  <!-- Kebab menu -->
+<div class="kebab-wrapper">
+  <button class="view-btn kebab-btn chart-kebab-btn" title="More actions" aria-haspopup="true" aria-expanded="false">
+    <span class="material-symbols-rounded">more_vert</span>
+  </button>
+
+  <div class="dropdown-menu kebab-menu chart-kebab-menu">
+    <button class="dropdown-item" type="button">
+      <span class="material-symbols-rounded">table_view</span>
+      Download Data
+    </button>
+  </div>
+</div>
+
+
+</div>
+
+
+</div>
+<div class="chart-wrapper">
+    <h2 style="margin-top: 0px;">Weather Normalised Power Usage</h2>
+    <!-- Replace with your Chart.js canvas -->
+  </div>
+ 
+<!-- NORMALISATION CHART (IMAGE) -->
+<div class="norm-image-shell" aria-label="Weather normalised chart image">
+  <img
+    src="images/new-4.png"
+    alt="Weather normalised power usage: monthly energy vs heating degree days, baseline reference"
+    class="norm-image"
+    loading="lazy"
+  />
+</div>
+<div class="chart-legend">
+
+  <div class="legend-item">
+    <span class="legend-bar"></span>
+    Consumption (kWh)
+  </div>
+
+  <div class="legend-item">
+    <span class="legend-line solid"></span>
+    Heating Degree Days (HDD)
+  </div>
+
+  <div class="legend-item">
+    <span class="legend-line dashed"></span>
+    Baseline
+  </div>
+
+</div>
+
+
+
+<!-- NORMALISATION SUMMARY (TEXT LAYOUT) -->
+<section class="norm-summary" aria-label="Weather normalisation summary">
+  <header class="norm-summary__head">
+    <div>
+      <h3 class="norm-summary__title">Weather normalisation summary</h3>
+      <p class="norm-summary__sub">
+        Raw savings can be misleading in warmer/colder years. Normalised savings adjusts usage using degree days (HDD) at the selected base temperature.
+      </p>
+    </div>
+
+    <div class="norm-summary__meta">
+      <span class="norm-chip">
+        <span class="material-symbols-outlined">thermostat</span>
+        Base <strong id="tableBaseTemp">15.5°C</strong>
+      </span>
+      <span class="norm-chip">
+        <span class="material-symbols-outlined">stacked_bar_chart</span>
+        HDD-based
+      </span>
+    </div>
+  </header>
+
+  <div class="norm-summary__rows" role="list">
+    <div class="norm-row norm-row--head" role="listitem" aria-hidden="true">
+      <div>Year</div>
+      <div class="num">kWh</div>
+      <div class="num">HDD</div>
+      <div class="num">kWh / HDD</div>
+      <div class="num">Raw savings</div>
+      <div class="num">Normalised savings</div>
+    </div>
+
+    <div class="norm-row norm-row--baseline" role="listitem">
+      <div class="year">Baseline</div>
+      <div class="num">40,480</div>
+      <div class="num">520</div>
+      <div class="num">78</div>
+      <div class="num muted">N/A</div>
+      <div class="num muted">N/A</div>
+    </div>
+
+    <div class="norm-row" role="listitem">
+      <div class="year">Year 1</div>
+      <div class="num">45,840</div>
+      <div class="num">681</div>
+      <div class="num">67</div>
+      <div class="num delta delta-neg">−13%</div>
+      <div class="num delta delta-pos">14%</div>
+    </div>
+
+    <div class="norm-row" role="listitem">
+      <div class="year">Year 2</div>
+      <div class="num">34,050</div>
+      <div class="num">498</div>
+      <div class="num">68</div>
+      <div class="num delta delta-pos">15%</div>
+      <div class="num delta delta-pos">13%</div>
+    </div>
+
+    <div class="norm-row" role="listitem">
+      <div class="year">Year 3</div>
+      <div class="num">34,810</div>
+      <div class="num">510</div>
+      <div class="num">68</div>
+      <div class="num delta delta-pos">15%</div>
+      <div class="num delta delta-pos">13%</div>
+    </div>
+  </div>
+
+  <footer class="norm-summary__foot">
+    <p class="norm-summary__note">
+      Note: a negative “Raw savings” means usage increased vs baseline; normalised savings removes weather variability so operational change is clearer.
+    </p>
+  </footer>
+</section>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+    </main>
+
+  </div>
+
+  <div class="context-menu" id="contextMenu"></div>
+
+ <!-- SCRIPTS -->
+<script src="assets/tree.js"></script>
+<script src="assets/layout.js"></script>
+
+
+
+<!-- ===============================
+     UNIVERSAL DROPDOWN LOGIC
+================================ -->
+<script>
+document.querySelectorAll('.filter-dropdown').forEach(drop => {
+  const button = drop.querySelector('.filter-pill');
+
+  button.addEventListener('click', e => {
+    e.stopPropagation();
+    // Close all others
+    document.querySelectorAll('.filter-dropdown.open').forEach(d => {
+      if (d !== drop) d.classList.remove('open');
+    });
+    drop.classList.toggle('open');
+  });
+
+  // Close on outside click
+  document.addEventListener('click', () => {
+    drop.classList.remove('open');
+  });
+});
+</script>
+
+<!-- ===============================
+     COMPARE DROPDOWN LOGIC
+================================ -->
+<script>
+const compareBtn = document.getElementById("compareBtn");
+const compareLabel = document.getElementById("compareLabel");
+
+document.querySelectorAll(".compare-option").forEach(option => {
+  option.addEventListener("click", () => {
+    compareLabel.textContent = option.dataset.value;
+    compareBtn.parentElement.classList.remove("open");
+  });
+});
+</script>
+
+<!-- ===============================
+     CHART TYPE SELECTOR LOGIC
+================================ -->
+<script>
+
+// Elements
+const chartTypeLabel = document.getElementById("chartTypeLabel");
+
+// All dropdowns inside chart-filters
+const chartFilters = document.querySelector(".chart-filters");
+const filterDropdowns = chartFilters.querySelectorAll(".filter-dropdown");
+
+// Filter indices (ordered in your HTML)
+const rangeFilter   = filterDropdowns[1]; // Date range (Year to Date)
+const groupFilter   = filterDropdowns[2]; // Group by Day / Week / Month
+const timeFilter    = filterDropdowns[3]; // Time Range selector
+const compareFilter = document.querySelector(".compare-dropdown");
+
+// Chart image placeholder
+const chartImg = document.querySelector(".chart-img");
+
+
+</script>
+
+
+</body>
+</html>

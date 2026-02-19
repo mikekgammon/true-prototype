@@ -112,7 +112,7 @@ const rootAllSites = createNode({
     label: "All Sites",
     isExpanded: true,
     children: [
-        createNode({ id: "site_admiralty", label: "The Admiralty" }),
+        createNode({ id: "site_admiralty", label: "Industrial Site" }),
         createNode({ id: "site_andover", label: "The Andover Arms" }),
         createNode({ id: "site_angel", label: "The Angel & Crown" }),
         createNode({ id: "site_viaduct", label: "The Viaduct Tavern" }),

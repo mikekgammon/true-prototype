@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>True Energy Platform</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet" href="assets/layout.css" />
+  <link rel="stylesheet" href="assets/chart.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allerta&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body class="nav-rail-collapsed">
+
+ <!-- GOOGLE-STYLE NAV RAIL -->
+ <aside id="navRail" class="nav-rail collapsed">
+
+  <div class="nav-rail-top">
+    <button id="navRailToggle" class="nav-rail-toggle">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+
+  <nav class="nav-rail-links">
+
+    <a href="company-overview.html">
+      <span class="material-symbols-outlined">home</span>
+      <span class="label">Home</span>
+    </a>
+
+    <a href="index-overview.html">
+      <span class="material-symbols-outlined">folder</span>
+      <span class="label">Portfolio</span>
+    </a>
+
+    <a href="sustainability.html" class="landed">
+      <span class="material-symbols-outlined">eco</span>
+      <span class="label">Sustainability</span>
+    </a>
+
+    <a href="trading.html">
+      <span class="material-symbols-outlined">trending_up</span>
+      <span class="label">Trading</span>
+    </a>
+
+    <a href="bill_validation.html">
+      <span class="material-symbols-outlined">receipt_long</span>
+      <span class="label">Bill Validation</span>
+    </a>
+
+    <a href="procurement.html">
+      <span class="material-symbols-outlined">bucket_check</span>
+      <span class="label">Procurement</span>
+    </a>
+
+  </nav>
+
+</aside>
+
+  <!-- TOP HEADER -->
+  <header class="top-header">
+     <div class="logo">
+    <a href="company-overview.html"><img src="images/true-logo.svg" alt="True" /></a>
+  </div>
+
+  </header>
+
+ <!-- BREADCRUMBS -->
+  <div class="breadcrumbs">
+    <span><a href="company-overview.html">Home</a></span> /
+   <span><a href="company-overview.html">Sample Company Ltd</a></span> /
+    <span><a href="sustainability.html">Sustainability</a></span>  /
+    <span><strong>Strategies</strong></span> 
+  </div>
+
+
+
+
+
+
+  <!-- MAIN LAYOUT -->
+  <div class="layout-wrapper">
+
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- PAGE TITLE -->
+<section class="page-title" style="margin: 20px 0 20px 0; padding: 0;">
+
+  <div class="title-left">
+    <h1>Sustainability</h1>
+
+  </div>
+
+
+</section>
+
+      <div class="content-top-menu">
+        <div class="menu-left">
+         <a href="sustainability.html" class="tab-link">Overview</a>
+         <a href="sustainability-strategy-overview.html" class="tab-link">Strategy</a>
+         <a href="sustainability-projects.html" class="tab-link landed">Projects</a>
+         <a href="sustainability-strategy.html" class="tab-link">Comparissons</a>
+         <a href="sustainability-schemes.html" class="tab-link">Schemes</a>
+         <a href="sustainability-targets.html" class="tab-link">Targets</a>
+         <a href="sustainability-emissions.html" class="tab-link">Emissions</a>
+        </div>
+
+        <span class="material-symbols-outlined more-menu">more_vert</span>
+      </div>
+<div class="report-metrics-row">
+
+  <!-- 1) Scope -->
+  <div class="report-metric-card">
+    <div class="metric-label">Estimated net savings</div>
+    <div class="metric-value">£343,323</div>
+    <div class="card-meta">Cumulative savings across all projects (estimate)</div>
+
+  </div>
+
+  <!-- 2) Recency / urgency -->
+  <div class="report-metric-card">
+    <div class="metric-label">Carbon savings</div>
+    <div class="metric-value">716.487 <span class="unit">tCO₂e</span></div>
+    <div class="card-meta">Estimated emissions reduction</div>
+  </div>
+
+  <!-- 3) Severity -->
+  <div class="report-metric-card">
+    <div class="metric-label">Maximum net cash commitment</div>
+    <div class="metric-value">£233,625</div>
+    <div class="card-meta">Peak investment required across projects</div>
+  </div>
+
+</div>
+    <!-- LEFT: TEXT CONTENT -->
+    <div class="sust-hero__text">
+<h3>Projects</h3>
+      <p>
+        The execution strategy analysis provides an outlook on the financial and carbon forecast across your proposed investments. By clicking add projects, you can change a project's start date allowing you to plan a journey to net zero that meets your investment budget, payback and carbon saving requirements.
+      </p>
+ 
+    </div>
+<!-- Projects (prototype HTML) -->
+
+<section class="card">
+
+<!-- Projects view toggle (prototype replacement for MudRadioGroup) -->
+<div class="seg" role="radiogroup" aria-label="Projects view">
+  <label class="seg__opt">
+    <input class="seg__radio" type="radio" name="projectsView" value="all" checked>
+    <span class="seg__btn">
+      <span class="material-symbols-outlined" aria-hidden="true">radio_button_checked</span>
+      All Projects
+    </span>
+  </label>
+
+  <label class="seg__opt">
+    <input class="seg__radio" type="radio" name="projectsView" value="site">
+    <span class="seg__btn">
+      <span class="material-symbols-outlined" aria-hidden="true">radio_button_unchecked</span>
+      View by Site
+    </span>
+  </label>
+
+  <label class="seg__opt">
+    <input class="seg__radio" type="radio" name="projectsView" value="meter">
+    <span class="seg__btn">
+      <span class="material-symbols-outlined" aria-hidden="true">radio_button_unchecked</span>
+      View by Meter
+    </span>
+  </label>
+</div>
+
+  <!-- Table -->
+  <div class="table-wrap">
+    <table class="new-table compact-table hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Project Type</th>
+          <th>Project Start Date</th>
+          <th>Owner</th>
+          <th class="align-right">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Name"><a class="link" href="/netzero/projects/summary/8718">mike</a></td>
+          <td data-label="Project Type">Anaerobic Digestion</td>
+          <td data-label="Project Start Date">04/06/2025</td>
+          <td data-label="Owner">Mike Gammon</td>
+          <td class="align-right" data-label="Actions">
+            <button class="icon-btn" type="button" aria-label="Project actions" title="Actions">
+              <span class="material-symbols-outlined" aria-hidden="true">more_vert</span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+</section>
+
+
+
+
+    </main>
+  </div>
+  <!-- SCRIPTS -->
+  <script src="assets/layout.js"></script>
+
+  <script>
+  // ==========================================================
+  // DATA LOADING + RENDERING
+  // ==========================================================
+  const DATA_URL = "data/companies_nov_dec_jan_demo_v2.json";
+
+  const engagementTable = document.getElementById("engagementTable");
+  const weekLabel = document.getElementById("weekLabel");
+
+  const sumHealthy = document.getElementById("sumHealthy");
+  const sumAttention = document.getElementById("sumAttention");
+  const sumRisk = document.getElementById("sumRisk");
+
+  const cadFilter = document.getElementById("cadFilter");
+  const rowsTotalEl = document.getElementById("rowsTotal");
+  const rowsShownEl = document.getElementById("rowsShown");
+
+  const fltTrusted = document.getElementById("fltTrusted"); // now means "Good data only" for demo
+  const fltRepeat  = document.getElementById("fltRepeat");
+  const fltValue   = document.getElementById("fltValue");
+
+  // Dropdown wrappers/buttons (multi-select)
+  const repeatDd = document.querySelector('.multi-dd[data-dd="repeat"]');
+  const valueDd  = document.querySelector('.multi-dd[data-dd="value"]');
+
+  let companies = [];
+
+  // Segment filter (top cards)
+  let activeSeg = "all"; // all | healthy | emerging | risk
+
+  // ==========================================================
+  // NORMALISERS + SMALL HELPERS
+  // ==========================================================
+  function normRepeat(val){
+    return String(val || "")
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, "-");
+  }
+
+  function normTrust(val){
+    // supports both demo + legacy
+    const v = String(val || "").trim().toLowerCase();
+    if (v === "good" || v === "trusted") return "good";
+    if (v === "partial") return "partial";
+    if (v === "poor" || v === "untrusted" || v === "bad") return "poor";
+    return "";
+  }
+
+  function repeatChecks(){
+    return Array.from(document.querySelectorAll(".repCadence"));
+  }
+
+  function tierChecks(){
+    return Array.from(document.querySelectorAll(".valTier"));
+  }
+
+  function roleLine(accountContext, cad){
+    const c = cad && cad.trim() ? cad.trim() : "Unassigned";
+    const ctx = accountContext && accountContext.trim() ? accountContext.trim() : "—";
+    return `${ctx} · ${c}`;
+  }
+
+  // ==========================================================
+  // PILLS
+  // ==========================================================
+  function pillForDataTrust(val){
+    const v = normTrust(val);
+
+    if (v === "good")   return { cls: "pill pill-confirmed", label: "Good" };
+    if (v === "partial")return { cls: "pill pill-partial",   label: "Partial" };
+    if (v === "poor")   return { cls: "pill pill-untrusted", label: "Poor" };
+
+    return { cls: "pill pill-muted", label: "—" };
+  }
+
+  function pillForRepeat(val){
+    const v = normRepeat(val);
+
+    if (v === "weekly" || v === "monthly") {
+      return { cls: "pill pill-frequency-green", label: val };
+    }
+    if (v && v !== "none") {
+      return { cls: "pill pill-frequency-orange", label: val };
+    }
+    return { cls: "pill pill-muted", label: "—" };
+  }
+
+  function pillForValueTier(tier){
+    if (tier === "high")   return { cls: "pill pill-ready open-panel",  label: "High" };
+    if (tier === "medium") return { cls: "pill pill-medium open-panel", label: "Medium" };
+    if (tier === "low")    return { cls: "pill pill-muted open-panel",  label: "Low" };
+    return { cls: "pill pill-muted open-panel", label: "No value" };
+  }
+
+  // ==========================================================
+  // SEGMENT FILTER (top cards -> table)
+  // ==========================================================
+  function getSegForRow(row){
+    const tier = (row.dataset.valueTier || "none").toLowerCase();
+    const rep  = normRepeat(row.dataset.repeatUse || "");
+
+    const isRepeat = rep === "weekly" || rep === "monthly";
+    const isAdhoc  = rep === "ad-hoc";
+    const isNone   = !rep || rep === "none";
+
+    // Healthy & repeat = repeat + medium/high value
+    if (isRepeat && (tier === "high" || tier === "medium")) return "healthy";
+
+    // Emerging value = medium value but ad-hoc cadence
+    if (isAdhoc && tier === "medium") return "emerging";
+
+    // At risk = low/none value OR no repeat
+    if (tier === "low" || tier === "none" || isNone) return "risk";
+
+    return "all";
+  }
+
+  function updateSegUI(){
+    document.querySelectorAll(".summary-cards [data-seg]").forEach(btn => {
+      const on = (btn.dataset.seg === activeSeg);
+      btn.classList.toggle("is-active", on);
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+  }
+
+  function wireSegmentCards(){
+    const cards = document.querySelectorAll(".summary-cards [data-seg]");
+    if (!cards.length) return;
+
+    cards.forEach(card => {
+      card.addEventListener("click", () => {
+        const seg = card.dataset.seg;
+        activeSeg = (activeSeg === seg) ? "all" : seg;
+        updateSegUI();
+        applyFilters();
+      });
+
+      // keyboard (Enter/Space) for div-based cards
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          card.click();
+        }
+      });
+    });
+  }
+
+  // ==========================================================
+  // TABLE RENDER
+  // ==========================================================
+  function renderTable(){
+    if (!engagementTable) return;
+
+    let html = `
+      <div class="user-row user-row--header">
+        <div class="col-label">Customer</div>
+        <div class="col-label">Data Trust</div>
+        <div class="col-label">Repeat use</div>
+        <div class="col-label">Value</div>
+        <div class="col-label" style="text-align:right;">Action</div>
+      </div>
+    `;
+
+    companies.forEach(c => {
+      const cad = c.cad && String(c.cad).trim() ? String(c.cad).trim() : "Unassigned";
+
+      const dt = pillForDataTrust(c.data_trust);
+      const rp = pillForRepeat(c.repeat_use);
+      const vt = pillForValueTier(c.value_tier);
+
+      const action =
+        c.value_tier === "high"
+          ? `<span class="muted-text">HEALTHY</span>`
+          : `<button class="nudge-btn open-panel"
+                 type="button"
+                 data-company="${escapeHtml(c.company)}"
+                 data-cad="${escapeHtml(cad)}"
+                 data-data="${escapeHtml(dt.label)}"
+                 data-repeat="${escapeHtml(rp.label)}"
+                 data-value-tier="${escapeHtml(c.value_tier)}"
+                 data-rationale="${escapeHtml(c.value_rationale || "")}"
+                 data-engagement="${escapeHtml(c.engagement_signal || "")}"
+                 data-timing="${escapeHtml(c.timing || "")}"
+                 aria-haspopup="dialog"
+                 aria-controls="valuePanel">Action</button>`;
+
+      html += `
+        <div class="user-row"
+             data-company="${escapeHtml(c.company)}"
+             data-cad="${escapeHtml(cad)}"
+             data-value-tier="${escapeHtml((c.value_tier || "none").toLowerCase())}"
+             data-data-trust="${escapeHtml(normTrust(c.data_trust))}"
+             data-repeat-use="${escapeHtml(normRepeat(c.repeat_use))}">
+          <div class="user-main">
+            <div class="user-name">${escapeHtml(c.company)}</div>
+            <div class="user-role">${escapeHtml(roleLine(c.account_context, cad))}</div>
+          </div>
+
+          <div class="cell">
+            <span class="${dt.cls}">${escapeHtml(dt.label)}</span>
+          </div>
+
+          <div class="cell">
+            <span class="${rp.cls}">${escapeHtml(rp.label)}</span>
+          </div>
+
+          <div class="cell">
+            <button class="${vt.cls}"
+                    type="button"
+                    data-company="${escapeHtml(c.company)}"
+                    data-cad="${escapeHtml(cad)}"
+                    data-data="${escapeHtml(dt.label)}"
+                    data-repeat="${escapeHtml(rp.label)}"
+                    data-value-tier="${escapeHtml(c.value_tier)}"
+                    data-rationale="${escapeHtml(c.value_rationale || "")}"
+                    data-engagement="${escapeHtml(c.engagement_signal || "")}"
+                    data-timing="${escapeHtml(c.timing || "")}"
+                    aria-haspopup="dialog"
+                    aria-controls="valuePanel">${escapeHtml(vt.label)}</button>
+          </div>
+
+          <div class="action-cell">
+            ${action}
+          </div>
+        </div>
+      `;
+    });
+
+    engagementTable.innerHTML = html;
+
+    // Wire panel open buttons after render
+    document.querySelectorAll(".open-panel").forEach(btn => {
+      btn.addEventListener("click", () => openPanel(btn));
+    });
+  }
+
+  // ==========================================================
+  // SUMMARY CARDS (counts based on UNIQUE companies array)
+  // ==========================================================
+  function renderSummary(){
+    let healthy = 0, emerging = 0, risk = 0;
+
+    companies.forEach(c => {
+      const tier = (c.value_tier || "none").toLowerCase();
+      const rep  = normRepeat(c.repeat_use || "");
+
+      const isRepeat = rep === "weekly" || rep === "monthly";
+      const isAdhoc  = rep === "ad-hoc";
+      const isNone   = !rep || rep === "none";
+
+      if (isRepeat && (tier === "high" || tier === "medium")) healthy++;
+      else if (isAdhoc && tier === "medium") emerging++;
+      else if (tier === "low" || tier === "none" || isNone) risk++;
+      else risk++;
+    });
+
+    if (sumHealthy) sumHealthy.textContent = healthy;
+    if (sumAttention) sumAttention.textContent = emerging;
+    if (sumRisk) sumRisk.textContent = risk;
+
+    if (weekLabel){
+      weekLabel.textContent = "Nov 2025 – Jan 2026";
+    }
+  }
+
+  // ==========================================================
+  // FILTERS (operate on rendered DOM rows)
+  // ==========================================================
+
+  function sortRowsForHealthy(rows){
+  const weight = (row) => {
+    const tier = (row.dataset.valueTier || "none").toLowerCase();
+    if (tier === "high") return 0;
+    if (tier === "medium") return 1;
+    return 2;
+  };
+
+  return rows.sort((a, b) => weight(a) - weight(b));
+}
+
+  function applyFilters(){
+    const rows = Array.from(document.querySelectorAll(".engagement-table .user-row"))
+      .filter(r => !r.classList.contains("user-row--header"));
+
+    if (rowsTotalEl) rowsTotalEl.textContent = rows.length;
+
+    const selectedCad = cadFilter ? cadFilter.value : "all";
+    const enforceTrusted = fltTrusted && fltTrusted.checked; // demo = "Good data only"
+    const enforceRepeat = fltRepeat && fltRepeat.checked;
+    const enforceValue = fltValue && fltValue.checked;
+
+    const selectedTiers = tierChecks().filter(cb => cb.checked).map(cb => cb.value);
+    const selectedCadences = repeatChecks().filter(cb => cb.checked).map(cb => cb.value);
+
+    let visible = 0;
+
+    rows.forEach(row => {
+      // CAD
+      const cad = row.dataset.cad || "Unassigned";
+      const cadOk = (selectedCad === "all") || (selectedCad === cad);
+
+      // Data quality: "Good" (demo)
+      const dataTrust = normTrust(row.dataset.dataTrust || "");
+      const trustedOk = !enforceTrusted || dataTrust === "good";
+
+      // Repeat use (weekly / monthly / ad-hoc selectable)
+      const repeatUse = normRepeat(row.dataset.repeatUse || "");
+      const isRepeat = repeatUse && repeatUse !== "none";
+      const cadenceMatch = (selectedCadences.length === 0) || selectedCadences.includes(repeatUse);
+      const repeatOk = !enforceRepeat || (isRepeat && cadenceMatch);
+
+      // Value tiers
+      const tier = (row.dataset.valueTier || "none").toLowerCase();
+      const valueOk = !enforceValue || (selectedTiers.length === 0) || selectedTiers.includes(tier);
+
+      // Segment filter from top cards
+      const seg = getSegForRow(row);
+      const segOk = (activeSeg === "all") || (seg === activeSeg);
+
+      const match = cadOk && trustedOk && repeatOk && valueOk && segOk;
+
+      row.style.display = match ? "" : "none";
+      if (match) visible++;
+    });
+
+    // 🔼 Reorder rows when Healthy is selected
+if (activeSeg === "healthy"){
+  const table = engagementTable;
+  const visibleRows = rows.filter(r => r.style.display !== "none");
+  const sorted = sortRowsForHealthy(visibleRows);
+
+  sorted.forEach(row => table.appendChild(row));
+}
+
+    if (rowsShownEl) rowsShownEl.textContent = visible;
+
+    // Enable dropdown buttons only when their master filter is active
+    if (repeatDd){
+      const b = repeatDd.querySelector(".multi-dd__btn");
+      if (b){
+        b.disabled = !(fltRepeat && fltRepeat.checked);
+        if (b.disabled) closeDd(repeatDd);
+      }
+    }
+    if (valueDd){
+      const b = valueDd.querySelector(".multi-dd__btn");
+      if (b){
+        b.disabled = !(fltValue && fltValue.checked);
+        if (b.disabled) closeDd(valueDd);
+      }
+    }
+  }
+
+  // ==========================================================
+  // MULTI-SELECT DROPDOWNS (Repeat + Value)
+  // ==========================================================
+  function openDd(dd){
+    dd.classList.add("is-open");
+    const btn = dd.querySelector(".multi-dd__btn");
+    if (btn) btn.setAttribute("aria-expanded", "true");
+  }
+
+  function closeDd(dd){
+    dd.classList.remove("is-open");
+    const btn = dd.querySelector(".multi-dd__btn");
+    if (btn) btn.setAttribute("aria-expanded", "false");
+  }
+
+  function updateDdLabel(dd){
+    const labelEl = dd.querySelector(".multi-dd__label");
+    if (!labelEl) return;
+
+    const isRepeat = dd.dataset.dd === "repeat";
+    const checks = isRepeat ? repeatChecks() : tierChecks();
+    const checked = checks.filter(c => c.checked).map(c => c.value);
+
+    const prefix = isRepeat ? "Repeat" : "Value";
+
+    if (checked.length === 0){
+      labelEl.textContent = `${prefix}: None`;
+      return;
+    }
+
+    const allValues = checks.map(c => c.value);
+    const allSelected = allValues.length > 0 && allValues.every(v => checked.includes(v));
+
+    if (allSelected){
+      labelEl.textContent = `${prefix}: All`;
+      return;
+    }
+
+    const pretty = (v) => (v === "ad-hoc" ? "Ad-hoc" : v.charAt(0).toUpperCase() + v.slice(1));
+    labelEl.textContent = `${prefix}: ${checked.map(pretty).join(", ")}`;
+  }
+
+  function wireMultiDd(dd){
+    const btn = dd.querySelector(".multi-dd__btn");
+    const menu = dd.querySelector(".multi-dd__menu");
+    if (!btn || !menu) return;
+
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (btn.disabled) return;
+
+      const isOpen = dd.classList.contains("is-open");
+      document.querySelectorAll(".multi-dd.is-open").forEach(x => closeDd(x));
+      if (!isOpen) openDd(dd);
+    });
+
+    menu.addEventListener("click", (e) => e.stopPropagation());
+
+    // All/None buttons
+    menu.querySelectorAll("[data-action]").forEach(a => {
+      a.addEventListener("click", () => {
+        const action = a.getAttribute("data-action");
+        const checks = (dd.dataset.dd === "repeat") ? repeatChecks() : tierChecks();
+        const shouldCheck = action === "all";
+        checks.forEach(cb => { cb.checked = shouldCheck; });
+        updateDdLabel(dd);
+        applyFilters();
+      });
+    });
+
+    // Checkbox changes
+    menu.querySelectorAll("input[type='checkbox']").forEach(cb => {
+      cb.addEventListener("change", () => {
+        updateDdLabel(dd);
+        applyFilters();
+      });
+    });
+
+    // Initial label
+    updateDdLabel(dd);
+  }
+
+  // Close menus when clicking away / Esc
+  document.addEventListener("click", () => {
+    document.querySelectorAll(".multi-dd.is-open").forEach(dd => closeDd(dd));
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape"){
+      document.querySelectorAll(".multi-dd.is-open").forEach(dd => closeDd(dd));
+    }
+  });
+
+  // ==========================================================
+  // SIDE PANEL (populate from button dataset)
+  // ==========================================================
+  const panel = document.getElementById("valuePanel");
+  const panelHeading = document.getElementById("panelHeading");
+  const panelCadName = document.getElementById("panelCadName");
+  const panelTopPills = document.getElementById("panelTopPills");
+  const panelSignals = document.getElementById("panelSignals");
+  const valueLadder = document.getElementById("valueLadder");
+  const panelNextStep = document.getElementById("panelNextStep");
+  const panelOpener = document.getElementById("panelOpener");
+
+  function ladderForTier(valueTier){
+    const tiers = [
+      { key:"foundation", title:"Foundation", desc:"Visibility of meters, trusted data, basic exports" },
+      { key:"insight", title:"Insight", desc:"Comparisons, variance explanation, reporting workflows" },
+      { key:"financial", title:"Financial control", desc:"Cost forecasting, MTM, forward curve exposure" },
+      { key:"strategic", title:"Strategic planning", desc:"Sustainability pathways, scenario planning" },
+      { key:"intelligent", title:"Intelligent advantage", desc:"AI insights, proactive alerts, guided action" }
+    ];
+
+    let currentKey = "insight";
+    if (valueTier === "high") currentKey = "financial";
+    if (valueTier === "medium") currentKey = "insight";
+    if (valueTier === "low") currentKey = "foundation";
+    if (valueTier === "none") currentKey = "foundation";
+
+    const idx = tiers.findIndex(t => t.key === currentKey);
+    const nextIdx = Math.min(idx + 1, tiers.length - 1);
+
+    return tiers.map((t, i) => {
+      let cls = "value-tier";
+      if (i < idx) cls += " value-tier--complete";
+      if (i === idx) cls += " value-tier--current";
+      if (i === nextIdx && i !== idx) cls += " value-tier--next";
+      return { ...t, cls, isCurrent: i===idx, isNext: (i===nextIdx && i!==idx) };
+    });
+  }
+
+  function setPanelFromTrigger(btn){
+    const company = btn.dataset.company || "Customer";
+    const cad = btn.dataset.cad || "Unassigned";
+    const data = btn.dataset.data || "—";
+    const repeat = btn.dataset.repeat || "—";
+    const tier = (btn.dataset.valueTier || "medium").toLowerCase();
+    const rationale = btn.dataset.rationale || "";
+    const engagement = btn.dataset.engagement || "";
+    const timing = btn.dataset.timing || "";
+
+    if (panelHeading) panelHeading.textContent = `${company} — Engagement signals`;
+    if (panelCadName) panelCadName.textContent = cad;
+
+    if (panelTopPills){
+      const dataNorm = normTrust(data);
+      const dataCls =
+        dataNorm === "good" ? "pill-confirmed" :
+        dataNorm === "partial" ? "pill-partial" :
+        dataNorm === "poor" ? "pill-untrusted" : "pill-muted";
+
+      const repeatNorm = normRepeat(repeat);
+      const repeatCls =
+        repeatNorm === "weekly" || repeatNorm === "monthly" ? "pill-frequency-green" :
+        repeatNorm && repeatNorm !== "none" ? "pill-frequency-orange" : "pill-muted";
+
+      const valueCls =
+        tier === "high" ? "pill-ready" :
+        tier === "medium" ? "pill-medium" : "pill-muted";
+
+      const valueLabel =
+        tier === "high" ? "High value" :
+        tier === "medium" ? "Medium value" :
+        tier === "low" ? "Low value" : "No value";
+
+      panelTopPills.innerHTML = `
+        <span class="pill ${dataCls}">
+          <span class="material-symbols-outlined">verified</span>
+          ${escapeHtml(data)} data
+        </span>
+        <span class="pill ${repeatCls}">${escapeHtml(repeat)}</span>
+        <span class="pill ${valueCls}">${escapeHtml(valueLabel)}</span>
+      `;
+    }
+
+    if (panelSignals){
+      const items = [];
+      if (engagement) items.push(`Engagement signal: ${engagement}`);
+      if (timing) items.push(`Timing: ${timing}`);
+      if (rationale) items.push(rationale);
+      panelSignals.innerHTML = items.length
+        ? items.map(t => `<li>${escapeHtml(t)}</li>`).join("")
+        : `<li>No additional signals captured yet.</li>`;
+    }
+
+    if (valueLadder){
+      const ladder = ladderForTier(tier);
+      valueLadder.innerHTML = ladder.map(item => `
+        <li class="${item.cls}">
+          <span class="tier-dot"></span>
+          <div class="tier-content">
+            <div class="tier-title">${escapeHtml(item.title)}</div>
+            <div class="tier-desc">${escapeHtml(item.desc)}</div>
+            ${item.isCurrent ? `<div class="tier-meta">Current level</div>` : ""}
+            ${item.isNext ? `<div class="tier-meta tier-meta--next">Next value unlock</div>` : ""}
+          </div>
+        </li>
+      `).join("");
+    }
+
+    // Next step + opener defaults by tier (demo-friendly)
+    const nextStepByTier = {
+      high: "Lock in cadence: agree a monthly forecast + exposure review pack for Finance/Procurement.",
+      medium: "Make reporting repeatable: a simple monthly ‘energy pack’ (exports + 2–3 KPIs + distribution list).",
+      low: "Stabilise the foundations: confirm core meters + data coverage, then set a lightweight reporting cadence.",
+      none: "Start with data and visibility: confirm key meters and a first export/reporting use case."
+    };
+    const openerByTier = {
+      high: "“You’re already using TRUE in a decision-support way — want to formalise a monthly exposure review so it’s consistent and shareable?”",
+      medium: "“I noticed you’re using TRUE at key points — would it help if we made that a repeatable monthly pack so reporting is quicker?”",
+      low: "“We can make this much more useful once the data is reliable — can we quickly confirm the core meters and the report you need most?”",
+      none: "“Let’s get the basics solid first — which sites/meters matter most so we can make the first export genuinely useful?”"
+    };
+
+    if (panelNextStep) panelNextStep.innerHTML = escapeHtml(nextStepByTier[tier] || nextStepByTier.medium);
+    if (panelOpener) panelOpener.textContent = openerByTier[tier] || openerByTier.medium;
+  }
+
+  function openPanel(btn){
+    if (!panel) return;
+    setPanelFromTrigger(btn);
+    panel.classList.add("is-open");
+    panel.setAttribute("aria-hidden", "false");
+    document.body.classList.add("panel-open");
+  }
+
+  function closePanel(){
+    if (!panel) return;
+    panel.classList.remove("is-open");
+    panel.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("panel-open");
+  }
+
+  if (panel){
+    const closeBtn = panel.querySelector(".side-panel__close");
+    if (closeBtn) closeBtn.addEventListener("click", closePanel);
+  }
+
+  // ==========================================================
+  // HELPERS
+  // ==========================================================
+  function escapeHtml(str){
+    return String(str || "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  // ==========================================================
+  // INIT
+  // ==========================================================
+  // Wire dropdowns (safe even before data render)
+  if (repeatDd) wireMultiDd(repeatDd);
+  if (valueDd) wireMultiDd(valueDd);
+
+  // Wire segment cards (safe before data render)
+  wireSegmentCards();
+  updateSegUI();
+
+  function isHealthyCompany(c){
+  const tier = (c.value_tier || "none").toLowerCase();
+  const rep  = normRepeat(c.repeat_use || "");
+  const isRepeat = rep === "weekly" || rep === "monthly";
+  return isRepeat && (tier === "high" || tier === "medium");
+}
+
+  fetch(DATA_URL)
+    .then(r => r.json())
+    .then(data => {
+      const raw = Array.isArray(data) ? data : [];
+
+      // ✅ This demo JSON is already aggregated (one row per company)
+      companies = raw.map(c => {
+  if (isHealthyCompany(c)) {
+    return { ...c, data_trust: "good" };
+  }
+  return c;
+});
+
+      renderSummary();
+      renderTable();
+      updateSegUI();
+      applyFilters();
+
+      // Hook filter events (after render)
+      if (cadFilter) cadFilter.addEventListener("change", applyFilters);
+      if (fltTrusted) fltTrusted.addEventListener("change", applyFilters);
+      if (fltRepeat) fltRepeat.addEventListener("change", applyFilters);
+      if (fltValue) fltValue.addEventListener("change", applyFilters);
+    })
+    .catch(err => {
+      console.error("Failed to load", DATA_URL, err);
+      if (engagementTable){
+        engagementTable.innerHTML = `
+          <div style="padding:14px;">
+            <strong>Could not load data.</strong>
+            <div style="margin-top:6px; opacity:.8;">Make sure <code>${DATA_URL}</code> exists and you’re previewing via a local server (e.g. VS Code Live Server) or GitHub Pages.</div>
+          </div>
+        `;
+      }
+    });
+
+    // ... all your existing JS above
+// filters, renderTable(), fetch(), init, etc.
+
+
+// ==========================================================
+// MAU (demo only)
+// ==========================================================
+const mauValue = document.getElementById("mauValue");
+if (mauValue) {
+mauValue.textContent = "412"; // demo MAU
+}
+</script>
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+<script>
+/* ==========================================================
+   DEMO DATA (hardcoded)
+   - trajectories: per-site yearly kWh
+   - projects: dots with metadata for tooltips + side panel
+   ========================================================== */
+
+const years = [
+  2025,2026,2027,2028,2029,2030,2031,2032,2033,2034,2035,2036,2037,2038,2039,2040
+];
+
+const trajectories = [
+  {
+    site: "Intercontinental The George",
+    kwh: [2062526,2046168,2036310,2000102,1988358,2506418,2493803,2487754,2467375,2436391,2425474,2417070,2398642,2382089,2379208,2375160]
+  },
+  {
+    site: "Kimpton Blythswood Square",
+    kwh: [1453812,1453812,1453812,1453812,1447841,1447841,1447841,1447841,1447841,1447841,1447841,1447841,1447841,1447841,1447841,1447841]
+  },
+  {
+    site: "Holiday Inn Edinburgh City West",
+    kwh: [2596060,2596060,2596060,2596060,2596060,2482435,2482435,2482435,2482435,2482435,2482435,2482435,2482435,2482435,2482435,2482435]
+  }
+];
+
+const projects = [
+  {
+    id: "p1",
+    site: "Intercontinental The George",
+    year: 2026,
+    name: "VO",
+    supplier: "—",
+    kwh_saving: 16358,
+    cost_saving: 1230,
+    capex: 0,
+    status: "Planned"
+  },
+  {
+    id: "p2",
+    site: "Intercontinental The George",
+    year: 2028,
+    name: "Solar",
+    supplier: "—",
+    kwh_saving: 36208,
+    cost_saving: 3200,
+    capex: 45000,
+    status: "Approved"
+  },
+  {
+    id: "p3",
+    site: "Intercontinental The George",
+    year: 2030,
+    name: "Heat Pumps",
+    supplier: "—",
+    kwh_saving: -518060, // negative = increases electricity
+    cost_saving: 9800,
+    capex: 160000,
+    status: "Planned"
+  }
+];
+
+/* ==========================================================
+   HELPERS
+   ========================================================== */
+const fmtInt = (n) => {
+  if (n === null || n === undefined) return "—";
+  const sign = n < 0 ? "−" : "";
+  return sign + Math.abs(Math.round(n)).toLocaleString("en-GB");
+};
+
+const fmtGBP = (n) => {
+  if (n === null || n === undefined) return "—";
+  const sign = n < 0 ? "−" : "";
+  return sign + "£" + Math.abs(Math.round(n)).toLocaleString("en-GB");
+};
+
+const getYearIndex = (y) => years.indexOf(y);
+
+/* ==========================================================
+   SIDE PANEL (wire to your existing panel if you have one)
+   ========================================================== */
+const projectPanel = document.getElementById("projectPanel");
+const projectCloseBtn = projectPanel?.querySelector(".side-panel__close");
+
+function openPanelForProject(p){
+  if (!projectPanel) return;
+
+  document.getElementById("ppTitle").textContent = p.name;
+  document.getElementById("ppMeta").textContent = `${p.status} · ${p.year}`;
+  document.getElementById("ppSite").textContent = p.site;
+  document.getElementById("ppSupplier").textContent = p.supplier || "—";
+  document.getElementById("ppKwh").textContent = `${fmtInt(p.kwh_saving)} kWh`;
+  document.getElementById("ppCost").textContent = fmtGBP(p.cost_saving);
+  document.getElementById("ppCapex").textContent = fmtGBP(p.capex);
+
+  projectPanel.classList.add("is-open");
+  projectPanel.setAttribute("aria-hidden", "false");
+}
+
+projectCloseBtn?.addEventListener("click", () => {
+  projectPanel.classList.remove("is-open");
+  projectPanel.setAttribute("aria-hidden", "true");
+});
+
+/* ==========================================================
+   CHART BUILD
+   ========================================================== */
+const ctx = document.getElementById("trajectoryChart");
+let metric = "kwh"; // demo uses kwh only; cost/carbon toggles can remap later
+
+// Line datasets (one per site)
+const siteColours = {
+  "Intercontinental The George": "#2563eb",   // blue
+  "Kimpton Blythswood Square": "#16a34a",     // green
+  "Holiday Inn Edinburgh City West": "#f3a33c" // orange
+};
+
+const lineDatasets = trajectories.map(t => ({
+  type: "line",
+  label: t.site,
+  data: years.map((y, i) => ({ x: y, y: t.kwh[i] })),
+  borderWidth: 2,
+  pointRadius: 0,
+  tension: 0.25,
+  borderColor: siteColours[t.site] || "#6b7280",
+  backgroundColor: siteColours[t.site] || "#6b7280"
+}));
+
+// Scatter datasets (dots). Keep per project so clicks map cleanly.
+const dotDatasets = projects.map(p => ({
+  type: "scatter",
+  label: p.name,
+  data: [{ x: p.year, y: trajectories.find(t => t.site === p.site)?.kwh[getYearIndex(p.year)] ?? null }],
+  pointRadius: 6,
+  pointHoverRadius: 8,
+  // Attach project id for click handling
+  _projectId: p.id
+}));
+
+const chart = new Chart(ctx, {
+  data: { datasets: [...lineDatasets, ...dotDatasets] },
+  options: {
+    parsing: false,
+    maintainAspectRatio: false,
+    interaction: { mode: "nearest", intersect: true },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          title: (items) => {
+            const item = items?.[0];
+            if (!item) return "";
+            const ds = item.dataset;
+            // If it’s a dot dataset, show project name
+            if (ds.type === "scatter") return ds.label;
+            return item.dataset.label;
+          },
+          label: (item) => {
+            const ds = item.dataset;
+            if (ds.type === "scatter") {
+              const p = projects.find(x => x.id === ds._projectId);
+              if (!p) return "";
+              return [
+                `Site: ${p.site}`,
+                `Year: ${p.year}`,
+                `kWh saving: ${fmtInt(p.kwh_saving)}`,
+                `Cost saving: ${fmtGBP(p.cost_saving)}`,
+                `Capex: ${fmtGBP(p.capex)}`
+              ];
+            }
+            return `kWh: ${fmtInt(item.raw.y)}`;
+          }
+        }
+      }
+    },
+    scales: {
+      x: {
+        type: "linear",
+        ticks: { callback: (v) => v },
+        grid: { display: false }
+      },
+      y: {
+        ticks: { callback: (v) => fmtInt(v) },
+        grid: { drawBorder: false }
+      }
+    },
+    onClick: (evt) => {
+      const points = chart.getElementsAtEventForMode(evt, "nearest", { intersect: true }, true);
+      if (!points.length) return;
+
+      const first = points[0];
+      const ds = chart.data.datasets[first.datasetIndex];
+
+      if (ds.type === "scatter" && ds._projectId) {
+        const p = projects.find(x => x.id === ds._projectId);
+        if (p) openPanelForProject(p);
+      }
+    }
+  }
+});
+
+/* ==========================================================
+   METRIC TOGGLE (demo stub)
+   - currently only kWh is real; but UI is in place
+   ========================================================== */
+document.querySelectorAll(".seg__btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".seg__btn").forEach(b => b.classList.remove("is-active"));
+    btn.classList.add("is-active");
+    metric = btn.dataset.metric;
+
+    // For demo: keep chart as kWh, but you’ve now got the control ready.
+    // Later: remap datasets to cost/carbon arrays and call chart.update().
+  });
+});
+
+/* ==========================================================
+   LEGEND FILTERING + METRIC CARD UPDATE
+   ========================================================== */
+
+const legendItems = document.querySelectorAll(".legend-item");
+
+const metricSites = document.getElementById("metricSites");
+const metricProjects = document.getElementById("metricProjects");
+const metricNetChange = document.getElementById("metricNetChange");
+
+function updateMetricsForSite(site){
+  if (site === "all") {
+    metricSites.textContent = trajectories.length;
+    metricProjects.textContent = projects.length;
+    metricNetChange.textContent = "+3.2%"; // demo static
+    return;
+  }
+
+  metricSites.textContent = "1";
+
+  const siteProjects = projects.filter(p => p.site === site);
+  metricProjects.textContent = siteProjects.length;
+
+  // Demo-friendly net change calculation
+  const t = trajectories.find(t => t.site === site);
+  if (t) {
+    const start = t.kwh[0];
+    const end = t.kwh[t.kwh.length - 1];
+    const pct = ((end - start) / start) * 100;
+    metricNetChange.textContent =
+      (pct > 0 ? "+" : "") + pct.toFixed(1) + "%";
+  }
+}
+
+legendItems.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const site = btn.dataset.site;
+
+    // Update legend active state
+    legendItems.forEach(b => b.classList.remove("is-active"));
+    btn.classList.add("is-active");
+
+    chart.data.datasets.forEach(ds => {
+      // LINE datasets
+      if (ds.type === "line") {
+        ds.hidden = site !== "all" && ds.label !== site;
+      }
+
+      // DOT datasets (projects)
+      if (ds.type === "scatter") {
+        const p = projects.find(x => x.id === ds._projectId);
+        ds.hidden = site !== "all" && p?.site !== site;
+      }
+    });
+
+    chart.update();
+    updateMetricsForSite(site);
+  });
+});
+
+</script>
+
+</body>
+</html>

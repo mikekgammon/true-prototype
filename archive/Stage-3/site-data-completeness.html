@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>True Energy Platform</title>
+
+  <!-- MATERIAL SYMBOLS: Outlined + Rounded -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+
+  <!-- TRUE Layout + Components -->
+  <link rel="stylesheet" href="assets/layout.css" />
+  <link rel="stylesheet" href="assets/tree.css" />
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<!-- MATERIAL SYMBOLS: Outlined + Rounded -->
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+
+</head>
+
+<body class="nav-rail-collapsed">
+
+  <!-- GOOGLE-STYLE NAV RAIL -->
+  <aside id="navRail" class="nav-rail collapsed">
+
+    <div class="nav-rail-top">
+      <button id="navRailToggle" class="nav-rail-toggle">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+
+    <nav class="nav-rail-links">
+
+      <a href="home.html">
+        <span class="material-symbols-outlined">home</span>
+        <span class="label">Home</span>
+      </a>
+
+      <a href="index.html" class="landed">
+        <span class="material-symbols-outlined">folder</span>
+        <span class="label">Portfolio</span>
+      </a>
+
+      <a href="sustainability.html">
+        <span class="material-symbols-outlined">eco</span>
+        <span class="label">Sustainability</span>
+      </a>
+
+      <a href="trading.html">
+        <span class="material-symbols-outlined">trending_up</span>
+        <span class="label">Trading</span>
+      </a>
+
+      <a href="bill_validation.html">
+        <span class="material-symbols-outlined">receipt_long</span>
+        <span class="label">Bill Validation</span>
+      </a>
+
+      <a href="procurement.html">
+        <span class="material-symbols-outlined">bucket_check</span>
+        <span class="label">Procurement</span>
+      </a>
+
+    </nav>
+
+  </aside>
+
+  <!-- TOP HEADER -->
+  <header class="top-header">
+    <div class="logo">true Energy Platform</div>
+  </header>
+
+  <!-- BREADCRUMBS -->
+  <div class="breadcrumbs">
+    <span>Home</span> /
+   <span><a href="company-overview.html">Fuller's Pubs & Hotels</a></span> /
+    <strong>The Admiralty</strong>
+  </div>
+
+  <!-- PAGE TITLE -->
+  <section class="page-title">
+
+    <div class="title-left">
+      <h1>The Admiralty</h1>
+
+      <!-- ADDRESS UNDER TITLE -->
+      <div class="location-row">
+        <span class="material-symbols-outlined">location_on</span>
+        Trafalgar Square, London
+      </div>
+    </div>
+
+    <!-- AI BUTTON -->
+    <button id="aiToggleBtn" class="ai-button">
+      <span class="material-symbols-outlined">auto_awesome</span>
+      AI
+    </button>
+
+  </section>
+
+  <!-- MAIN LAYOUT -->
+  <div class="layout-wrapper">
+
+   <main class="main-content">
+
+      <div class="content-top-menu">
+        <div class="menu-left">
+          <a href="site-overview.html" class="tab-link">Overview</a>
+          <a href="site-budget.html" class="tab-link">Budget &amp; Forecast</a>
+          <a href="site-emissions.html" class="tab-link">Emissions</a>
+          <a href="site-reports.html" class="tab-link">Reports</a>
+          <a href="site-projects.html" class="tab-link">Projects</a>
+          <a href="site-contracts.html" class="tab-link">Contracts</a>
+          <a href="site-data-completeness.html" class="tab-link landed">Data Completeness</a>
+          <a href="site-max-demand.html" class="tab-link">Max Demand/Banding</a>
+
+        </div>
+
+        <span class="material-symbols-outlined more-menu">more_vert</span>
+      </div>
+
+      <!-- METRIC CARDS -->
+
+            <div class="report-metrics-row">
+
+  <div class="report-metric-card">
+    <span class="material-symbols-rounded metric-icon">construction</span>
+    <div class="metric-label">Total Estimated</div>
+    <div class="metric-value">4</div>
+  </div>
+
+  <div class="report-metric-card">
+    <span class="material-symbols-outlined metric-icon">savings</span>
+    <div class="metric-label">Total Missing</div>
+    <div class="metric-value">8</div>
+  </div>
+
+  <div class="report-metric-card">
+    <span class="material-symbols-rounded">data_usage</span>
+    <div class="metric-label">DATA QUALITY</div>
+    <div class="metric-value">80%</div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+      <!-- CONTENT AREA -->
+      <div id="contentArea">
+        
+<div class="data-tools-row">
+
+  <!-- LEFT COLUMN: FILTER BUTTONS -->
+  <div class="tools-left">
+    <button class="filter-btn active" data-filter="all">Show All</button>
+    <button class="filter-btn" data-filter="missing">Missing Only</button>
+    <button class="filter-btn" data-filter="estimated">Estimated Only</button>
+  </div>
+
+  <!-- RIGHT COLUMN: EXPORT BUTTON -->
+  <div class="tools-right">
+    <button class="export-btn">
+      <span class="material-symbols-outlined">download</span>
+      Export Missing Days CSV
+    </button>
+  </div>
+
+</div>
+
+
+        <!-- SEARCH BAR -->
+        <div class="meters-table-wrapper new-style">
+          <div class="new-table-search">
+            <span class="material-symbols-outlined search-icon">search</span>
+            <input type="text" placeholder="Search by site, meter, meter number, serial number" />
+          </div>
+        </div>
+<table class="new-table compact-table">
+
+  
+<thead>
+  <tr>
+    <th><span class="material-symbols-outlined">filter_list</span> Utility</th>
+    <th>Meter Name</th>
+    <th>Top Line MPAN</th>
+    <th>Core MPAN/MPRN</th>
+    <th>Supplier</th>
+
+    <!-- ⭐ ADDED FILTER ICON HERE -->
+    <th>
+      <span class="material-symbols-outlined">filter_list</span>
+      Meter Usage (Last 12 Months)
+    </th>
+
+    <th>Contract<br>Details</th>
+    <th>AMR</th>
+    <th> </th>
+  </tr>
+</thead>
+
+
+  <tbody>
+
+    <tr>
+      <td><span class="chip meter-chip hh"><span class="material-symbols-rounded">charger</span> HH</span></td>
+      <td>Pub</td>
+      <td>00 | 0000 | H04</td>
+      <td>1470001278441</td>
+      <td>TotalEnergies Gas & Power Limited</td>
+      <td>2,430,000 kWh</td>
+      <td>Fixed<br><span class="date">31/05/2036</span></td>
+
+      <!-- AMR -->
+      <td>
+        <span class="material-symbols-rounded" style="color:#22c55e;">task_alt</span>
+      </td>
+
+ 
+
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
+    <!-- SITE BLOCK -->
+     <tr style="border-top: none;"><td colspan="4">Meter Completeness Overview 2024</td>
+    <td colspan="4" style="text-align: right;">           
+              <span class="chip" style="background-color: #e74c3e; color: #fff;">5 Missing</span>
+              <span class="chip" style="background-color: #f3a33c; color: #fff;">10 Estimated</span>
+  
+           </td>
+          <td colspan="1" style="text-align: right;"><button class="menu-btn material-symbols-outlined">more_vert</button></td>
+        </tr>
+    <tr style="border-top: none;"><td colspan="9">
+      
+        <div class="site-block expanded">
+
+          <!-- HEADER -->
+          <div class="site-header">
+            
+ 
+
+
+          </div>
+
+
+          <!-- MONTH GRID -->
+          <div class="month-grid">
+
+            <div class="month-row">
+              <div class="month-label">JAN</div>
+              <div class="days">
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq est">9</div>
+                <div class="sq est">10</div>
+                <div class="sq est">11</div>
+                <div class="sq est">12</div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+              </div>
+            </div>
+
+            <div class="month-row">
+              <div class="month-label">FEB</div>
+              <div class="days">
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq est">5</div>
+                <div class="sq est">6</div>
+                <div class="sq est">7</div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+              </div>
+            </div>
+
+            <div class="month-row">
+              <div class="month-label">APR</div>
+              <div class="days">
+                <div class="sq ok"></div>
+                                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq missing">10</div>
+                <div class="sq missing">11</div>
+                <div class="sq missing">12</div>
+                <div class="sq missing">13</div>
+                <div class="sq missing">14</div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+              </div>
+            </div>
+
+            <div class="month-row">
+              <div class="month-label">JUN</div>
+              <div class="days">
+                <div class="sq ok"></div>
+                <div class="sq est">2</div>
+                <div class="sq est">3</div>
+                <div class="sq est">4</div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+    </td></tr>
+
+    <tr>
+      <td>
+      <span class="chip meter-chip nhh"><span class="material-symbols-outlined">charger</span> nHH</span></td>
+      <td>Kitchen</td>
+      <td>00 | 0000 | M02</td>
+      <td>1300035386046</td>
+      <td>TotalEnergies Gas & Power Limited</td>
+      <td>1,976,662 kWh</td>
+      <td>Fixed<br><span class="date">14/07/2027</span></td>
+
+      <!-- AMR -->
+      <td>
+        <span class="material-symbols-rounded" style="color:#22c55e;">task_alt</span>
+      </td>
+
+ 
+
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
+
+    <tr>
+      <td> <span class="chip meter-chip gas"><span class="material-symbols-rounded">local_fire_department</span> Gas</span></td>
+
+      
+
+
+      <td>Cellar</td>
+      <td>00 | 0000 | M02</td>
+      <td>8876163202</td>
+      <td>British Gas Business</td>
+      <td>2,430,000 kWh</td>
+      <td>Fixed<br><span>22/11/2025</span></td>
+
+      <!-- AMR -->
+      <td>
+        <span class="material-symbols-rounded" style="color:#22c55e;">task_alt</span>
+      </td>
+
+ 
+
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
+
+        <tr>
+      <td> <span class="chip meter-chip water"><span class="material-symbols-rounded">water_drop</span> Water</span></td>
+
+      
+
+
+      <td>Accommodation</td>
+      <td>00 | 0000 | M02</td>
+      <td>8876163202</td>
+      <td>Southern Water</td>
+      <td>37,997 L</td>
+      <td>Fixed<br><span>22/11/2025</span></td>
+
+      <!-- AMR -->
+      <td>
+        <span class="material-symbols-rounded" style="color:#22c55e;">task_alt</span>
+      </td>
+
+ 
+
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+      </div>
+    </main>
+
+  </div>
+
+
+  <!-- SCRIPTS -->
+  <script src="assets/tree.js"></script>
+  <script src="assets/layout.js"></script>
+
+  <!-- AI PANEL -->
+  <aside id="aiPanel" class="ai-panel">
+    <div class="ai-panel-header">
+      <h2>AI Insights</h2>
+      <button id="aiCloseBtn" class="ai-close-btn">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <div class="ai-panel-content">
+      <!-- AI content unchanged -->
+    </div>
+
+  </aside>
+
+</body>
+</html>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>True Energy Platform</title>
+
+  <!-- MATERIAL SYMBOLS: Outlined + Rounded -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+
+  <!-- TRUE Layout + Components -->
+  <link rel="stylesheet" href="assets/layout.css" />
+  <link rel="stylesheet" href="assets/tree.css" />
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<!-- MATERIAL SYMBOLS: Outlined + Rounded -->
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+
+</head>
+
+
+
+
+<body>
+
+
+
+  <!-- TOP HEADER -->
+  <header class="top-header">
+    <div class="logo">true Energy Platform</div>
+  </header>
+
+ <!-- BREADCRUMBS -->
+  <div class="breadcrumbs">
+    <span>Home</span> /
+   <span><a href="company-overview.html">Fuller's Pubs & Hotels</a></span> /
+    <strong>The Admiralty</strong>
+  </div>
+
+<!-- PAGE TITLE -->
+<section class="page-title">
+  <div class="page-title-inner">
+    <div class="title-left">
+      <h1>The Admiralty</h1>
+
+      <div class="location-row">
+        <span class="material-symbols-outlined">location_on</span>
+        Trafalgar Square, London
+      </div>
+    </div>
+  </div>
+    <div class="page-actions">
+  <button class="kebab-btn" id="pageKebabBtn" aria-label="Page actions" aria-haspopup="true" aria-expanded="false">
+    <span class="material-symbols-outlined">more_vert</span>
+  </button>
+
+  <div class="kebab-menu" id="pageKebabMenu" role="menu" aria-label="Page actions">
+    <button class="kebab-item" role="menuitem" type="button">Company Preferences</button>
+    <button class="kebab-item" role="menuitem" type="button">Download Company Consumption</button>
+  </div>
+</div>
+
+</section>
+
+
+
+<!-- PAGE TABS -->
+<div class="page-tabs-wrapper" style="max-width: 1260px;">
+  <div class="page-tabs">
+    <a href="site-overview.html" class="page-tab active">Site Consumption</a>
+    <a href="site-overview-max-demand.html" class="page-tab">Max Demand</a>
+    <a href="site-overview-max-demand.html" class="page-tab">Energy Banding</a>
+    <a href="site-page-data-completeness.html" class="page-tab">Data Completeness</a>
+  </div>
+</div>
+
+
+
+
+  <!-- MAIN LAYOUT -->
+  <div class="layout-wrapper">
+
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+ 
+
+
+
+
+
+
+
+<div class="chart-section">
+
+<div class="chart-header">
+  
+
+  <div class="chart-filters">
+
+    <div class="filter-dropdown chart-type-dropdown">
+  <button id="chartTypeBtn" class="filter-pill">
+    <span class="material-symbols-outlined">insights</span>
+    <span id="chartTypeLabel">Day of Week Comparison</span>
+    <span class="material-symbols-outlined">expand_more</span>
+  </button>
+
+<div id="chartTypeMenu" class="dropdown-menu">
+  <div class="dropdown-title">Chart Type</div>
+
+  <a href="site-overview.html" class="dropdown-item">Compare Off</a>
+  <a href="site-overview-compare-date-range.html" class="dropdown-item">Compare By Date Range</a>
+  <a href="site-overview-compare-time-of-day.html" class="dropdown-item">Time of Day</a>
+  <a href="site-overview-compare-day-of-week.html" class="dropdown-item">Day of Week Comparison</a>
+</div>
+
+</div>
+
+
+
+
+
+
+  </div>
+
+<div class="chart-actions">
+  <div class="utility-toggle">
+    <button class="utility-btn active">Power</button>
+    <button class="utility-btn">Gas</button>
+  </div>
+
+  <div class="view-toggle">
+    <button class="view-btn active">
+      <span class="material-symbols-rounded">bar_chart</span>
+    </button>
+    <button class="view-btn">
+      <span class="material-symbols-rounded">list</span>
+    </button>
+  </div>
+
+  <!-- Kebab menu -->
+<div class="kebab-wrapper">
+  <button class="view-btn kebab-btn chart-kebab-btn" title="More actions" aria-haspopup="true" aria-expanded="false">
+    <span class="material-symbols-rounded">more_vert</span>
+  </button>
+
+  <div class="dropdown-menu kebab-menu chart-kebab-menu">
+    <button class="dropdown-item" type="button">
+      <span class="material-symbols-rounded">table_view</span>
+      Download Excel
+    </button>
+    <button class="dropdown-item" type="button">
+      <span class="material-symbols-rounded">image</span>
+      Download Chart
+    </button>
+  </div>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<div class="report-metrics-row">
+
+  <div class="report-metric-card">
+    <div class="metric-label">BUSIEST DAY (LAST 12M)</div>
+    <div class="metric-value">Saturday</div>
+    <div class="metric-subtext">Avg 21,340 kWh</div>
+  </div>
+
+  <div class="report-metric-card">
+    <div class="metric-label">QUIETEST DAY (LAST 12M)</div>
+    <div class="metric-value">Tuesday</div>
+    <div class="metric-subtext">Avg 14,120 kWh</div>
+  </div>
+
+  <div class="report-metric-card">
+    <div class="metric-label">WEEKLY SWING</div>
+    <div class="metric-value">+51%</div>
+    <div class="metric-subtext">Busiest vs quietest</div>
+  </div>
+
+</div>
+
+  <div class="chart-wrapper">
+    <h2 style="margin-top: -20px;">Power Consumption</h2>
+    <!-- Replace with your Chart.js canvas -->
+    <div class="chart-placeholder">
+      <img src="images/day-of-week.png" alt="Power Consumption Chart" class="chart-img">
+    </div>
+  </div>
+
+<div class="chart-legend">
+    <div class="legend-item">
+      <span class="legend-dot magenta"></span> Last Week
+    </div>
+    <div class="legend-item">
+      <span class="legend-dot pink"></span> Last Month
+    </div>
+        <div class="legend-item">
+      <span class="legend-dot lightpink"></span> Last Quarter
+    </div>
+        <div class="legend-item">
+      <span class="legend-dot pale"></span> Last Year
+    </div>
+  </div>
+
+
+</div>
+
+
+       <div class="meters-table-wrapper new-style">
+
+    <!-- Search bar -->
+    <div class="new-table-search">
+      <span class="material-symbols-outlined search-icon">search</span>
+      <input type="text" placeholder="Search by meter, meter number, serial number" />
+    </div>
+
+<table class="new-table compact-table">
+<thead>
+  <tr>
+    <th><span class="material-symbols-outlined">filter_list</span> Utility</th>
+    <th>Meter Name</th>
+    <th>Top Line MPAN</th>
+    <th>Core MPAN/MPRN</th>
+    <th>Supplier</th>
+
+    <!-- ⭐ ADDED FILTER ICON HERE -->
+    <th>
+      
+     <div class="usage-filter">
+    <span>Site Usage (Last 12 Months)</span>
+    <span class="material-symbols-outlined usage-filter-icon">expand_more</span>
+
+    <!-- DROPDOWN -->
+<div class="usage-dropdown">
+  <div class="dropdown-title">Select Range</div>
+
+  <!-- DEFAULT SELECTED OPTION -->
+  <button class="dropdown-item" data-range="ytd">
+    <span class="material-symbols-outlined check-icon hidden">check</span>
+    Year to Date
+  </button>
+
+  <button class="dropdown-item selected" data-range="12m">
+    <span class="material-symbols-outlined check-icon">check</span>
+    Last 12 Months
+  </button>
+</div>
+
+  </div>
+    </th>
+
+    <th>Contract<br>Details</th>
+    <th>AMR</th>
+    <th> </th>
+    <th></th>
+  </tr>
+</thead>
+
+
+  <tbody>
+
+    <tr>
+      <td><span class="chip meter-chip hh"><span class="material-symbols-rounded">charger</span> HH</span></td>
+      <td>
+  <div class="meter-name">
+    <span><a href="meter-overview.html"  class="site-link">Pub</a></span>
+    <span class="chip status-chip archived">Archived</span>
+  </div>
+</td>
+      <td>00 | 0000 | H04</td>
+      <td>1470001278441</td>
+      <td>TotalEnergies Gas & Power Limited</td>
+      <td>2,430,000 kWh</td>
+      <td>Fixed<br><span class="date">31/05/2036</span></td>
+
+      <!-- AMR -->
+      <td>
+        <span class="material-symbols-rounded" style="color:#22c55e;">task_alt</span>
+      </td>
+
+ 
+
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
+
+    <tr>
+      <td>
+      <span class="chip meter-chip nhh"><span class="material-symbols-outlined">charger</span> nHH</span></td>
+      <td><span><a href="#"  class="site-link">Kitchen</a></span></td>
+      <td>00 | 0000 | M02</td>
+      <td>1300035386046</td>
+      <td>TotalEnergies Gas & Power Limited</td>
+      <td>–</td>
+      <td>Fixed<br><span class="date">14/07/2027</span></td>
+
+      <!-- AMR -->
+      <td>
+        <span class="material-symbols-rounded" style="color:#22c55e;">task_alt</span>
+      </td>
+
+ 
+
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
+
+    <tr>
+      <td> <span class="chip meter-chip gas"><span class="material-symbols-rounded">local_fire_department</span> Gas</span></td>
+
+      
+
+
+      <td><span><a href="#"  class="site-link">Cellar</a></span></td>
+      <td>00 | 0000 | M02</td>
+      <td>8876163202</td>
+      <td>British Gas Business</td>
+      <td>2,430,000 kWh</td>
+      <td>Fixed<br><span>22/11/2025</span></td>
+
+      <!-- AMR -->
+      <td>
+        <span class="material-symbols-rounded" style="color:#22c55e;">task_alt</span>
+      </td>
+
+ 
+
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
+
+        <tr>
+      <td> <span class="chip meter-chip water"><span class="material-symbols-rounded">water_drop</span> Water</span></td>
+
+      
+
+
+      <td><span><a href="#"  class="site-link">Accommodation</a></span></td>
+      <td>00 | 0000 | M02</td>
+      <td>8876163202</td>
+      <td>Southern Water</td>
+      <td>37,997 L</td>
+      <td>Fixed<br><span>22/11/2025</span></td>
+
+      <!-- AMR -->
+      <td>
+        <span class="material-symbols-rounded" style="color:#22c55e;">task_alt</span>
+      </td>
+
+ 
+
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
+
+  </tbody>
+</table>
+
+    <!-- Pagination -->
+
+
+  </div></div>
+
+
+
+    </main>
+
+  </div>
+
+  <div class="context-menu" id="contextMenu"></div>
+
+ <!-- SCRIPTS -->
+<script src="assets/tree.js"></script>
+<script src="assets/layout.js"></script>
+
+
+
+<!-- ===============================
+     UNIVERSAL DROPDOWN LOGIC
+================================ -->
+<script>
+document.querySelectorAll('.filter-dropdown').forEach(drop => {
+  const button = drop.querySelector('.filter-pill');
+
+  button.addEventListener('click', e => {
+    e.stopPropagation();
+    // Close all others
+    document.querySelectorAll('.filter-dropdown.open').forEach(d => {
+      if (d !== drop) d.classList.remove('open');
+    });
+    drop.classList.toggle('open');
+  });
+
+  // Close on outside click
+  document.addEventListener('click', () => {
+    drop.classList.remove('open');
+  });
+});
+</script>
+
+<!-- ===============================
+     COMPARE DROPDOWN LOGIC
+================================ -->
+<script>
+const compareBtn = document.getElementById("compareBtn");
+const compareLabel = document.getElementById("compareLabel");
+
+document.querySelectorAll(".compare-option").forEach(option => {
+  option.addEventListener("click", () => {
+    compareLabel.textContent = option.dataset.value;
+    compareBtn.parentElement.classList.remove("open");
+  });
+});
+</script>
+
+<!-- ===============================
+     CHART TYPE SELECTOR LOGIC
+================================ -->
+<script>
+
+// Elements
+const chartTypeLabel = document.getElementById("chartTypeLabel");
+
+// All dropdowns inside chart-filters
+const chartFilters = document.querySelector(".chart-filters");
+const filterDropdowns = chartFilters.querySelectorAll(".filter-dropdown");
+
+// Filter indices (ordered in your HTML)
+const rangeFilter   = filterDropdowns[1]; // Date range (Year to Date)
+const groupFilter   = filterDropdowns[2]; // Group by Day / Week / Month
+const timeFilter    = filterDropdowns[3]; // Time Range selector
+const compareFilter = document.querySelector(".compare-dropdown");
+
+// Chart image placeholder
+const chartImg = document.querySelector(".chart-img");
+
+
+</script>
+
+
+</body>
+</html>

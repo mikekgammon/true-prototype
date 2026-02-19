@@ -32,7 +32,7 @@
 ============================= -->
 <aside id="navRail" class="nav-rail collapsed">
   <div class="nav-rail-top">
-    <a href="home.html">
+    <a href="company-overview.html">
   <button id="navRailToggle" class="nav-rail-toggle">
     <span class="material-symbols-outlined">menu</span>
   </button>
@@ -71,38 +71,68 @@
     TOP HEADER
 ============================= -->
 <header class="top-header">
-  <div class="logo">true Energy Platform</div>
-</header>
+     <div class="logo">
+    <a href="company-overview.html"><img src="images/true-logo.svg" alt="True" /></a>
+  </div>
+  </header>
+
+ 
+
+
+
 
 <!-- =============================
     BREADCRUMBS
 ============================= -->
 <div class="breadcrumbs">
-  <span><a href="home.html">Home</a></span> /
-  <strong>Fuller's Pubs & Hotels</strong>
+  <span><a href="company-overview.html">Home</a></span> /
+  <span><a href="company-overview.html">Sample Company Ltd</a></span> /
+  <strong>Company Overview</strong>
 </div>
 
-<!-- =============================
-    PAGE TITLE
-============================= -->
-<section class="page-title">
-  <div class="title-left">
-    <h1>Fuller's Pubs & Hotels</h1>
-    <div class="page-subtitle">Portfolio overview and performance insights</div>
-  </div>
 
-  <button id="aiToggleBtn" class="ai-button">
-    <span class="material-symbols-outlined">auto_awesome</span> AI
-  </button>
-</section>
 
 <!-- =============================
     MAIN LAYOUT
 ============================= -->
 <div class="layout-wrapper">
 
+
+
+
   <!-- MAIN CONTENT -->
   <main class="main-content">
+
+      <!-- =============================
+    PAGE TITLE
+============================= -->
+<section class="page-title" style="margin-left: 0; padding-left: 0; margin-bottom: 30px;;">
+  <div class="title-left">
+    <h1>Company Overview</h1>
+          <div class="location-row">
+        <span class="material-symbols-outlined">location_on</span>
+       Chiswick, London W4 3NN
+      </div>
+
+  </div>
+<!-- 
+  <button id="aiToggleBtn" class="ai-button">
+    <span class="material-symbols-outlined">auto_awesome</span> AI
+  </button> -->
+
+  <a href="#"
+   class="loa-pill loa-pill--sm"
+   title="Create a new LOA"
+   aria-label="Create a new LOA (LOA expires on 20/03/26)">
+  
+  <span class="material-symbols-outlined">
+schedule
+</span>
+
+  <span class="loa-text">LOA Expires On: 20/03/26</span>
+</a>
+
+</section>
 
     <!-- =============================
         AI INSIGHTS CARD
@@ -159,18 +189,73 @@
     <div class="metric-value">7</div>
   </div>
 
-    <div class="report-metric-card">
+</div>
+
+    <div class="report-metrics-row">
+
+
+          <div class="report-metric-card">
     <span class="material-symbols-rounded" style="color: #3f2a95;">insert_chart</span>
     <div class="metric-label">Annual Energy Spend</div>
     <div class="metric-value">£4.83m</div>
   </div>
 
+
+  <div class="report-metric-card">
+    <span class="material-symbols-rounded metric-icon" style="color: #ba4975;">charger</span>
+    <div class="metric-label">TOTAL ACTUAL SAVINGS</div>
+    <div class="metric-value">£233,268</div>
+  </div>
+
+  <div class="report-metric-card">
+    <span class="material-symbols-outlined metric-icon" style="color: #ba4975;">charger</span>
+    <div class="metric-label">TOTAL ESTIMATED SAVINGS</div>
+    <div class="metric-value">£90,000</div>
+  </div>
+
 </div>
 
+
+
     <!-- =============================
+        SUSTAINABILITY SECTION
+    ============================== -->
+    <div class="sust-section">
+      <h2>Sustainability Progress</h2>
+      <p class="section-desc">Tracking Net Zero progress across the entire portfolio</p>
+
+      <div class="sust-highlights">
+
+<a href="sustainability.html" class="highlight-card highlight-card--link">
+  <span class="material-symbols-outlined">engineering</span>
+  <div>
+    <strong>7 Active Improvement Projects</strong>
+    <p>LED upgrades, HVAC optimisation, and solar feasibility.</p>
+  </div>
+</a>
+
+<a href="sustainability-targets.html" class="highlight-card highlight-card--link">
+  <span class="material-symbols-outlined">engineering</span>
+  <div>
+    <strong>3 Targets Set</strong>
+    <p>Define your sustainability goals and chart your path to reduced emissions. </p>
+  </div>
+</a>
+
+<a href="sustainability-emissions.html" class="highlight-card highlight-card--link">
+  <span class="material-symbols-outlined">engineering</span>
+  <div>
+    <strong>Emissions Down 6.2% YTD</strong>
+    <p>Driven by site efficiency and reduced gas usage.</p>
+  </div>
+</a>
+      </div>
+    </div>
+
+        <!-- =============================
         QUICK LINK CARDS
     ============================== -->
-    <h2>Explore Portfolio</h2>
+    <h2>Reports and Projects</h2>
     <div class="quick-links-grid">
 
       <a href="index-overview.html" class="quick-link-card">
@@ -183,56 +268,16 @@
         <div class="ql-count">48</div>
       </a>
 
-      <a href="index-emissions.html" class="quick-link-card">
-        <div class="ql-title">Emissions</div>
-        <div class="ql-count">3,920 tCO₂e</div>
-      </a>
 
       <a href="index-projects.html" class="quick-link-card">
         <div class="ql-title">Projects</div>
         <div class="ql-count">7 Active</div>
       </a>
 
-      <a href="index-reports.html" class="quick-link-card">
+      <a href="sustainability.html" class="quick-link-card">
         <div class="ql-title">Reports</div>
         <div class="ql-count">View all</div>
       </a>
-    </div>
-
-    <!-- =============================
-        SUSTAINABILITY SECTION
-    ============================== -->
-    <div class="sust-section">
-      <h2>Sustainability Progress</h2>
-      <p class="section-desc">Tracking Net Zero progress across the entire portfolio</p>
-
-      <div class="sust-highlights">
-
-        <div class="highlight-card">
-          <span class="material-symbols-outlined">forest</span>
-          <div>
-            <strong>Emissions Down 6.2% YTD</strong>
-            <p>Driven by site efficiency and reduced gas usage.</p>
-          </div>
-        </div>
-
-        <div class="highlight-card">
-          <span class="material-symbols-outlined">bolt</span>
-          <div>
-            <strong>32% Renewable Coverage</strong>
-            <p>Supported by REGO-backed supply contracts.</p>
-          </div>
-        </div>
-
-        <div class="highlight-card">
-          <span class="material-symbols-outlined">engineering</span>
-          <div>
-            <strong>7 Active Improvement Projects</strong>
-            <p>LED upgrades, HVAC optimisation, and solar feasibility.</p>
-          </div>
-        </div>
-
-      </div>
     </div>
 
   </main>

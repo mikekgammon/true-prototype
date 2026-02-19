@@ -6,7 +6,7 @@
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
   <link rel="stylesheet" href="assets/layout.css" />
-  <link rel="stylesheet" href="assets/tree.css" />
+  <link rel="stylesheet" href="assets/chart.css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +26,7 @@
 
   <nav class="nav-rail-links">
 
-    <a href="home.html">
+    <a href="company-overview.html">
       <span class="material-symbols-outlined">home</span>
       <span class="label">Home</span>
     </a>
@@ -62,36 +62,20 @@
 
   <!-- TOP HEADER -->
   <header class="top-header">
-    <div class="logo">true Energy Platform</div>
+     <div class="logo">
+    <a href="company-overview.html"><img src="images/true-logo.svg" alt="True" /></a>
+  </div>
+
   </header>
 
  <!-- BREADCRUMBS -->
   <div class="breadcrumbs">
-    <span>Home</span> /
-   <span><a href="company-overview.html">Fuller's Pubs & Hotels</a></span> /
-    <span><a href="site-overview.html"><strong>The Admiralty</strong></a></span> 
+    <span><a href="company-overview.html">Home</a></span> /
+   <span><a href="company-overview.html">Sample Company Ltd</a></span> /
+    <span><strong>Sustainability</strong></span> 
   </div>
 
-  <!-- PAGE TITLE -->
-<section class="page-title">
 
-  <div class="title-left">
-    <h1>Sustainability</h1>
-
-    <!-- ADDRESS UNDER TITLE -->
-    <div class="location-row">
-      <span class="material-symbols-outlined">location_on</span>
-      Chiswick, London W4 3NN
-    </div>
-  </div>
-
-  <!-- AI BUTTON -->
-  <button id="aiToggleBtn" class="ai-button">
-    <span class="material-symbols-outlined">auto_awesome</span>
-    AI
-  </button>
-
-</section>
 
 
 
@@ -104,97 +88,210 @@
     <!-- MAIN CONTENT -->
     <main class="main-content">
 
+        <!-- PAGE TITLE -->
+<section class="page-title" style="margin: 20px 0 20px 0; padding: 0;">
+
+  <div class="title-left">
+    <h1>Sustainability</h1>
+
+  </div>
+
+
+</section>
+
       <div class="content-top-menu">
         <div class="menu-left">
-          <a href="site-overview.html" class="tab-link landed">Overview</a>
-          <a href="site-budget.html" class="tab-link">Budget &amp; Forecast</a>
-          <a href="site-emissions.html" class="tab-link">Emissions</a>
-          <a href="site-reports.html" class="tab-link">Reports</a>
-          <a href="site-projects.html" class="tab-link">Projects</a>
-
+         <a href="sustainability.html" class="tab-link landed">Overview</a>
+         <a href="sustainability-strategy-overview.html" class="tab-link">Strategy</a>
+         <a href="sustainability-projects.html" class="tab-link">Projects</a>
+         <a href="sustainability-strategy.html" class="tab-link">Comparissons</a>
+         <a href="sustainability-strategy.html" class="tab-link">Schemes</a>
+         <a href="sustainability-targets.html" class="tab-link">Targets</a>
+         <a href="sustainability-emissions.html" class="tab-link">Emissions</a>
         </div>
 
         <span class="material-symbols-outlined more-menu">more_vert</span>
       </div>
 
-      <div class="metric-row">
 
-        <div class="metric-card">
-          <h3>Carbon Saved by Projects</h3>
-          <div class="value">877 kgCO₂e</div>
-        </div>
+<div class="report-metrics-row">
 
-        <div class="metric-card">
-          <h3>Active Sustainability Projects</h3>
-          <div class="value">3</div>
-        </div>
+  <!-- 1) Scope -->
+  <div class="report-metric-card">
+    <div class="metric-label">Carbon Saved by Projects</div>
+    <div class="metric-value">877 kgCO₂e</div>
 
-        <div class="metric-card">
-          <h3>Annual Saving Potential</h3>
-          <div class="value">1.4 tCO₂e</div>
-        </div>
+  </div>
 
-      </div>
+  <!-- 2) Recency / urgency -->
+  <div class="report-metric-card">
+    <div class="metric-label">Active Sustainability Projects</div>
+    <div class="metric-value">3</div>
+  </div>
 
-
-
-
-
-
-      
-
-      <div id="contentArea"><p>Assess and compare sustainability projects to develop emission reduction strategies, view emissions to understand your environmental impact, and set targets to reduce emissions in order to achieve Net Zero.</p>
-      
-     <div class="sust-section">
-
-  <h2>What you can do here</h2>
-  <p>
-    Use this workspace to monitor your site’s environmental performance, review progress against
-    Net Zero goals, and identify the most effective actions to reduce emissions.
-  </p>
-
-  <ul class="sust-list">
-    <li><strong>Track emissions</strong> across Scope 1, 2 and (where available) Scope 3 categories.</li>
-    <li><strong>Analyse trends</strong> to see how performance compares to previous periods and forecast targets.</li>
-    <li><strong>Evaluate sustainability projects</strong> and their impact on energy reduction and carbon savings.</li>
-    <li><strong>Prioritise improvement opportunities</strong> based on cost, payback, and emissions benefit.</li>
-    <li><strong>Benchmark sites</strong> to understand which locations are performing well and where intervention is needed.</li>
-  </ul>
-
-  <h2>Key insights available</h2>
-  <p>
-    True applies automated analysis and AI-powered insights to help you understand the drivers behind your emissions:
-  </p>
-
-  <div class="sust-highlights">
-    <div class="highlight-card">
-      <span class="material-symbols-outlined">trending_down</span>
-      <div>
-        <strong>Reduction Hotspots</strong><br>
-        Identify the quickest wins and highest-impact opportunities.
-      </div>
-    </div>
-
-    <div class="highlight-card">
-      <span class="material-symbols-outlined">bolt</span>
-      <div>
-        <strong>Operational Drivers</strong><br>
-        See how schedules, plant performance and occupancy affect emissions.
-      </div>
-    </div>
-
-    <div class="highlight-card">
-      <span class="material-symbols-outlined">emoji_objects</span>
-      <div>
-        <strong>Recommended Actions</strong><br>
-        Get sight of targeted measures to accelerate progress toward Net Zero.
-      </div>
-    </div>
+  <!-- 3) Severity -->
+  <div class="report-metric-card">
+    <div class="metric-label">Annual Saving Potential</div>
+    <div class="metric-value">1.4 tCO₂e</div>
   </div>
 
 </div>
 
+<div id="contentArea">
+
+
+
+  <div class="sust-hero">
+
+    <!-- LEFT: TEXT CONTENT -->
+    <div class="sust-hero__text">
+
+      <p><img src="images/sustainability.svg" alt="Sustainability overview illustration" style="float: right; width: 150px; padding-left: 30px;">
+        Assess and compare sustainability projects to develop emission reduction strategies,
+        view emissions to understand your environmental impact, and set targets to reduce
+        emissions in order to achieve Net Zero. 
+      </p>
+    <!-- RIGHT: ILLUSTRATION -->
+      <div class="sust-section">
+
+        <h2>What you can do here</h2>
+        <p>
+          Use this workspace to monitor your site’s environmental performance, review progress against
+          Net Zero goals, and identify the most effective actions to reduce emissions.
+        </p>
+
+        <ul class="sust-list">
+          <li><strong>Track emissions</strong> across Scope 1, 2 and (where available) Scope 3 categories.</li>
+          <li><strong>Analyse trends</strong> to see how performance compares to previous periods and forecast targets.</li>
+          <li><strong>Evaluate sustainability projects</strong> and their impact on energy reduction and carbon savings.</li>
+          <li><strong>Prioritise improvement opportunities</strong> based on cost, payback, and emissions benefit.</li>
+          <li><strong>Benchmark sites</strong> to understand which locations are performing well and where intervention is needed.</li>
+        </ul>
+
+
+
+
+
+
       </div>
+      <!-- Recent Sustainability Activity -->
+<!-- Recent Sustainability Activity -->
+<!-- Recent Sustainability Activity -->
+<section class="sust-activity">
+
+  <div class="sust-activity__header">
+    <h2>Recent sustainability activity</h2>
+
+    <a class="sust-activity__link" href="sustainability-projects.html">
+      View all projects
+      <span class="material-symbols-outlined">arrow_forward</span>
+    </a>
+  </div>
+
+  <div class="sust-activity__grid">
+
+    <!-- Project 1 -->
+    <article class="sust-activity__item">
+      <div class="sust-activity__row">
+
+        <div class="sust-activity__title">
+          <span class="material-symbols-outlined">lightbulb</span>
+          <strong>LED upgrade – Warehouse</strong>
+        </div>
+
+
+
+        <div class="sust-inline-meta">
+          <span class="material-symbols-outlined">co2</span>
+          <span><strong>Impact:</strong> -0.8 tCO₂e</span>
+        </div>
+
+        <div class="sust-inline-meta">
+          <span class="material-symbols-outlined">schedule</span>
+          <span><strong>Updated:</strong> 3 days ago</span>
+        </div>
+
+                <span class="sust-pill is-progress">
+          <span class="material-symbols-outlined">autorenew</span>
+          In progress
+        </span>
+
+      </div>
+    </article>
+
+
+    <!-- Project 2 -->
+    <article class="sust-activity__item">
+      <div class="sust-activity__row">
+
+        <div class="sust-activity__title">
+          <span class="material-symbols-outlined">ac_unit</span>
+          <strong>HVAC optimisation – Head office</strong>
+        </div>
+
+
+
+        <div class="sust-inline-meta">
+          <span class="material-symbols-outlined">co2</span>
+          <span><strong>Impact:</strong> -0.4 tCO₂e</span>
+        </div>
+
+        <div class="sust-inline-meta">
+          <span class="material-symbols-outlined">schedule</span>
+          <span><strong>Updated:</strong> 2 weeks ago</span>
+        </div>
+
+                <span class="sust-pill is-complete">
+          <span class="material-symbols-outlined">check_circle</span>
+          Complete
+        </span>
+
+      </div>
+    </article>
+
+
+    <!-- Project 3 -->
+    <article class="sust-activity__item">
+      <div class="sust-activity__row">
+
+        <div class="sust-activity__title">
+          <span class="material-symbols-outlined">solar_power</span>
+          <strong>Solar feasibility – Site group</strong>
+        </div>
+
+
+
+        <div class="sust-inline-meta">
+          <span class="material-symbols-outlined">co2</span>
+          <span><strong>Est. impact:</strong> -1.2 tCO₂e</span>
+        </div>
+
+        <div class="sust-inline-meta">
+          <span class="material-symbols-outlined">schedule</span>
+          <span><strong>Updated:</strong> 5 days ago</span>
+        </div>
+
+                <span class="sust-pill is-planning">
+          <span class="material-symbols-outlined">edit_calendar</span>
+          Planning
+        </span>
+
+      </div>
+    </article>
+
+  </div>
+
+</section>
+
+
+
+    </div>
+
+
+
+  </div>
+</div>
+
 
 
     </main>
@@ -217,7 +314,7 @@
   </div>
 
   <div class="ai-panel-content">
-    <p><strong>The Admiralty</strong> summary and opportunities identified by AI:</p>
+    <p><strong>Industrial Site</strong> summary and opportunities identified by AI:</p>
 
     <ul class="ai-insights-list">
       <li>Energy usage is 12% above expected baseline this month.</li>

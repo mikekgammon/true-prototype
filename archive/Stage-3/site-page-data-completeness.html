@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>True Energy Platform</title>
+
+  <!-- MATERIAL SYMBOLS: Outlined + Rounded -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+
+  <!-- TRUE Layout + Components -->
+  <link rel="stylesheet" href="assets/layout.css" />
+  <link rel="stylesheet" href="assets/tree.css" />
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<!-- MATERIAL SYMBOLS: Outlined + Rounded -->
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+
+</head>
+
+
+
+
+<body>
+
+
+
+  <!-- TOP HEADER -->
+  <header class="top-header">
+    <div class="logo">true Energy Platform</div>
+  </header>
+
+ <!-- BREADCRUMBS -->
+  <div class="breadcrumbs">
+    <span>Home</span> /
+   <span><a href="company-overview.html">Fuller's Pubs & Hotels</a></span> /
+    <strong>The Admiralty</strong>
+  </div>
+
+<!-- PAGE TITLE -->
+<section class="page-title">
+  <div class="page-title-inner">
+    <div class="title-left">
+      <h1>The Admiralty</h1>
+
+      <div class="location-row">
+        <span class="material-symbols-outlined">location_on</span>
+        Trafalgar Square, London
+      </div>
+    </div>
+  </div>
+    <div class="page-actions">
+  <button class="kebab-btn" id="pageKebabBtn" aria-label="Page actions" aria-haspopup="true" aria-expanded="false">
+    <span class="material-symbols-outlined">more_vert</span>
+  </button>
+
+  <div class="kebab-menu" id="pageKebabMenu" role="menu" aria-label="Page actions">
+    <button class="kebab-item" role="menuitem" type="button">Company Preferences</button>
+    <button class="kebab-item" role="menuitem" type="button">Download Company Consumption</button>
+  </div>
+</div>
+
+</section>
+
+
+
+<!-- PAGE TABS -->
+<div class="page-tabs-wrapper" style="max-width: 1260px;">
+  <div class="page-tabs">
+    <a href="site-overview.html" class="page-tab">Site Consumption</a>
+    <a href="site-overview-max-demand.html" class="page-tab">Max Demand</a>
+    <a href="site-overview-banding.html" class="page-tab">Energy Banding</a>
+    <a href="site-page-data-completeness.html" class="page-tab active">Data Completeness</a>
+  </div>
+</div>
+
+
+
+
+
+
+ <!-- MAIN LAYOUT -->
+  <div class="layout-wrapper"  style=" max-width: 1200px;
+  margin: 0 auto;
+">
+
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+ 
+<div class="chart-header">
+
+
+  <div class="chart-filters">
+
+ 
+
+    <div class="filter-dropdown">
+  <button class="filter-pill">
+    Last 12 Months 
+    <span class="material-symbols-outlined">expand_more</span>
+  </button>
+
+  <div class="dropdown-menu">
+    <div class="dropdown-title">Select Range</div>
+    <button class="dropdown-item">Last Months</button>
+    <button class="dropdown-item">Last 6 Months</button>
+    <button class="dropdown-item">Last 12 Months</button>
+  </div>
+</div>
+
+
+
+
+
+
+  </div>
+
+<div class="chart-actions">
+
+
+
+  <!-- Kebab menu -->
+<div class="kebab-wrapper">
+  <button class="view-btn kebab-btn chart-kebab-btn" title="More actions" aria-haspopup="true" aria-expanded="false">
+    <span class="material-symbols-rounded">more_vert</span>
+  </button>
+
+  <div class="dropdown-menu kebab-menu chart-kebab-menu">
+    <button class="dropdown-item" type="button">
+      <span class="material-symbols-rounded">table_view</span>
+      Download Data
+    </button>
+  </div>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+ <div class="chart-date-range" style="margin-top: 20px; margin-bottom: 20px;">
+  <span class="material-symbols-outlined">calendar_month</span>
+  <span>Data range: <strong>1 Jan 2025 – 1 Jan 2026</strong></span>
+</div>
+<div class="report-metrics-row">
+
+  <div class="report-metric-card" style="padding-bottom: 0;">
+   <div class="metric-label">TOTAL ESTIMATED PERIODS</div>
+    <div class="metric-value">10</div>
+  </div>
+
+    <div class="report-metric-card" style="padding-bottom: 0;">
+   <div class="metric-label">TOTAL MISSING PERIODS</div>
+    <div class="metric-value">5</div>
+  </div>
+
+  <div class="report-metric-card" style="padding-bottom: 0;">
+  <div class="metric-label" style="text-transform: uppercase;">
+    SITE DATA QUALITY
+  </div>
+
+  <div class="metric-row">
+    <div class="metric-value">85%</div>
+ <!-- Donut chart SVG: 80% green, 15% orange, 5% red -->
+<svg class="metric-donut" viewBox="0 0 120 120" width="56" height="56" role="img" aria-label="Data quality donut: 80% good, 15% warning, 5% bad">
+  <!-- Track (optional) -->
+  <circle cx="60" cy="60" r="44"
+          fill="none"
+          stroke="#e5e7eb"
+          stroke-width="12" />
+
+  <!-- Segments -->
+  <!-- Geometry:
+       r=44 => C ≈ 276.46
+       80% => 221.17
+       15% => 41.47
+       5%  => 13.82
+  -->
+  <g fill="none" stroke-width="12" stroke-linecap="butt" transform="rotate(-90 60 60)">
+    <!-- 80% green -->
+    <circle cx="60" cy="60" r="44"
+            stroke="#16a34a"
+            stroke-dasharray="221.17 276.46"
+            stroke-dashoffset="0" />
+
+    <!-- 15% orange -->
+    <circle cx="60" cy="60" r="44"
+            stroke="#f59e0b"
+            stroke-dasharray="41.47 276.46"
+            stroke-dashoffset="-221.17" />
+
+    <!-- 5% red -->
+    <circle cx="60" cy="60" r="44"
+            stroke="#ef4444"
+            stroke-dasharray="13.82 276.46"
+            stroke-dashoffset="-262.64" />
+  </g>
+
+  <!-- Donut hole -->
+  <circle cx="60" cy="60" r="32" fill="#ffffff" />
+</svg>
+
+  </div>
+</div>
+
+
+</div>
+
+      <!-- CONTENT AREA -->
+      <div id="contentArea">
+        
+<div class="data-tools-row">
+
+  <!-- LEFT COLUMN: FILTER BUTTONS -->
+  <div class="tools-left">
+    <button class="filter-btn active" data-filter="all">Show All</button>
+    <button class="filter-btn" data-filter="missing">Missing Only (22)</button>
+    <button class="filter-btn" data-filter="estimated">Estimated Only (16)</button>
+  </div>
+
+
+
+</div>
+
+
+<table class="new-table compact-table">
+
+  
+<thead>
+  <tr>
+    <th><span class="material-symbols-outlined">filter_list</span> Utility</th>
+    <th>Meter Name</th>
+    <th>Top Line MPAN</th>
+    <th>Core MPAN/MPRN</th>
+    <th>Supplier</th>
+
+    <!-- ⭐ ADDED FILTER ICON HERE -->
+    <th>
+      <span class="material-symbols-outlined">filter_list</span>
+      Meter Usage (Last 12 Months)
+    </th>
+
+    <th>Contract<br>Details</th>
+    <th>AMR</th>
+    <th> </th>
+  </tr>
+</thead>
+
+
+  <tbody>
+
+    <tr>
+      <td><span class="chip meter-chip hh"><span class="material-symbols-rounded">charger</span> HH</span></td>
+      <td><a href="meter-page-data-completeness.html" class="site-link">Pub</a></td>
+      <td>00 | 0000 | H04</td>
+      <td>1470001278441</td>
+      <td>TotalEnergies Gas & Power Limited</td>
+      <td>2,430,000 kWh</td>
+      <td>Fixed<br><span class="date">31/05/2036</span></td>
+
+      <!-- AMR -->
+      <td>
+        <span class="material-symbols-rounded" style="color:#22c55e;">task_alt</span>
+      </td>
+
+ 
+
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
+    <!-- SITE BLOCK -->
+  
+    <tr style="border-top: none;"><td colspan="9">
+      
+        <div class="site-block expanded">
+
+          <!-- HEADER -->
+          <div class="site-header">
+            
+ 
+
+
+          </div>
+
+
+          <!-- MONTH GRID -->
+          <div class="month-grid">
+
+            <div class="month-row">
+              <div class="month-label">JAN</div>
+              <div class="days">
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq est">9</div>
+                <div class="sq est">10</div>
+                <div class="sq est">11</div>
+                <div class="sq est">12</div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+              </div>
+            </div>
+
+            <div class="month-row">
+              <div class="month-label">FEB</div>
+              <div class="days">
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq est">5</div>
+                <div class="sq est">6</div>
+                <div class="sq est">7</div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+              </div>
+            </div>
+
+            <div class="month-row">
+              <div class="month-label">APR</div>
+              <div class="days">
+                <div class="sq ok"></div>
+                                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq missing">10</div>
+                <div class="sq missing">11</div>
+                <div class="sq missing">12</div>
+                <div class="sq missing">13</div>
+                <div class="sq missing">14</div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+              </div>
+            </div>
+
+            <div class="month-row">
+              <div class="month-label">JUN</div>
+              <div class="days">
+                <div class="sq ok"></div>
+                <div class="sq est">2</div>
+                <div class="sq est">3</div>
+                <div class="sq est">4</div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+                <div class="sq ok"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+    </td></tr>
+
+    <tr>
+      <td>
+      <span class="chip meter-chip nhh"><span class="material-symbols-outlined">charger</span> nHH</span></td>
+      <td>Kitchen</td>
+      <td>00 | 0000 | M02</td>
+      <td>1300035386046</td>
+      <td>TotalEnergies Gas & Power Limited</td>
+      <td>1,976,662 kWh</td>
+      <td>Fixed<br><span class="date">14/07/2027</span></td>
+
+      <!-- AMR -->
+      <td>
+        <span class="material-symbols-rounded" style="color:#22c55e;">task_alt</span>
+      </td>
+
+ 
+
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
+
+    <tr>
+      <td> <span class="chip meter-chip gas"><span class="material-symbols-rounded">local_fire_department</span> Gas</span></td>
+
+      
+
+
+      <td>Cellar</td>
+      <td>00 | 0000 | M02</td>
+      <td>8876163202</td>
+      <td>British Gas Business</td>
+      <td>2,430,000 kWh</td>
+      <td>Fixed<br><span>22/11/2025</span></td>
+
+      <!-- AMR -->
+      <td>
+        <span class="material-symbols-rounded" style="color:#22c55e;">task_alt</span>
+      </td>
+
+ 
+
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
+
+        <tr>
+      <td> <span class="chip meter-chip water"><span class="material-symbols-rounded">water_drop</span> Water</span></td>
+
+      
+
+
+      <td>Accommodation</td>
+      <td>00 | 0000 | M02</td>
+      <td>8876163202</td>
+      <td>Southern Water</td>
+      <td>37,997 L</td>
+      <td>Fixed<br><span>22/11/2025</span></td>
+
+      <!-- AMR -->
+      <td>
+        <span class="material-symbols-rounded" style="color:#22c55e;">task_alt</span>
+      </td>
+
+ 
+
+      <td><span class="material-symbols-outlined more">more_vert</span></td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+      </div>
+
+
+
+
+
+
+
+</div>
+
+
+
+    </main>
+
+  </div>
+
+  <div class="context-menu" id="contextMenu"></div>
+
+ <!-- SCRIPTS -->
+<script src="assets/tree.js"></script>
+<script src="assets/layout.js"></script>
+
+
+
+<!-- ===============================
+     UNIVERSAL DROPDOWN LOGIC
+================================ -->
+<script>
+document.querySelectorAll('.filter-dropdown').forEach(drop => {
+  const button = drop.querySelector('.filter-pill');
+
+  button.addEventListener('click', e => {
+    e.stopPropagation();
+    // Close all others
+    document.querySelectorAll('.filter-dropdown.open').forEach(d => {
+      if (d !== drop) d.classList.remove('open');
+    });
+    drop.classList.toggle('open');
+  });
+
+  // Close on outside click
+  document.addEventListener('click', () => {
+    drop.classList.remove('open');
+  });
+});
+</script>
+
+<!-- ===============================
+     COMPARE DROPDOWN LOGIC
+================================ -->
+<script>
+const compareBtn = document.getElementById("compareBtn");
+const compareLabel = document.getElementById("compareLabel");
+
+document.querySelectorAll(".compare-option").forEach(option => {
+  option.addEventListener("click", () => {
+    compareLabel.textContent = option.dataset.value;
+    compareBtn.parentElement.classList.remove("open");
+  });
+});
+</script>
+
+<!-- ===============================
+     CHART TYPE SELECTOR LOGIC
+================================ -->
+<script>
+
+// Elements
+const chartTypeLabel = document.getElementById("chartTypeLabel");
+
+// All dropdowns inside chart-filters
+const chartFilters = document.querySelector(".chart-filters");
+const filterDropdowns = chartFilters.querySelectorAll(".filter-dropdown");
+
+// Filter indices (ordered in your HTML)
+const rangeFilter   = filterDropdowns[1]; // Date range (Year to Date)
+const groupFilter   = filterDropdowns[2]; // Group by Day / Week / Month
+const timeFilter    = filterDropdowns[3]; // Time Range selector
+const compareFilter = document.querySelector(".compare-dropdown");
+
+// Chart image placeholder
+const chartImg = document.querySelector(".chart-img");
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>True Energy Platform</title>
+
+  <!-- MATERIAL SYMBOLS: Outlined + Rounded -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+
+  <!-- TRUE Layout + Components -->
+  <link rel="stylesheet" href="assets/layout.css" />
+  <link rel="stylesheet" href="assets/tree.css" />
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<!-- MATERIAL SYMBOLS: Outlined + Rounded -->
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+
+</head>
+
+
+
+
+<body>
+
+
+
+  <!-- TOP HEADER -->
+  <header class="top-header">
+     <div class="logo">
+    <img src="images/true-logo.svg" alt="True" />
+  </div>
+
+  </header>
+
+ <!-- BREADCRUMBS -->
+  <div class="breadcrumbs">
+    <span>Home</span> /
+   <span><a href="company-overview.html">Sample Company Ltd</a></span> /
+    <strong>Industrial Site</strong>
+  </div>
+
+<!-- PAGE TITLE -->
+<section class="page-title">
+  <div class="page-title-inner">
+    <div class="title-left">
+      <h1>Industrial Site</h1>
+
+      <div class="location-row">
+        <span class="material-symbols-outlined">location_on</span>
+        Main Road, Brighton
+      </div>
+    </div>
+  </div>
+    <div class="page-actions">
+  <button class="kebab-btn" id="pageKebabBtn" aria-label="Page actions" aria-haspopup="true" aria-expanded="false">
+    <span class="material-symbols-outlined">more_vert</span>
+  </button>
+
+  <div class="kebab-menu" id="pageKebabMenu" role="menu" aria-label="Page actions">
+    <button class="kebab-item" role="menuitem" type="button">Company Preferences</button>
+    <button class="kebab-item" role="menuitem" type="button">Download Company Consumption</button>
+  </div>
+</div>
+
+</section>
+
+
+
+<!-- PAGE TABS -->
+<div class="page-tabs-wrapper" style="max-width: 1260px;">
+  <div class="page-tabs">
+    <a href="site-overview.html" class="page-tab">Site Consumption</a>
+        <a href="site-overview.html" class="page-tab active">Site Normalisation</a>
+    <a href="site-overview-max-demand.html" class="page-tab">Max Demand</a>
+    <a href="site-overview-max-demand.html" class="page-tab">Energy Banding</a>
+    <a href="site-page-data-completeness.html" class="page-tab">Data Completeness</a>
+  </div>
+</div>
+
+
+
+
+  <!-- MAIN LAYOUT -->
+  <div class="layout-wrapper">
+
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <div class="chart-header">
+
+
+  <div class="chart-filters">
+
+ 
+
+    <div class="filter-dropdown">
+  <button class="filter-pill">
+    Last 12 Months 
+    <span class="material-symbols-outlined">expand_more</span>
+  </button>
+
+  <div class="dropdown-menu">
+    <div class="dropdown-title">Select Range</div>
+    <button class="dropdown-item">Last Months</button>
+    <button class="dropdown-item">Last 6 Months</button>
+    <button class="dropdown-item">Last 12 Months</button>
+  </div>
+</div>
+
+  </div>
+
+  
+
+<div class="chart-actions">
+
+
+
+  <!-- Kebab menu -->
+<div class="kebab-wrapper">
+  <button class="view-btn kebab-btn chart-kebab-btn" title="More actions" aria-haspopup="true" aria-expanded="false">
+    <span class="material-symbols-rounded">more_vert</span>
+  </button>
+
+  <div class="dropdown-menu kebab-menu chart-kebab-menu">
+    <button class="dropdown-item" type="button">
+      <span class="material-symbols-rounded">table_view</span>
+      Download Data
+    </button>
+  </div>
+</div>
+
+
+</div>
+
+
+</div>
+
+ <div class="chart-wrapper">
+    <h2 style="margin-top: 0px;">Weather Normalised Power Usage</h2>
+    <!-- Replace with your Chart.js canvas -->
+  </div>
+<!-- NORMALISATION SCATTER (HDD vs kWh) -->
+<section class="scatter-shell" aria-label="Degree days scatter chart">
+  <div class="scatter-head">
+    <div>
+      <strong>Weather sensitivity</strong>
+      <div class="scatter-sub">kWh vs Heating Degree Days (base <span id="scatterBaseTemp">15.5</span>°C)</div>
+    </div>
+    <div class="scatter-kpis">
+      <span class="kpi-pill" id="kpiR2">
+        <span class="material-symbols-outlined">query_stats</span>
+        R² <strong>–</strong>
+      </span>
+      <span class="kpi-pill" id="kpiSlope">
+        <span class="material-symbols-outlined">trending_up</span>
+        kWh / HDD <strong>–</strong>
+      </span>
+    </div>
+  </div>
+
+  <div class="scatter-stage">
+    <canvas id="scatterCanvas" width="980" height="420"></canvas>
+    <div class="scatter-tooltip" id="scatterTip" aria-hidden="true"></div>
+  </div>
+
+  <!-- SCATTER CHART LEGEND -->
+<div class="scatter-legend" aria-label="Scatter chart legend">
+  <div class="legend-item">
+    <span class="legend-dot legend-dot--point"></span>
+    <span>Monthly actual usage</span>
+  </div>
+
+  <div class="legend-item">
+    <span class="legend-line legend-line--fit"></span>
+    <span>Best-fit line (weather sensitivity)</span>
+  </div>
+
+  <div class="legend-item">
+    <span class="legend-info">
+      <span class="material-symbols-outlined">thermostat</span>
+      Base temperature: <strong>15.5°C</strong>
+    </span>
+  </div>
+</div>
+
+
+  <div class="scatter-foot">
+    <span class="muted">Tip: tighter fit = stronger weather dependence. Outliers can indicate operational anomalies.</span>
+  </div>
+</section>
+
+</div>
+
+
+
+    </main>
+
+  </div>
+
+  <div class="context-menu" id="contextMenu"></div>
+
+ <!-- SCRIPTS -->
+<script src="assets/tree.js"></script>
+<script src="assets/layout.js"></script>
+
+
+
+<!-- ===============================
+     UNIVERSAL DROPDOWN LOGIC
+================================ -->
+<script>
+document.querySelectorAll('.filter-dropdown').forEach(drop => {
+  const button = drop.querySelector('.filter-pill');
+
+  button.addEventListener('click', e => {
+    e.stopPropagation();
+    // Close all others
+    document.querySelectorAll('.filter-dropdown.open').forEach(d => {
+      if (d !== drop) d.classList.remove('open');
+    });
+    drop.classList.toggle('open');
+  });
+
+  // Close on outside click
+  document.addEventListener('click', () => {
+    drop.classList.remove('open');
+  });
+});
+</script>
+
+<!-- ===============================
+     COMPARE DROPDOWN LOGIC
+================================ -->
+<script>
+const compareBtn = document.getElementById("compareBtn");
+const compareLabel = document.getElementById("compareLabel");
+
+document.querySelectorAll(".compare-option").forEach(option => {
+  option.addEventListener("click", () => {
+    compareLabel.textContent = option.dataset.value;
+    compareBtn.parentElement.classList.remove("open");
+  });
+});
+</script>
+
+<!-- ===============================
+     CHART TYPE SELECTOR LOGIC
+================================ -->
+<script>
+
+// Elements
+const chartTypeLabel = document.getElementById("chartTypeLabel");
+
+// All dropdowns inside chart-filters
+const chartFilters = document.querySelector(".chart-filters");
+const filterDropdowns = chartFilters.querySelectorAll(".filter-dropdown");
+
+// Filter indices (ordered in your HTML)
+const rangeFilter   = filterDropdowns[1]; // Date range (Year to Date)
+const groupFilter   = filterDropdowns[2]; // Group by Day / Week / Month
+const timeFilter    = filterDropdowns[3]; // Time Range selector
+const compareFilter = document.querySelector(".compare-dropdown");
+
+// Chart image placeholder
+const chartImg = document.querySelector(".chart-img");
+
+
+</script>
+
+<script>
+  // ---- Demo data (replace with your real monthly data) ----
+  // Required fields: m (label), days, meanTempC, kwh_power, kwh_gas
+  const months = [
+    { m:"Jan", days:31, meanTempC:5.2,  kwh_power:520000, kwh_gas:690000 },
+    { m:"Feb", days:28, meanTempC:6.0,  kwh_power:500000, kwh_gas:640000 },
+    { m:"Mar", days:31, meanTempC:8.4,  kwh_power:470000, kwh_gas:560000 },
+    { m:"Apr", days:30, meanTempC:11.0, kwh_power:445000, kwh_gas:480000 },
+    { m:"May", days:31, meanTempC:14.2, kwh_power:430000, kwh_gas:380000 },
+    { m:"Jun", days:30, meanTempC:16.8, kwh_power:415000, kwh_gas:300000 },
+    { m:"Jul", days:31, meanTempC:18.5, kwh_power:420000, kwh_gas:260000 },
+    { m:"Aug", days:31, meanTempC:18.0, kwh_power:428000, kwh_gas:270000 },
+    { m:"Sep", days:30, meanTempC:15.3, kwh_power:438000, kwh_gas:330000 },
+    { m:"Oct", days:31, meanTempC:12.0, kwh_power:460000, kwh_gas:430000 },
+    { m:"Nov", days:30, meanTempC:8.0,  kwh_power:495000, kwh_gas:580000 },
+    { m:"Dec", days:31, meanTempC:6.1,  kwh_power:515000, kwh_gas:660000 },
+  ];
+
+  const state = {
+    utility: "power", // "power" | "gas"
+    baseTemp: 15.5
+  };
+
+  const fmt = (n) => n.toLocaleString("en-GB", { maximumFractionDigits: 0 });
+  const fmt2 = (n) => n.toLocaleString("en-GB", { maximumFractionDigits: 2 });
+
+  function calcHDD(meanTempC, baseTempC, days){
+    return Math.max(0, (baseTempC - meanTempC)) * days;
+  }
+
+  // simple linear regression: y = a + b*x
+  function linReg(points){
+    const n = points.length;
+    let sx=0, sy=0, sxx=0, sxy=0;
+    for(const p of points){ sx+=p.x; sy+=p.y; sxx+=p.x*p.x; sxy+=p.x*p.y; }
+    const denom = (n*sxx - sx*sx) || 1e-9;
+    const b = (n*sxy - sx*sy) / denom;
+    const a = (sy - b*sx) / n;
+
+    // R²
+    const yMean = sy/n;
+    let ssTot=0, ssRes=0;
+    for(const p of points){
+      const yHat = a + b*p.x;
+      ssTot += (p.y - yMean) ** 2;
+      ssRes += (p.y - yHat) ** 2;
+    }
+    const r2 = ssTot > 0 ? 1 - (ssRes/ssTot) : 0;
+    return {a,b,r2};
+  }
+
+  function renderScatter(){
+    document.getElementById("scatterBaseTemp").textContent = state.baseTemp;
+
+    const canvas = document.getElementById("scatterCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // Device pixel ratio for crisp lines
+    const dpr = window.devicePixelRatio || 1;
+    const cssW = canvas.clientWidth;
+    const cssH = Math.round(cssW * (420/980));
+    canvas.style.height = cssH + "px";
+    canvas.width = Math.round(cssW * dpr);
+    canvas.height = Math.round(cssH * dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+
+    const pad = {l:56, r:18, t:18, b:44};
+    const W = cssW, H = cssH;
+    const iw = W - pad.l - pad.r;
+    const ih = H - pad.t - pad.b;
+
+    const series = months.map((d) => {
+      const hdd = calcHDD(d.meanTempC, state.baseTemp, d.days);
+      const kwh = (state.utility === "gas") ? d.kwh_gas : d.kwh_power;
+      return { label: d.m, x: hdd, y: kwh, meanTempC: d.meanTempC };
+    });
+
+    const xMin = 0;
+    const xMax = Math.max(...series.map(p => p.x)) * 1.08;
+    const yMin = Math.min(...series.map(p => p.y)) * 0.92;
+    const yMax = Math.max(...series.map(p => p.y)) * 1.08;
+
+    const xScale = (x) => pad.l + (x - xMin) / (xMax - xMin) * iw;
+    const yScale = (y) => pad.t + (1 - (y - yMin) / (yMax - yMin)) * ih;
+
+    // Background
+    ctx.clearRect(0,0,W,H);
+
+    // Grid
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "rgba(0,0,0,.08)";
+    ctx.fillStyle = "rgba(0,0,0,.65)";
+    ctx.font = "12px system-ui, -apple-system, Segoe UI, Roboto, Arial";
+
+    const xTicks = 5, yTicks = 4;
+    for(let i=0;i<=xTicks;i++){
+      const x = pad.l + (iw/xTicks)*i;
+      ctx.beginPath(); ctx.moveTo(x, pad.t); ctx.lineTo(x, pad.t+ih); ctx.stroke();
+      const val = xMin + (xMax-xMin)*(i/xTicks);
+      ctx.fillText(fmt(Math.round(val)), x-10, pad.t+ih+24);
+    }
+    for(let i=0;i<=yTicks;i++){
+      const y = pad.t + (ih/yTicks)*i;
+      ctx.beginPath(); ctx.moveTo(pad.l, y); ctx.lineTo(pad.l+iw, y); ctx.stroke();
+      const val = yMax - (yMax-yMin)*(i/yTicks);
+      ctx.fillText(fmt(Math.round(val)), 6, y+4);
+    }
+
+    // Axes labels
+    ctx.fillStyle = "rgba(0,0,0,.75)";
+    ctx.fillText("Heating Degree Days (HDD)", pad.l + iw/2 - 72, H-10);
+    ctx.save();
+    ctx.translate(16, pad.t + ih/2 + 50);
+    ctx.rotate(-Math.PI/2);
+    ctx.fillText(`${state.utility === "gas" ? "Gas" : "Power"} usage (kWh)`, 0, 0);
+    ctx.restore();
+
+    // Regression line
+    const fit = linReg(series);
+    document.querySelector("#kpiR2 strong").textContent = fmt2(fit.r2);
+    document.querySelector("#kpiSlope strong").textContent = fmt(Math.round(fit.b));
+
+    const xA = xMin, xB = xMax;
+    const yA = fit.a + fit.b*xA;
+    const yB = fit.a + fit.b*xB;
+
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = "rgba(59,130,246,.95)"; // blue
+    ctx.beginPath();
+    ctx.moveTo(xScale(xA), yScale(yA));
+    ctx.lineTo(xScale(xB), yScale(yB));
+    ctx.stroke();
+
+    // Points
+    const points = [];
+    for(const p of series){
+      const cx = xScale(p.x), cy = yScale(p.y);
+      points.push({ ...p, cx, cy });
+
+      ctx.fillStyle = "rgba(217,70,239,.95)"; // magenta
+      ctx.beginPath(); ctx.arc(cx, cy, 5.5, 0, Math.PI*2); ctx.fill();
+
+      ctx.strokeStyle = "rgba(255,255,255,.95)";
+      ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.arc(cx, cy, 5.5, 0, Math.PI*2); ctx.stroke();
+    }
+
+    // Tooltip hover
+    const tip = document.getElementById("scatterTip");
+    const hitR = 10;
+
+    function showTip(p, mx, my){
+      tip.innerHTML = `
+        <strong>${p.label}</strong><br>
+        <span class="muted">Mean temp:</span> ${p.meanTempC.toFixed(1)}°C<br>
+        <span class="muted">HDD:</span> ${fmt(Math.round(p.x))}<br>
+        <span class="muted">Usage:</span> ${fmt(Math.round(p.y))} kWh
+      `;
+      tip.style.left = mx + "px";
+      tip.style.top = my + "px";
+      tip.style.opacity = 1;
+      tip.setAttribute("aria-hidden", "false");
+    }
+    function hideTip(){
+      tip.style.opacity = 0;
+      tip.setAttribute("aria-hidden", "true");
+    }
+
+    canvas.onmousemove = (e) => {
+      const r = canvas.getBoundingClientRect();
+      const mx = e.clientX - r.left;
+      const my = e.clientY - r.top;
+
+      let found = null;
+      for(const p of points){
+        const dx = mx - p.cx, dy = my - p.cy;
+        if ((dx*dx + dy*dy) <= hitR*hitR){ found = p; break; }
+      }
+      if(found){
+        canvas.style.cursor = "pointer";
+        showTip(found, mx, my);
+      } else {
+        canvas.style.cursor = "default";
+        hideTip();
+      }
+    };
+    canvas.onmouseleave = hideTip;
+  }
+
+  // initial render + resize
+  window.addEventListener("resize", () => renderScatter());
+  renderScatter();
+
+  // If you have base-temp buttons already, call this after updates:
+  // state.baseTemp = newValue; renderScatter();
+  // If you have utility buttons, call:
+  // state.utility = "gas"|"power"; renderScatter();
+</script>
+
+</body>
+</html>

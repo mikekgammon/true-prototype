@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>True Energy Platform xxx</title>
+  <title>True Energy Prototype</title>
 
   <!-- MATERIAL SYMBOLS: Outlined + Rounded -->
   <link rel="stylesheet"
@@ -25,44 +25,80 @@
 
 </head>
   
-<body>
+<body class="nav-rail-collapsed">
+
+ <!-- GOOGLE-STYLE NAV RAIL -->
+ <aside id="navRail" class="nav-rail collapsed">
+
+  <div class="nav-rail-top">
+    <button id="navRailToggle" class="nav-rail-toggle">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+
+  <nav class="nav-rail-links">
+
+    <a href="company-overview.html">
+      <span class="material-symbols-outlined">home</span>
+      <span class="label">Home</span>
+    </a>
+
+    <a href="index-overview.html" class="landed">
+      <span class="material-symbols-outlined">folder</span>
+      <span class="label">Portfolio</span>
+    </a>
+
+    <a href="sustainability.html">
+      <span class="material-symbols-outlined">eco</span>
+      <span class="label">Sustainability</span>
+    </a>
+
+    <a href="trading.html">
+      <span class="material-symbols-outlined">trending_up</span>
+      <span class="label">Trading</span>
+    </a>
+
+    <a href="bill_validation.html">
+      <span class="material-symbols-outlined">receipt_long</span>
+      <span class="label">Bill Validation</span>
+    </a>
+
+    <a href="procurement.html">
+      <span class="material-symbols-outlined">bucket_check</span>
+      <span class="label">Procurement</span>
+    </a>
+
+  </nav>
+
+</aside>
 
 
   <!-- TOP HEADER -->
   <header class="top-header">
-    <div class="logo">true Energy Platform</div>
+     <div class="logo">
+    <img src="images/true-logo.svg" alt="True" />
+  </div>
+
   </header>
 
  <!-- BREADCRUMBS -->
   <div class="breadcrumbs">
     <span>Home</span> /
-    <span><a href="company-overview.html">Fuller's Pubs & Hotels</a></span> /
+    <span><a href="company-overview.html">Sample Company Ltd</a></span> /
     <strong>Portfolio</strong>
   </div>
+
+
+
 
    <!-- PAGE TITLE -->
 <section class="page-title">
   <div class="page-title-inner">
     <div class="title-left">
-      <h1>Fuller's Pubs & Hotels</h1>
+      <h1>Portfolio</h1>
 
-      <div class="location-row">
-        <span class="material-symbols-outlined">location_on</span>
-       Chiswick, London W4 3NN
-      </div>
     </div>
-        <!-- LOA pill -->
-<a href="#"
-   class="loa-pill loa-pill--sm"
-   title="Create a new LOA"
-   aria-label="Create a new LOA (LOA expires on 20/03/26)">
-  
-  <span class="material-symbols-outlined">
-schedule
-</span>
 
-  <span class="loa-text">LOA Expires On: 20/03/26</span>
-</a>
 
   </div>
 
@@ -78,11 +114,17 @@ schedule
 </div>
 </section>
 
+
+
+  <!-- MAIN LAYOUT -->
+  <div class="layout-wrapper">
+
 <!-- PAGE TABS -->
-<div class="page-tabs-wrapper" style="max-width: 1260px;">
+<div class="page-tabs-wrapper" style="max-width: 1260px; margin-left: 0;">
   <div class="page-tabs">
     <a href="index-overview.html" class="page-tab active">Company Consumption</a>
 <a href="index-data.html" class="page-tab">Data Completeness</a>
+<a href="index-sustainability.html" class="page-tab">Sustainability</a>
 <a href="index-true-savings.html" class="page-tab">
   <span class="material-symbols-rounded page-tab-icon">savings</span>
   True Value Tracker
@@ -91,11 +133,6 @@ schedule
 
   </div>
 </div>
-
-  <!-- MAIN LAYOUT -->
-  <div class="layout-wrapper">
-
-
     <!-- MAIN CONTENT -->
    <main class="main-content">
 
@@ -208,14 +245,14 @@ schedule
 
 
 </div>
-  <div class="chart-date-range" style="margin-top: -20px;">
+  <div class="chart-date-range">
   <span class="material-symbols-outlined">calendar_month</span>
   <span>Data range: <strong>1 Jan 2025 – 1 Jan 2026</strong></span>
 </div>
 <div class="report-metrics-row">
 
   <div class="report-metric-card">
-    <div class="metric-label">LAST 12 MONTHS xxx</div>
+    <div class="metric-label">LAST 12 MONTHS</div>
     <div class="metric-value">5,482,205 kWh</div>
   </div>
 
@@ -338,7 +375,7 @@ schedule
   <!-- ROW 1 -->
   <tr>
     <td>
-  <a href="site-overview.html" class="site-link">The Admiralty</a>
+  <a href="site-overview.html" class="site-link">Industrial Site</a>
   <span class="chip status-chip archived">Archived</span>
   
 </td>
