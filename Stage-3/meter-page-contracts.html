@@ -157,22 +157,60 @@
 
 
 
-  <div class="contract-body">
-    <div class="contract-col">
-      <p><strong>Contract Start:</strong> 01 January 2050</p>
-      <p><strong>Date Signed:</strong> 01 August 2025</p>
-      <p><strong>Day Rate:</strong> 2.2 (p/kWh)</p>
-      <p><strong>Standing Charge:</strong> 1 (p/Day)</p>
+<div class="contract-body">
+
+  <!-- ROW 1: TERM -->
+  <div class="contract-term-row">
+    <div class="term-item">
+      <span class="term-label">Start</span>
+      <span class="term-value">01 January 2050</span>
     </div>
 
-    <div class="contract-col">
-      <p><strong>Contract End:</strong> 31 December 2051</p>
-      <p><strong>Annual Consumption:</strong> 666.0 (kWh)</p>
-      <p class="contract-note">*Consumption the contract was based on.</p>
-      <p><strong>Night Rate:</strong> 2.2 (p/kWh)</p>
-      <p><strong>Capacity Charge:</strong> 1 (p/kVA/Day)</p>
+    <div class="term-item">
+      <span class="term-label">End</span>
+      <span class="term-value">31 December 2051</span>
+    </div>
+
+    <div class="term-item">
+      <span class="term-label">Date Signed</span>
+      <span class="term-value">01 August 2025</span>
     </div>
   </div>
+
+  <!-- ROW 2: THREE COLUMNS -->
+  <div class="contract-main-grid">
+
+    <!-- CONSUMPTION -->
+    <div class="contract-group">
+      <h4 class="contract-group-title">Consumption Basis</h4>
+      <p><strong>Annual Consumption:</strong> 666.0 (kWh)</p>
+      <p class="contract-note">
+        *Consumption the contract was based on.
+      </p>
+    </div>
+
+    <!-- RATES -->
+    <div class="contract-group">
+      <h4 class="contract-group-title">Rates</h4>
+      <p><strong>Day Rate:</strong> 2.2 (p/kWh)</p>
+      <p><strong>Night Rate:</strong> 2.2 (p/kWh)</p>
+    </div>
+
+    <!-- CHARGES -->
+    <div class="contract-group">
+      <h4 class="contract-group-title">Charges</h4>
+      <p><strong>Standing Charge:</strong> 1 (p/Day)</p>
+      <p><strong>Capacity Charge:</strong> 1 (p/kVA/Day)</p>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
 
   <div class="contract-footer">
     <button class="pdf-btn">

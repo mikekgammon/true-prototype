@@ -1080,7 +1080,7 @@ body.nav-rail-expanded .page-title {
 }
 
 .contract-body {
-  display: grid;
+  display: block; /* important */
   grid-template-columns: 1fr 1fr;
   gap: 40px;
 }
@@ -5787,4 +5787,129 @@ h2 {
 
 .contract-meta-row{
   margin-top: 10px;
+}
+.contract-body--grouped {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.contract-group-title {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+/* TERM ROW */
+.contract-term-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.term-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.term-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.term-value {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* MAIN GRID BELOW TERM */
+.contract-main-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.contract-group-title {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.contract-body--grouped {
+  margin-top: 16px;
+}
+
+/* TERM ROW */
+.contract-term-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.term-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.term-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.term-value {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* THREE COLUMN GRID */
+.contract-main-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.contract-group-title {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.contract-group p {
+  margin-bottom: 6px;
+}
+.contract-body {
+  display: block; /* important */
+  margin-top: 16px;
+}
+/* TERM ROW */
+.contract-term-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* 3 COLUMN GRID UNDER TERM */
+.contract-main-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
 }
