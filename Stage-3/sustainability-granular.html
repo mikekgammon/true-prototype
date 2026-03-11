@@ -297,12 +297,12 @@
 
     /* ── COLLAPSIBLE PANEL (Battery) ── */
     .expandable-panel {
-      background: #fff; border: none;
-      border-radius: 0; margin-bottom: 20px; overflow: hidden;
+      background: #FAFAFA; border: 1px solid var(--border-subtle);
+      border-radius: var(--radius); margin-bottom: 20px; overflow: hidden;
     }
     .panel-trigger {
       width: 100%; border: none; background: none;
-      padding: 14px 0;
+      padding: 14px 20px;
       display: flex; align-items: center; justify-content: space-between;
       cursor: pointer; font-family: inherit;
     }
@@ -315,7 +315,7 @@
     }
     .panel-trigger .chevron { font-size: 20px; color: var(--text-main); transition: transform .2s; }
     .panel-trigger.open .chevron { transform: rotate(180deg); }
-    .panel-body { padding: 0; }
+    .panel-body { padding: 0 20px 20px; }
 
     /* Slider controls */
     .slider-group { margin-bottom: 14px; }
@@ -519,6 +519,7 @@
     </div>
 
     <!-- MATCHING PROFILE CHART -->
+    <div style="height:15px;"></div>
     <div class="card">
       <div class="card__head">
         <div>
@@ -640,15 +641,14 @@
 
     <!-- BATTERY STORAGE CONTROLS — collapsible -->
     <div class="expandable-panel">
-      <button class="panel-trigger open" onclick="this.classList.toggle('open'); this.nextElementSibling.style.display = this.classList.contains('open') ? 'block' : 'none';">
+      <button class="panel-trigger" onclick="this.classList.toggle('open'); this.nextElementSibling.style.display = this.classList.contains('open') ? 'block' : 'none';">
         <div class="panel-trigger-left">
           <span class="material-symbols-outlined" style="font-size:20px; color:#111;">battery_charging_full</span>
           <span class="h3">Battery Storage Settings</span>
-          <span class="badge">Saved 1.62 tCO₂</span>
         </div>
         <span class="material-symbols-outlined chevron">expand_more</span>
       </button>
-      <div class="panel-body">
+      <div class="panel-body" style="display:none;">
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
           <div>
             <div class="slider-group">
@@ -675,6 +675,7 @@
 
         <!-- Battery summary chips -->
         <div class="battery-summary">
+          <span class="bat-chip" style="background:#e7f6e9; border-color:#bbdfc3;"><strong>Saved</strong> 1.62 tCO₂</span>
           <span class="bat-chip"><strong>Shifted</strong> 18 MWh</span>
           <span class="bat-chip"><strong>Cycles</strong> 1.8</span>
           <span class="bat-chip"><strong>Losses</strong> 3.2 MWh</span>
@@ -683,47 +684,19 @@
       </div>
     </div>
 
-    <!-- EMISSIONS IMPACT SUMMARY -->
-    <div style="font-size:16px; font-weight:600; color:#111; margin-bottom:12px; margin-top:40px;">Emissions Impact</div>
-    <div class="emissions-row">
-      <div class="emission-card">
-        <div class="emission-icon avoided">
-          <span class="material-symbols-outlined">eco</span>
-        </div>
-        <div>
-          <div class="emission-label">Avoided Emissions</div>
-          <div class="emission-value">47.4 <span class="emission-unit">tCO₂</span></div>
-        </div>
-      </div>
-      <div class="emission-card">
-        <div class="emission-icon unmatched">
-          <span class="material-symbols-outlined">warning</span>
-        </div>
-        <div>
-          <div class="emission-label">Unmatched Emissions</div>
-          <div class="emission-value">13.74 <span class="emission-unit">tCO₂</span></div>
-        </div>
-      </div>
-      <div class="emission-card">
-        <div class="emission-icon baseline">
-          <span class="material-symbols-outlined">cloud</span>
-        </div>
-        <div>
-          <div class="emission-label">Baseline (No Matching)</div>
-          <div class="emission-value">61.14 <span class="emission-unit">tCO₂</span></div>
-        </div>
-      </div>
-    </div>
-
     <!-- CONTEXTUAL ACTIONS -->
-    <div style="display:flex; gap:12px; margin-bottom:28px;">
-      <a href="#" style="display:inline-flex; align-items:center; gap:6px; padding:10px 18px; background:#111111; color:#fff; border-radius:8px; font-size:14px; font-weight:500; text-decoration:none; font-family:inherit;">
+    <div style="display:flex; gap:12px; margin-top:40px; margin-bottom:28px;">
+      <a href="#" style="flex:1; display:inline-flex; align-items:center; justify-content:center; gap:6px; padding:10px 18px; background:#fff; color:#111; border:1px solid #d4d4d8; border-radius:8px; font-size:14px; font-weight:500; text-decoration:none; font-family:inherit;">
         <span class="material-symbols-outlined" style="font-size:18px;">lightbulb</span>
         Explore ways to improve your CFE score
       </a>
-      <a href="#" style="display:inline-flex; align-items:center; gap:6px; padding:10px 18px; background:#fff; color:#111; border:1px solid #d4d4d8; border-radius:8px; font-size:14px; font-weight:500; text-decoration:none; font-family:inherit;">
+      <a href="#" style="flex:1; display:inline-flex; align-items:center; justify-content:center; gap:6px; padding:10px 18px; background:#fff; color:#111; border:1px solid #d4d4d8; border-radius:8px; font-size:14px; font-weight:500; text-decoration:none; font-family:inherit;">
         <span class="material-symbols-outlined" style="font-size:18px;">compare_arrows</span>
         Compare with another farm
+      </a>
+      <a href="#" style="flex:1; display:inline-flex; align-items:center; justify-content:center; gap:6px; padding:10px 18px; background:#fff; color:#111; border:1px solid #d4d4d8; border-radius:8px; font-size:14px; font-weight:500; text-decoration:none; font-family:inherit;">
+        <span class="material-symbols-outlined" style="font-size:18px;">eco</span>
+        Emissions Impact
       </a>
     </div>
 
