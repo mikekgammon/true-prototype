@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Create Scheme</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+<link rel="stylesheet" href="assets/layout.css">
+
+
+</head>
+
+<body class="nav-rail-collapsed">
+
+<!-- NAV RAIL -->
+
+<aside id="navRail" class="nav-rail collapsed">
+
+<div class="nav-rail-top">
+<button id="navRailToggle" class="nav-rail-toggle">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+
+<nav class="nav-rail-links">
+
+<a href="company-overview.html">
+<span class="material-symbols-outlined">home</span>
+<span class="label">Home</span>
+</a>
+
+<a href="index-overview.html">
+<span class="material-symbols-outlined">folder</span>
+<span class="label">Portfolio</span>
+</a>
+
+<a href="sustainability.html" class="landed">
+<span class="material-symbols-outlined">eco</span>
+<span class="label">Sustainability</span>
+</a>
+
+<a href="trading.html">
+<span class="material-symbols-outlined">trending_up</span>
+<span class="label">Trading</span>
+</a>
+
+</nav>
+
+</aside>
+
+
+<header class="top-header">
+
+<div class="logo">
+<a href="company-overview.html">
+<img src="images/true-logo.svg">
+</a>
+</div>
+
+</header>
+
+
+<div class="breadcrumbs">
+
+<span><a href="company-overview.html">Home</a></span> /
+<span><a href="company-overview.html">Sample Company Ltd</a></span> /
+<span><strong>Sustainability</strong></span>
+
+</div>
+
+
+<div class="layout-wrapper">
+
+<main class="main-content">
+
+        <!-- PAGE TITLE -->
+<section class="page-title" style="margin: 20px 0 20px 0; padding: 0;">
+
+  <div class="title-left">
+    <h1>Sustainability</h1>
+
+  </div>
+
+
+</section>
+
+
+<div class="content-top-menu">
+
+<div class="menu-left">
+<a href="sustainability.html" class="tab-link">Overview</a>
+<a href="sustainability-projects.html" class="tab-link">Projects</a>
+<a href="sustainability-comparissons.html" class="tab-link">Comparisons</a>
+<a href="sustainability-strategy.html" class="tab-link">Strategy</a>
+<a href="sustainability-schemes.html" class="tab-link landed">Schemes</a>
+<a href="sustainability-targets.html" class="tab-link">Targets</a>
+<a href="sustainability-emissions.html" class="tab-link">Emissions</a>
+</div>
+
+</div>
+
+
+
+<section class="scheme-wizard">
+
+
+<h3>
+Enter your scheme details
+</h3>
+
+
+<p class="scheme-intro">
+
+Schemes group projects into a compliance reporting structure. Selecting the ESOS phase and reporting boundaries enables automated Year 1–3 action plan tracking and submission-ready summaries.
+
+</p>
+
+
+
+<form id="schemeDetailsForm" class="scheme-form">
+
+
+<div class="scheme-field">
+
+<label>Scheme Name</label>
+
+<input
+type="text"
+placeholder="Scheme Name"
+class="scheme-input"
+/>
+
+<div class="scheme-help">
+Make it memorable. Give your scheme a name
+</div>
+
+</div>
+
+
+
+<div class="scheme-field">
+
+<label>Compliance Framework</label>
+
+<div class="select-wrapper">
+
+<select class="project-filter">
+
+<option selected>
+ESOS
+</option>
+
+</select>
+
+<span class="material-symbols-outlined select-chevron">
+expand_more
+</span>
+
+</div>
+
+<div class="scheme-help">
+Defines the compliance reporting structure used for this scheme
+</div>
+
+</div>
+
+
+
+<div class="scheme-field">
+
+<label>ESOS Phase</label>
+
+<div class="scheme-phase-toggle">
+
+<button
+type="button"
+class="phase-option active"
+data-phase="3">
+Phase 3
+</button>
+
+<button
+type="button"
+class="phase-option"
+data-phase="4">
+Phase 4
+</button>
+
+</div>
+
+<div class="scheme-help">
+Switching phase updates reporting boundaries and action-plan tracking
+</div>
+
+
+<div class="scheme-phase-warning is-hidden" id="phase4Warning">
+
+<span class="material-symbols-outlined">info</span>
+
+<p>
+
+Phase 4 submission deadlines have not yet been confirmed. Dates shown are provisional and will update automatically once official ESOS deadlines are published.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="scheme-field">
+
+<label>Reporting Boundaries</label>
+
+<div class="select-wrapper">
+
+<select id="boundaries" class="project-filter">
+
+<option value="P3">
+Official ESOS Phase 3 Boundaries
+</option>
+
+<option value="P4">
+Phase 4 (Awaiting confirmed deadlines)
+</option>
+
+<option value="CUSTOM">
+Custom Reporting Boundaries
+</option>
+
+</select>
+
+<span class="material-symbols-outlined select-chevron">
+expand_more
+</span>
+
+</div>
+
+<div class="scheme-help">
+Used to categorise projects into ESOS Year 1–3 reporting periods
+</div>
+
+</div>
+
+
+
+<div class="scheme-date-grid">
+
+
+<div class="scheme-field">
+
+<label>Reporting Period Start</label>
+
+<input
+type="date"
+id="startDate"
+class="scheme-input"
+value="2023-12-06"
+readonly
+/>
+
+</div>
+
+
+<div class="scheme-field">
+
+<label>Reporting Period End</label>
+
+<input
+type="date"
+id="endDate"
+class="scheme-input"
+value="2027-12-05"
+readonly
+/>
+
+</div>
+
+
+</div>
+
+
+
+<div class="scheme-field">
+
+<label>Submission Deadline</label>
+
+<input
+type="date"
+id="submissionDate"
+class="scheme-input"
+value="2027-12-05"
+readonly
+/>
+
+</div>
+
+
+
+<div class="scheme-field">
+
+<label>Action Plan Tracking</label>
+
+<div class="scheme-toggle">
+
+<input type="checkbox" checked>
+
+<span>
+
+Automatically categorise projects into Year 1, 2 and 3 based on implementation date and ESOS boundaries
+
+</span>
+
+</div>
+
+</div>
+
+
+
+<div class="scheme-actions">
+
+<a href="sustainability-schemes.html" class="btn-outline" style="border:none; border-radius: 8px; padding: 10px 20px; text-decoration: none; display: inline-block; background-color: lightgrey; color: black;">
+  Back
+</a>
+
+<button class="btn-primary">
+Save & Continue
+</button>
+
+</div>
+
+
+</form>
+
+</section>
+
+
+</main>
+
+</div>
+
+
+<script src="assets/layout.js"></script>
+
+
+<script>
+
+/* Phase toggle */
+
+const phaseButtons = document.querySelectorAll(".phase-option")
+const phase4Warning = document.getElementById("phase4Warning")
+
+phaseButtons.forEach(btn => {
+
+btn.addEventListener("click", () => {
+
+phaseButtons.forEach(b => b.classList.remove("active"))
+btn.classList.add("active")
+
+const phase = btn.dataset.phase
+
+phase4Warning.classList.toggle("is-hidden", phase !== "4")
+
+})
+
+})
+
+</script>
+
+
+</body>
+</html>

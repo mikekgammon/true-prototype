@@ -165,8 +165,8 @@ body{
   cursor:pointer;
 }
 .legend-item.is-active{
-  border-color:#000;
-  background:#000;
+  border-color:#111111;
+  background:#111111;
   color:#fff !important;
 }
 .legend-swatch{
@@ -276,10 +276,10 @@ body.panel-open{ overflow:hidden; }
   vertical-align:-4px;
 }
 
-.pill-confirmed{ background:#9be37a !important; color:#000 !important; font-weight:600; }
-.pill-partial{ background:#f3a33c !important; color:#000 !important; }
-.pill-untrusted{ background:#e74c3c !important; color:#000 !important; }
-.pill-muted{ background:#ddd !important; color:#000 !important; }
+.pill-confirmed{ background:#9be37a !important; color:#111111 !important; font-weight:600; }
+.pill-partial{ background:#f3a33c !important; color:#111111 !important; }
+.pill-untrusted{ background:#e74c3c !important; color:#111111 !important; }
+.pill-muted{ background:#ddd !important; color:#111111 !important; }
 
 /* Value ladder (value panel) */
 .value-ladder{ list-style:none; margin:12px 0 0; padding:0; }
@@ -323,7 +323,7 @@ body.panel-open{ overflow:hidden; }
 
 /* Panel action buttons */
 .nudge-btn{
-  background:#000;
+  background:#111111;
   color:#fff !important;
   border:none;
   border-radius:16px;

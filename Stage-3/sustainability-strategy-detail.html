@@ -68,11 +68,12 @@
 
   </header>
 
-<!-- BREADCRUMBS -->
+ <!-- BREADCRUMBS -->
   <div class="breadcrumbs">
     <span><a href="company-overview.html">Home</a></span> /
    <span><a href="company-overview.html">Sample Company Ltd</a></span> /
-    <span><strong>Sustainability</strong></span> 
+    <span><a href="sustainability.html">Sustainability</a></span>  /
+    <span><strong>Strategies</strong></span> 
   </div>
 
 
@@ -101,129 +102,188 @@
 
       <div class="content-top-menu">
         <div class="menu-left">
-          <a href="sustainability.html" class="tab-link">Overview</a>
-          <a href="sustainability-projects.html" class="tab-link">Projects</a>
-          <a href="sustainability-comparissons.html" class="tab-link">Comparissons</a>
-          <a href="sustainability-strategy.html" class="tab-link landed">Strategy</a>
-          <a href="sustainability-schemes.html" class="tab-link">Schemes</a>
-          <a href="sustainability-targets.html" class="tab-link">Targets</a>
-          <a href="sustainability-emissions.html" class="tab-link">Emissions</a>
+         <a href="sustainability.html" class="tab-link">Overview</a>
+         <a href="sustainability-strategy-overview.html" class="tab-link landed">Strategy</a>
+         <a href="sustainability-projects.html" class="tab-link">Projects</a>
+         <a href="sustainability-strategy.html" class="tab-link">Comparissons</a>
+         <a href="sustainability-strategy-overview.html" class="tab-link">Schemes</a>
+         <a href="sustainability-targets.html" class="tab-link">Targets</a>
+         <a href="sustainability-emissions.html" class="tab-link">Emissions</a>
         </div>
 
         <span class="material-symbols-outlined more-menu">more_vert</span>
       </div>
 <div class="report-metrics-row">
 
-  <!-- 1 -->
+  <!-- 1) Scope -->
   <div class="report-metric-card">
-    <div class="metric-label">Total potential savings</div>
+    <div class="metric-label">Estimated net savings</div>
     <div class="metric-value">£343,323</div>
-    <div class="card-meta">Estimated annual savings across all strategies</div>
+    <div class="card-meta">Cumulative savings across all projects (estimate)</div>
+
   </div>
 
-  <!-- 2 -->
+  <!-- 2) Recency / urgency -->
   <div class="report-metric-card">
-    <div class="metric-label">Carbon reduction potential</div>
-    <div class="metric-value">716.5 <span class="unit">tCO₂e</span></div>
-    <div class="card-meta">Total emissions reduction across strategies</div>
+    <div class="metric-label">Carbon savings</div>
+    <div class="metric-value">716.487 <span class="unit">tCO₂e</span></div>
+    <div class="card-meta">Estimated emissions reduction</div>
   </div>
 
-  <!-- 3 -->
+  <!-- 3) Severity -->
   <div class="report-metric-card">
-    <div class="metric-label">Average payback period</div>
-    <div class="metric-value">3.4 <span class="unit">years</span></div>
-    <div class="card-meta">Average return period for strategy investments</div>
+    <div class="metric-label">Maximum net cash commitment</div>
+    <div class="metric-value">£233,625</div>
+    <div class="card-meta">Peak investment required across projects</div>
   </div>
 
 </div>
     <!-- LEFT: TEXT CONTENT -->
     <div class="sust-hero__text">
-<h3>Strategies</h3>
-<p>
-Strategic pathways for reducing energy consumption, emissions, and operating costs across the portfolio. 
-Each strategy groups together recommended initiatives and technologies to evaluate investment options 
-and prioritise the most effective route to decarbonisation.
-</p>
+<h3>Execution Strategy</h3>
+      <p>
+        The execution strategy analysis provides an outlook on the financial and carbon forecast across your proposed investments. By clicking add projects, you can change a project's start date allowing you to plan a journey to net zero that meets your investment budget, payback and carbon saving requirements.
+      </p>
  
     </div>
-<!-- Projects (prototype HTML) -->
-
-<section class="card">
 
 
+<div id="contentArea">
 
-  <!-- Table -->
-  <div class="table-wrap">
-    <table class="new-table compact-table hover">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Owner</th>
-          <th class="align-right">Actions</th>
-        </tr>
-      </thead>
-<tbody>
+  <!-- Filter chips (True prototype style) -->
+<div class="chip-row" role="group" aria-label="Filters">
+  <button type="button" class="chip" data-chip="all" aria-pressed="false">
+    <span class="chip__label">5 Years</span>
+  </button>
 
-<tr>
-  <td data-label="Name"><a class="link" href="sustainability-strategy-detail.html">ESOS Recommendations – Implementation Strategy</a></td>
-  <td data-label="Owner">True Changemaker</td>
-  <td class="align-right">
-    <button class="icon-btn" type="button">
-      <span class="material-symbols-outlined">more_vert</span>
-    </button>
-  </td>
-</tr>
+  <button type="button" class="chip is-selected" data-chip="projects" aria-pressed="true">
+    <span class="chip__icon material-symbols-outlined" aria-hidden="true">check</span>
+    <span class="chip__label">10 Years</span>
+  </button>
 
-<tr>
-  <td data-label="Name"><a class="link" href="sustainability-strategy-detail.html">Initial Net Zero Strategy</a></td>
-  <td data-label="Owner">True Changemaker</td>
-  <td class="align-right">
-    <button class="icon-btn" type="button">
-      <span class="material-symbols-outlined">more_vert</span>
-    </button>
-  </td>
-</tr>
+  <button type="button" class="chip" data-chip="comparisons" aria-pressed="false">
+    <span class="chip__label">2050</span>
+  </button>
 
-<tr>
-  <td data-label="Name"><a class="link" href="sustainability-strategy-detail.html">Low Investment Strategy</a></td>
-  <td data-label="Owner">True Changemaker</td>
-  <td class="align-right">
-    <button class="icon-btn" type="button">
-      <span class="material-symbols-outlined">more_vert</span>
-    </button>
-  </td>
-</tr>
 
-<tr>
-  <td data-label="Name"><a class="link" href="sustainability-strategy-detail.html">Restaurant Decarbonisation Strategy</a></td>
-  <td data-label="Owner">True Changemaker</td>
-  <td class="align-right">
-    <button class="icon-btn" type="button">
-      <span class="material-symbols-outlined">more_vert</span>
-    </button>
-  </td>
-</tr>
+</div>
 
-<tr>
-  <td data-label="Name"><a class="link" href="sustainability-strategy-detail.html">Solar & VO Restaurant Rollout</a></td>
-  <td data-label="Owner">True Changemaker</td>
-  <td class="align-right">
-    <button class="icon-btn" type="button">
-      <span class="material-symbols-outlined">more_vert</span>
-    </button>
-  </td>
-</tr>
+  <div class="sust-hero" style="margin-top: 30px;">
 
-</tbody>
-    </table>
+      <div class="content-top-menu">
+        <div class="menu-left">
+         <a href="sustainability.html" class="tab-link">CASH FLOW AND COMMITMENT</a>
+         <a href="sustainability-strategy.html" class="tab-link">ENERGY COSTS</a>
+         <a href="sustainability-targets.html" class="tab-link">TARGET VS STRATEGY</a>
+         <a href="sustainability-targets.html" class="tab-link landed">DECARBON PATHWAY</a>
+        </div>
+
+      </div>
   </div>
 
 
-</section>
 
 
+  <p>See how energy demand is expected to change over time for each site — and which projects drive the step-changes.
+Hover a dot for headline impact; click to open full project detail (savings, capex, supplier).</p>
 
 
+<!-- Chart card -->
+<div class="card"> 
+  <div class="card__head">
+    <div>
+      <div class="h2">Projected consumption trajectory</div>
+      <div class="muted">Electricity (kWh) · 2025–2040</div>
+    </div>
+
+
+<div class="toolbar" aria-label="Chart controls">
+
+  <!-- Fuel scope (single-select) -->
+  <div class="seg seg--metric" id="fuelControl" role="radiogroup" aria-label="Fuel scope">
+    <button class="seg__btn is-active" data-fuel="all" aria-checked="true" role="radio">All energy</button>
+    <button class="seg__btn" data-fuel="gas" aria-checked="false" role="radio">Gas only</button>
+    <button class="seg__btn" data-fuel="power" aria-checked="false" role="radio">Power only</button>
+  </div>
+
+  <span class="toolbar__divider" aria-hidden="true"></span>
+
+  <!-- Metric (single-select) -->
+  <div class="seg seg--metric" id="metricControl" role="radiogroup" aria-label="Metric">
+    <button class="seg__btn is-active" data-metric="energy" aria-checked="true" role="radio">Energy</button>
+    <button class="seg__btn" data-metric="cost" aria-checked="false" role="radio">Cost</button>
+    <button class="seg__btn" data-metric="carbon" aria-checked="false" role="radio">Carbon</button>
+  </div>
+
+</div>
+
+
+  </div>
+
+  <div class="card__body">
+    <canvas id="trajectoryChart" height="120"></canvas>
+  </div>
+</div>
+<div class="chart-legend">
+  <button class="legend-item is-active" data-site="all">All sites</button>
+
+  <button class="legend-item is-active" data-site="Intercontinental The George">
+    <span class="legend-swatch is-site-1"></span>
+    Intercontinental The George
+  </button>
+
+  <button class="legend-item is-active" data-site="Kimpton Blythswood Square">
+    <span class="legend-swatch is-site-2"></span>
+    Kimpton Blythswood Square
+  </button>
+
+  <button class="legend-item is-active" data-site="Holiday Inn Edinburgh City West">
+    <span class="legend-swatch is-site-3"></span>
+    Holiday Inn Edinburgh City West
+  </button>
+</div>
+
+  <div class="note-box" style="margin-top: 20px;">
+  <span class="material-symbols-outlined note-ico" aria-hidden="true">info</span>
+  <p class="note-text">
+    The financial figures in this analysis can incorporate your company’s discount rate, which hasn’t been set.
+    To update the rate used, please contact your account manager.
+  </p>
+</div>
+
+<div class="image-wrapper" style="margin-top: 20px;;">
+  <img src="images/slider.png" alt="Descriptive alt text" class="responsive-img">
+</div>
+
+
+</div>
+
+
+<!-- Side panel (reuse your existing if you already have one) -->
+<aside id="projectPanel" class="side-panel" aria-hidden="true">
+  <div class="side-panel__head">
+    <div>
+      <div id="ppTitle" class="side-panel__title">Project</div>
+      <div id="ppMeta" class="side-panel__meta muted"></div>
+    </div>
+    <button class="side-panel__close" type="button" aria-label="Close">✕</button>
+  </div>
+
+  <div class="side-panel__body">
+    <div class="kv">
+      <div class="kv__row"><div class="muted">Site</div><div id="ppSite"></div></div>
+      <div class="kv__row"><div class="muted">Supplier</div><div id="ppSupplier"></div></div>
+      <div class="kv__row"><div class="muted">kWh saving</div><div id="ppKwh"></div></div>
+      <div class="kv__row"><div class="muted">Cost saving</div><div id="ppCost"></div></div>
+      <div class="kv__row"><div class="muted">Capex</div><div id="ppCapex"></div></div>
+    </div>
+
+    <div class="actions">
+      <button class="btn">View proposal</button>
+      <button class="btn btn--ghost">Mark as Live</button>
+    </div>
+  </div>
+</aside>
     </main>
   </div>
   <!-- SCRIPTS -->
@@ -1035,12 +1095,23 @@ const lineDatasets = trajectories.map(t => ({
 const dotDatasets = projects.map(p => ({
   type: "scatter",
   label: p.name,
-  data: [{ x: p.year, y: trajectories.find(t => t.site === p.site)?.kwh[getYearIndex(p.year)] ?? null }],
-  pointRadius: 6,
-  pointHoverRadius: 8,
-  // Attach project id for click handling
+  data: [{
+    x: p.year,
+    y: trajectories.find(t => t.site === p.site)?.kwh[getYearIndex(p.year)] ?? null
+  }],
+
+  // Make markers obvious
+  pointRadius: 8,
+  pointHoverRadius: 11,
+
+  // White halo + strong outline
+  pointBackgroundColor: "#ffffff",
+  pointBorderColor: "#111",
+  pointBorderWidth: 3,
+
   _projectId: p.id
 }));
+
 
 const chart = new Chart(ctx, {
   data: { datasets: [...lineDatasets, ...dotDatasets] },
@@ -1178,6 +1249,10 @@ legendItems.forEach(btn => {
     updateMetricsForSite(site);
   });
 });
+
+
+
+
 
 </script>
 

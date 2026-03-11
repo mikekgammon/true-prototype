@@ -1,0 +1,983 @@
+<!--
+Hedge Policy-Aware Trading Visibility (Prototype)
+Save as: hedge-policy-visibility.html
+Open in browser (or Live Server). No build tools required.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TRUE | Hedge Policy-Aware Trading Visibility (Prototype)</title>
+
+  <!-- Material Symbols (optional) -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+  <style>
+    :root{
+      --bg:#0b0b0c;
+      --panel:#101012;
+      --panel2:#0e0e10;
+      --text:#f4f4f5;
+      --muted:#b6b6bb;
+      --subtle:#8a8a90;
+      --line:#2a2a2f;
+
+      --good:#2ecc71;
+      --warn:#f4b23a;
+      --bad:#ff4d4d;
+
+      --chip:#151518;
+      --shadow: 0 10px 26px rgba(0,0,0,.35);
+      --radius:14px;
+      --radius2:12px;
+      --max:1260px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family:var(--sans);
+      background: radial-gradient(1200px 600px at 20% -20%, rgba(255,255,255,.06), transparent 50%),
+                  radial-gradient(900px 500px at 100% 0%, rgba(255,255,255,.04), transparent 45%),
+                  var(--bg);
+      color:var(--text);
+    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding:28px 18px 60px; }
+
+    /* Top bar */
+    .topbar{
+      display:flex; align-items:flex-start; justify-content:space-between;
+      gap:16px; margin-bottom:18px;
+    }
+    .title{
+      display:flex; flex-direction:column; gap:6px;
+    }
+    .title h1{
+      margin:0; font-size:22px; font-weight:650; letter-spacing:.2px;
+    }
+    .title .subtitle{
+      color:var(--muted); font-size:13px; line-height:1.3;
+      max-width:820px;
+    }
+    .crumbs{
+      display:flex; gap:8px; align-items:center; color:var(--subtle); font-size:12px;
+    }
+    .crumbs .dot{ opacity:.6; }
+    .actions{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .pill{
+      display:inline-flex; gap:8px; align-items:center;
+      border:1px solid var(--line); background:rgba(255,255,255,.03);
+      padding:8px 10px; border-radius:999px; font-size:12px; color:var(--muted);
+    }
+    .pill strong{ color:var(--text); font-weight:650; }
+    .btn{
+      cursor:pointer; user-select:none;
+      display:inline-flex; gap:8px; align-items:center;
+      padding:9px 12px; border-radius:10px;
+      border:1px solid var(--line); background:rgba(255,255,255,.03);
+      color:var(--text); font-size:12px;
+      transition:transform .08s ease, background .12s ease;
+    }
+    .btn:hover{ background:rgba(255,255,255,.06); }
+    .btn:active{ transform:translateY(1px); }
+    .icon{
+      font-family:"Material Symbols Outlined";
+      font-size:18px; line-height:1; color:var(--muted);
+    }
+
+    /* Layout grid */
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:14px;
+      align-items:start;
+    }
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    /* Cards */
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .card .hd{
+      padding:14px 14px 10px;
+      display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
+      border-bottom:1px solid rgba(255,255,255,.04);
+      background:rgba(0,0,0,.10);
+    }
+    .card .hd h2{
+      margin:0; font-size:13px; font-weight:700; letter-spacing:.25px;
+      text-transform:uppercase;
+    }
+    .card .hd .hint{
+      margin-top:4px;
+      color:var(--muted); font-size:12px; line-height:1.25;
+      max-width:520px;
+    }
+    .card .bd{ padding:14px; }
+
+    .row{ display:flex; gap:12px; flex-wrap:wrap; }
+    .spacer{ height:10px; }
+
+    /* mini metric cards */
+    .metric{
+      flex:1 1 180px;
+      min-width:180px;
+      background:rgba(0,0,0,.18);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:var(--radius2);
+      padding:12px;
+    }
+    .metric .k{
+      color:var(--muted);
+      font-size:11px;
+      letter-spacing:.25px;
+      text-transform:uppercase;
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      margin-bottom:6px;
+    }
+    .metric .v{
+      font-size:20px;
+      font-weight:720;
+      letter-spacing:.2px;
+      display:flex; align-items:baseline; gap:8px;
+    }
+    .metric .v small{ font-size:12px; color:var(--muted); font-weight:600; }
+    .tag{
+      display:inline-flex; align-items:center; gap:6px;
+      padding:4px 8px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.09);
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:11px;
+      white-space:nowrap;
+    }
+    .tag.good{ border-color:rgba(46,204,113,.35); color:#c8f6db; }
+    .tag.warn{ border-color:rgba(244,178,58,.35); color:#ffe7b9; }
+    .tag.bad{ border-color:rgba(255,77,77,.35); color:#ffd2d2; }
+    .tag .dot{
+      width:7px; height:7px; border-radius:50%;
+      background:var(--muted);
+      opacity:.75;
+    }
+    .tag.good .dot{ background:var(--good); }
+    .tag.warn .dot{ background:var(--warn); }
+    .tag.bad .dot{ background:var(--bad); }
+
+    /* Tabs */
+    .tabs{
+      display:flex; gap:8px; flex-wrap:wrap;
+      padding:10px 14px; border-bottom:1px solid rgba(255,255,255,.04);
+      background:rgba(0,0,0,.12);
+    }
+    .tab{
+      cursor:pointer;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.02);
+      color:var(--muted);
+      font-size:12px;
+      user-select:none;
+    }
+    .tab.active{
+      background:rgba(255,255,255,.08);
+      color:var(--text);
+      border-color:rgba(255,255,255,.16);
+    }
+
+    /* Progress / policy bar */
+    .policy-wrap{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:10px;
+    }
+    .policy-bar{
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(0,0,0,.22);
+      border-radius:999px;
+      overflow:hidden;
+      height:14px;
+      position:relative;
+    }
+    .policy-fill{
+      height:100%;
+      width:0%;
+      background:linear-gradient(90deg, rgba(46,204,113,.95), rgba(46,204,113,.55));
+      transition:width .25s ease;
+    }
+    .policy-marker{
+      position:absolute; top:-6px;
+      width:2px; height:26px;
+      background:rgba(244,178,58,.9);
+      opacity:.95;
+    }
+    .policy-legend{
+      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+      color:var(--muted);
+      font-size:12px;
+    }
+    .policy-legend b{ color:var(--text); }
+    .policy-legend .mono{ font-family:var(--mono); font-size:12px; color:var(--muted); }
+
+    /* Tables */
+    table{
+      width:100%;
+      border-collapse:collapse;
+      font-size:12px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:12px;
+      background:rgba(0,0,0,.18);
+    }
+    th, td{
+      padding:10px 10px;
+      border-bottom:1px solid rgba(255,255,255,.06);
+      text-align:left;
+      vertical-align:top;
+    }
+    th{
+      color:var(--muted);
+      font-weight:650;
+      text-transform:uppercase;
+      letter-spacing:.22px;
+      font-size:11px;
+      background:rgba(255,255,255,.03);
+    }
+    tr:last-child td{ border-bottom:none; }
+    td.right, th.right{ text-align:right; }
+
+    /* Curve mini chart */
+    .curve{
+      border:1px solid rgba(255,255,255,.07);
+      background:rgba(0,0,0,.18);
+      border-radius:12px;
+      padding:10px;
+      overflow:hidden;
+    }
+    .curve svg{ width:100%; height:120px; display:block; }
+    .curve .meta{
+      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+      margin-top:8px; color:var(--muted); font-size:12px;
+    }
+    .curve .meta b{ color:var(--text); }
+
+    /* Scenario */
+    .scenario{
+      border:1px solid rgba(255,255,255,.07);
+      background:rgba(0,0,0,.18);
+      border-radius:12px;
+      padding:12px;
+    }
+    .scenario .line{
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      color:var(--muted); font-size:12px; margin-bottom:8px;
+    }
+    input[type="range"]{
+      width:100%;
+      accent-color:#ffffff;
+    }
+    .scenario .impact{
+      margin-top:10px;
+      display:flex; gap:10px; flex-wrap:wrap;
+    }
+    .impact .box{
+      flex:1 1 200px;
+      border:1px solid rgba(255,255,255,.07);
+      background:rgba(255,255,255,.03);
+      border-radius:12px;
+      padding:10px;
+    }
+    .impact .box .k{ font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.22px; }
+    .impact .box .v{ font-size:18px; font-weight:720; margin-top:6px; }
+    .impact .box .s{ color:var(--muted); font-size:12px; margin-top:3px; }
+
+    /* Right column "Investigation feed" */
+    .feed{
+      display:flex; flex-direction:column; gap:10px;
+    }
+    .note{
+      border:1px solid rgba(255,255,255,.07);
+      background:rgba(0,0,0,.18);
+      border-radius:12px;
+      padding:12px;
+    }
+    .note .t{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      font-weight:700; font-size:12px; letter-spacing:.25px; text-transform:uppercase;
+    }
+    .note p{
+      margin:8px 0 0;
+      color:var(--muted);
+      font-size:12px; line-height:1.35;
+    }
+    .bullets{
+      margin:8px 0 0; padding:0 0 0 16px;
+      color:var(--muted); font-size:12px; line-height:1.45;
+    }
+
+    /* Footer */
+    .footer{
+      margin-top:14px;
+      color:var(--subtle);
+      font-size:12px;
+      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+    }
+    .kbd{
+      font-family:var(--mono);
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.04);
+      padding:2px 6px;
+      border-radius:7px;
+      color:var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="topbar">
+      <div class="title">
+        <div class="crumbs">
+          <span>TRUE</span><span class="dot">•</span>
+          <span>Trading</span><span class="dot">•</span>
+          <span>Hedge Policy Visibility</span>
+        </div>
+        <h1>Hedge Policy-Aware Trading Visibility <span style="color:var(--muted); font-weight:600;">(Prototype)</span></h1>
+        <div class="subtitle">
+          Connects <b>forward curves</b>, <b>hedge ratio</b>, <b>open exposure</b>, <b>time-to-delivery</b> and a <b>policy target</b> into one orchestration layer.
+          <span style="color:var(--subtle);">No trade recommendations — contextual risk visibility only.</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <div class="pill"><strong id="companyName">ABC Manufacturing</strong> <span style="opacity:.6;">•</span> UK Power + Gas</div>
+        <div class="pill">Data Trust <strong id="dataTrust">92%</strong></div>
+        <button class="btn" id="btnMockRefresh" title="Randomise sample data">
+          <span class="icon">refresh</span>Mock refresh
+        </button>
+        <button class="btn" id="btnCopySummary" title="Copy a concise risk summary">
+          <span class="icon">content_copy</span>Copy summary
+        </button>
+      </div>
+    </div>
+
+    <div class="grid">
+
+      <!-- LEFT: Main orchestration -->
+      <div class="card">
+        <div class="hd">
+          <div>
+            <h2>Policy alignment at a glance</h2>
+            <div class="hint">Pick a season to see hedge ratio vs policy, open exposure, and scenario impact. Designed to sit “above” Trading + Portfolio + Bill Validation.</div>
+          </div>
+          <div id="riskTag" class="tag warn"><span class="dot"></span><span>Policy gap</span></div>
+        </div>
+
+        <div class="tabs" id="seasonTabs">
+          <div class="tab active" data-season="WINTER_26">Winter 26</div>
+          <div class="tab" data-season="SUMMER_27">Summer 27</div>
+          <div class="tab" data-season="CAL_27">Cal 27</div>
+        </div>
+
+        <div class="bd">
+
+          <div class="row">
+            <div class="metric">
+              <div class="k">
+                <span>Hedge ratio (current)</span>
+                <span class="tag" id="hedgeStatus"><span class="dot"></span><span>—</span></span>
+              </div>
+              <div class="v"><span id="hedgeRatio">—</span><small>of forecast volume hedged</small></div>
+            </div>
+
+            <div class="metric">
+              <div class="k">
+                <span>Open exposure</span>
+                <span class="tag" id="openStatus"><span class="dot"></span><span>—</span></span>
+              </div>
+              <div class="v"><span id="openMWh">—</span><small>MWh</small></div>
+            </div>
+
+            <div class="metric">
+              <div class="k">
+                <span>Time to delivery start</span>
+                <span class="tag" id="timeStatus"><span class="dot"></span><span>—</span></span>
+              </div>
+              <div class="v"><span id="timeToStart">—</span><small>months</small></div>
+            </div>
+
+            <div class="metric">
+              <div class="k">
+                <span>Bill validation confidence</span>
+                <span class="tag good"><span class="dot"></span><span>Trusted</span></span>
+              </div>
+              <div class="v"><span id="billConf">—</span><small>invoice lines validated</small></div>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <!-- Policy bar -->
+          <div class="policy-wrap">
+            <div class="policy-legend">
+              <div>
+                Policy target by now: <b id="policyTargetNow">—</b>
+                <span class="mono">•</span>
+                Time marker: <span class="mono" id="policyNowLabel">—</span>
+              </div>
+              <div>
+                Current hedge: <b id="hedgeNowLabel">—</b>
+                <span class="mono">•</span>
+                Gap: <b id="policyGapLabel">—</b>
+              </div>
+            </div>
+
+            <div class="policy-bar" aria-label="Policy alignment bar">
+              <div class="policy-fill" id="policyFill"></div>
+              <div class="policy-marker" id="policyMarker" title="Policy target (by now)"></div>
+            </div>
+
+            <div class="policy-legend" style="color:var(--subtle);">
+              <span>0%</span>
+              <span>25%</span>
+              <span>50%</span>
+              <span>75%</span>
+              <span>100%</span>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <!-- Curve + Scenario -->
+          <div class="row">
+            <div class="curve" style="flex: 1 1 460px; min-width:320px;">
+              <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;">
+                <div style="font-weight:700; font-size:12px; letter-spacing:.22px; text-transform:uppercase; color:var(--muted);">
+                  Forward curve (illustrative)
+                </div>
+                <div class="tag" id="curveMoveTag"><span class="dot"></span><span>—</span></div>
+              </div>
+
+              <svg viewBox="0 0 600 120" role="img" aria-label="Forward curve mini chart">
+                <path id="curveLine" d="" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2.2" />
+                <path id="curveArea" d="" fill="rgba(255,255,255,.08)" stroke="none" />
+                <g id="curvePoints"></g>
+              </svg>
+
+              <div class="meta">
+                <div>Now: <b id="curveNow">—</b> <span style="color:var(--subtle)">£/MWh</span></div>
+                <div>3m ago: <b id="curvePrev">—</b> <span style="color:var(--subtle)">£/MWh</span></div>
+                <div>Δ: <b id="curveDelta">—</b></div>
+              </div>
+            </div>
+
+            <div class="scenario" style="flex: 1 1 420px; min-width:320px;">
+              <div class="line">
+                <div style="font-weight:700; letter-spacing:.22px; text-transform:uppercase;">Scenario impact</div>
+                <div>Adjust market move: <b class="mono" id="deltaPriceLabel">£10/MWh</b></div>
+              </div>
+
+              <input type="range" id="deltaPrice" min="-50" max="50" step="1" value="10" />
+
+              <div class="impact">
+                <div class="box">
+                  <div class="k">Estimated cost impact on open exposure</div>
+                  <div class="v" id="costImpact">—</div>
+                  <div class="s" id="costImpactNote">Based on open MWh × price move</div>
+                </div>
+                <div class="box">
+                  <div class="k">At-risk season (delivery window)</div>
+                  <div class="v" id="seasonWindow">—</div>
+                  <div class="s">Used for urgency context — not trade guidance</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <!-- Join-the-dots table -->
+          <table aria-label="Join the dots: data → visibility → risk">
+            <thead>
+              <tr>
+                <th>Signal</th>
+                <th>What it means</th>
+                <th class="right">Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Consumption vs Forecast</b></td>
+                <td id="consumptionLine">—</td>
+                <td class="right">Portfolio</td>
+              </tr>
+              <tr>
+                <td><b>Invoice Confidence</b></td>
+                <td id="billLine">—</td>
+                <td class="right">Bill Validation</td>
+              </tr>
+              <tr>
+                <td><b>Hedge Alignment</b></td>
+                <td id="policyLine">—</td>
+                <td class="right">Trading + Contracts</td>
+              </tr>
+              <tr>
+                <td><b>Next Decision Window</b></td>
+                <td id="decisionLine">—</td>
+                <td class="right">Trading Desk</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="footer">
+            <div>Keyboard: <span class="kbd">1</span> Winter 26 · <span class="kbd">2</span> Summer 27 · <span class="kbd">3</span> Cal 27</div>
+            <div style="opacity:.9;">Prototype intent: “contextualise risk” — never “recommend a trade”.</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RIGHT: Investigation / notes panel -->
+      <div class="feed">
+        <div class="card">
+          <div class="hd">
+            <div>
+              <h2>Investigation prompts</h2>
+              <div class="hint">The “why” layer you can bring into TrueDI later. Keeps this prototype lightweight but directionally coherent.</div>
+            </div>
+          </div>
+          <div class="bd">
+            <div class="note">
+              <div class="t">
+                <span>Why is the user copying the curve daily?</span>
+                <span class="tag" style="margin-left:auto;"><span class="dot"></span><span>Hypothesis</span></span>
+              </div>
+              <ul class="bullets">
+                <li>They’re tracking a trigger threshold for the next tranche.</li>
+                <li>They’re updating an internal budget / forecast workbook.</li>
+                <li>They don’t have an export + delta view in-product.</li>
+              </ul>
+            </div>
+
+            <div class="note">
+              <div class="t">
+                <span>Why is the MtM user checking daily?</span>
+                <span class="tag" style="margin-left:auto;"><span class="dot"></span><span>Persona</span></span>
+              </div>
+              <ul class="bullets">
+                <li>Finance reassurance / board pack narrative (“in/out of the money”).</li>
+                <li>Validation of timing decision (psychology + accountability).</li>
+                <li>Monitoring open exposure impacts on valuation.</li>
+              </ul>
+            </div>
+
+            <div class="note">
+              <div class="t">
+                <span>What unlocks modelling?</span>
+                <span class="tag good" style="margin-left:auto;"><span class="dot"></span><span>Foundations</span></span>
+              </div>
+              <ul class="bullets">
+                <li>Trusted consumption baseline (12–24 months).</li>
+                <li>Validated cost stack (bill validation confidence).</li>
+                <li>Contracts + tolerance band metadata.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="bd">
+            <p style="margin:0; color:var(--muted); font-size:12px; line-height:1.45;">
+              This prototype is intentionally “thin”: it shows how a single orchestration layer can join the dots between
+              <b>Trading</b>, <b>Portfolio</b>, and <b>Bill Validation</b> without creating a new module.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // -----------------------------
+    // Sample data + policy rules
+    // -----------------------------
+    const SEASONS = {
+      WINTER_26: {
+        label: "Winter 26",
+        window: "01 Oct 2026 – 31 Mar 2027",
+        monthsToStart: 7,                 // mock
+        forecastMWh: 8200,
+        hedgedMWh: 4800,
+        billValidatedPct: 96,
+        consumptionVsForecast: -2.8,      // %
+        forwardCurve: [102, 104, 108, 113, 118, 121, 119, 117], // illustrative points
+        curvePrev: 110                    // 3m ago "average"
+      },
+      SUMMER_27: {
+        label: "Summer 27",
+        window: "01 Apr 2027 – 30 Sep 2027",
+        monthsToStart: 13,
+        forecastMWh: 7400,
+        hedgedMWh: 3100,
+        billValidatedPct: 92,
+        consumptionVsForecast: +1.4,
+        forwardCurve: [88, 90, 93, 95, 97, 96, 94, 92],
+        curvePrev: 91
+      },
+      CAL_27: {
+        label: "Cal 27",
+        window: "01 Jan 2027 – 31 Dec 2027",
+        monthsToStart: 10,
+        forecastMWh: 15600,
+        hedgedMWh: 8600,
+        billValidatedPct: 94,
+        consumptionVsForecast: -0.6,
+        forwardCurve: [96, 98, 101, 105, 108, 107, 104, 102],
+        curvePrev: 99
+      }
+    };
+
+    // Simple hedge policy (illustrative): target hedge ratio by time-to-start
+    // You can swap these out for Greg's real policy bands.
+    // Interpretation: "By now" target depends on monthsToStart.
+    function policyTargetByMonthsToStart(m) {
+      if (m >= 18) return 0.20;   // >=18 months out: 20%
+      if (m >= 12) return 0.60;   // 12–18 months: 60%
+      if (m >= 6)  return 0.80;   // 6–12 months: 80%
+      if (m >= 0)  return 0.95;   // <6 months: 95%
+      return 1.00;
+    }
+
+    // -----------------------------
+    // DOM helpers
+    // -----------------------------
+    const $ = (sel) => document.querySelector(sel);
+    const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+
+    const els = {
+      tabs: $("#seasonTabs"),
+      hedgeRatio: $("#hedgeRatio"),
+      openMWh: $("#openMWh"),
+      timeToStart: $("#timeToStart"),
+      billConf: $("#billConf"),
+      dataTrust: $("#dataTrust"),
+      riskTag: $("#riskTag"),
+      hedgeStatus: $("#hedgeStatus"),
+      openStatus: $("#openStatus"),
+      timeStatus: $("#timeStatus"),
+
+      policyFill: $("#policyFill"),
+      policyMarker: $("#policyMarker"),
+      policyTargetNow: $("#policyTargetNow"),
+      policyNowLabel: $("#policyNowLabel"),
+      hedgeNowLabel: $("#hedgeNowLabel"),
+      policyGapLabel: $("#policyGapLabel"),
+
+      curveLine: $("#curveLine"),
+      curveArea: $("#curveArea"),
+      curvePoints: $("#curvePoints"),
+      curveNow: $("#curveNow"),
+      curvePrev: $("#curvePrev"),
+      curveDelta: $("#curveDelta"),
+      curveMoveTag: $("#curveMoveTag"),
+
+      deltaRange: $("#deltaPrice"),
+      deltaLabel: $("#deltaPriceLabel"),
+      costImpact: $("#costImpact"),
+      seasonWindow: $("#seasonWindow"),
+
+      consumptionLine: $("#consumptionLine"),
+      billLine: $("#billLine"),
+      policyLine: $("#policyLine"),
+      decisionLine: $("#decisionLine"),
+
+      btnMockRefresh: $("#btnMockRefresh"),
+      btnCopySummary: $("#btnCopySummary")
+    };
+
+    let currentSeasonKey = "WINTER_26";
+
+    function fmtPct(x){ return `${Math.round(x*100)}%`; }
+    function fmtNum(n){ return n.toLocaleString("en-GB"); }
+    function fmtMoney(n){
+      const sign = n < 0 ? "-" : "";
+      const abs = Math.abs(n);
+      return `${sign}£${abs.toLocaleString("en-GB", {maximumFractionDigits:0})}`;
+    }
+
+    function setTag(tagEl, state, label){
+      tagEl.classList.remove("good","warn","bad");
+      tagEl.classList.add(state);
+      tagEl.querySelector("span:last-child").textContent = label;
+    }
+
+    function riskStateFromGap(gapRatio){
+      // gapRatio = hedge - policyTarget (negative = behind)
+      if (gapRatio >= 0) return {state:"good", label:"On policy"};
+      if (gapRatio > -0.10) return {state:"warn", label:"Slightly behind"};
+      return {state:"bad", label:"Behind policy"};
+    }
+
+    function timeTagFromMonths(m){
+      if (m <= 2) return {state:"bad", label:"Imminent"};
+      if (m <= 6) return {state:"warn", label:"Closing window"};
+      return {state:"good", label:"In runway"};
+    }
+
+    function openTagFromPct(openPct){
+      if (openPct <= 0.10) return {state:"good", label:"Low open"};
+      if (openPct <= 0.35) return {state:"warn", label:"Moderate open"};
+      return {state:"bad", label:"High open"};
+    }
+
+    // Draw a simple curve
+    function drawCurve(points){
+      // Normalize to SVG box (600x120 with padding)
+      const w = 600, h = 120, padX = 16, padY = 14;
+      const min = Math.min(...points), max = Math.max(...points);
+      const span = (max - min) || 1;
+
+      const xStep = (w - padX*2) / (points.length - 1);
+      const mapX = (i) => padX + i*xStep;
+      const mapY = (v) => padY + (h - padY*2) * (1 - (v - min)/span);
+
+      let d = "";
+      points.forEach((v,i)=>{
+        const x = mapX(i), y = mapY(v);
+        d += (i===0 ? `M ${x} ${y}` : ` L ${x} ${y}`);
+      });
+
+      // Area path
+      const lastX = mapX(points.length-1);
+      const baseY = h - padY;
+      const areaD = `${d} L ${lastX} ${baseY} L ${padX} ${baseY} Z`;
+
+      els.curveLine.setAttribute("d", d);
+      els.curveArea.setAttribute("d", areaD);
+
+      // Points
+      els.curvePoints.innerHTML = "";
+      points.forEach((v,i)=>{
+        const x = mapX(i), y = mapY(v);
+        const c = document.createElementNS("http://www.w3.org/2000/svg","circle");
+        c.setAttribute("cx", x); c.setAttribute("cy", y);
+        c.setAttribute("r", 3.2);
+        c.setAttribute("fill","rgba(255,255,255,.85)");
+        c.setAttribute("opacity","0.95");
+        els.curvePoints.appendChild(c);
+      });
+
+      return {min, max, now: points[points.length-1]};
+    }
+
+    function updateScenario(){
+      const s = SEASONS[currentSeasonKey];
+      const delta = Number(els.deltaRange.value);
+      els.deltaLabel.textContent = `${delta >= 0 ? "£" : "-£"}${Math.abs(delta)}/MWh`;
+
+      const openMWh = Math.max(0, s.forecastMWh - s.hedgedMWh);
+      const impact = openMWh * delta; // simplistic: open MWh × move
+      els.costImpact.textContent = fmtMoney(impact);
+
+      // Add a short hint about direction
+      els.costImpactNote = $("#costImpactNote");
+      if (delta >= 0){
+        $("#costImpactNote").textContent = "If market rises by this amount, open exposure becomes more expensive.";
+      } else {
+        $("#costImpactNote").textContent = "If market falls by this amount, open exposure becomes cheaper (but MtM may change).";
+      }
+    }
+
+    function updateJoinDots(){
+      const s = SEASONS[currentSeasonKey];
+      const cons = s.consumptionVsForecast;
+
+      els.consumptionLine.textContent =
+        `Current period consumption is ${cons >= 0 ? "↑" : "↓"} ${Math.abs(cons).toFixed(1)}% vs forecast. ` +
+        `This is the volume signal that can push spend above/below budget even when price is fixed.`;
+
+      els.billLine.textContent =
+        `${s.billValidatedPct}% of invoice line items validated; cost baseline considered ${s.billValidatedPct >= 95 ? "trusted" : "partial"} for forecasting.`;
+
+      const hedgeRatio = s.hedgedMWh / s.forecastMWh;
+      const target = policyTargetByMonthsToStart(s.monthsToStart);
+      const gap = hedgeRatio - target;
+
+      els.policyLine.textContent =
+        `Hedge ratio ${Math.round(hedgeRatio*100)}% vs policy target ${Math.round(target*100)}% at ${s.monthsToStart} months to delivery. ` +
+        `Gap: ${gap >= 0 ? "+" : ""}${Math.round(gap*100)}pp.`;
+
+      // a lightweight “decision window” prompt (not advice)
+      if (gap < 0){
+        els.decisionLine.textContent =
+          `Policy indicates a shortfall. Typical desk action: confirm forecast, validate contract/tolerance, then consider next tranche window with the trading team.`;
+      } else {
+        els.decisionLine.textContent =
+          `Policy alignment achieved. Typical desk action: monitor volatility + forecast drift; maintain optionality for later tranches.`;
+      }
+    }
+
+    function updatePolicyBar(hedgeRatio, policyTarget){
+      // Fill = current hedge ratio
+      const fillPct = Math.max(0, Math.min(1, hedgeRatio)) * 100;
+      const markerPct = Math.max(0, Math.min(1, policyTarget)) * 100;
+
+      els.policyFill.style.width = `${fillPct}%`;
+      els.policyMarker.style.left = `calc(${markerPct}% - 1px)`;
+
+      els.policyTargetNow.textContent = fmtPct(policyTarget);
+      els.policyNowLabel.textContent = "by now";
+      els.hedgeNowLabel.textContent = fmtPct(hedgeRatio);
+
+      const gapPP = Math.round((hedgeRatio - policyTarget) * 100);
+      els.policyGapLabel.textContent = `${gapPP >= 0 ? "+" : ""}${gapPP}pp`;
+    }
+
+    function updateRiskTags(hedgeRatio, policyTarget, openPct, monthsToStart){
+      const gap = hedgeRatio - policyTarget;
+      const r = riskStateFromGap(gap);
+
+      setTag(els.riskTag, r.state, r.label);
+      setTag(els.hedgeStatus, r.state, r.label);
+
+      const o = openTagFromPct(openPct);
+      setTag(els.openStatus, o.state, o.label);
+
+      const t = timeTagFromMonths(monthsToStart);
+      setTag(els.timeStatus, t.state, t.label);
+    }
+
+    function updateCurveUI(s){
+      const now = s.forwardCurve[s.forwardCurve.length-1];
+      const prev = s.curvePrev;
+      const delta = now - prev;
+
+      drawCurve(s.forwardCurve);
+
+      els.curveNow.textContent = now.toFixed(0);
+      els.curvePrev.textContent = prev.toFixed(0);
+      els.curveDelta.textContent = `${delta >= 0 ? "+" : ""}${delta.toFixed(0)} £/MWh`;
+
+      if (Math.abs(delta) < 2) setTag(els.curveMoveTag, "good", "Stable vs 3m");
+      else if (Math.abs(delta) < 8) setTag(els.curveMoveTag, "warn", "Moving vs 3m");
+      else setTag(els.curveMoveTag, "bad", "Volatile vs 3m");
+    }
+
+    function render(){
+      const s = SEASONS[currentSeasonKey];
+
+      const hedgeRatio = s.hedgedMWh / s.forecastMWh;
+      const openMWh = Math.max(0, s.forecastMWh - s.hedgedMWh);
+      const openPct = openMWh / s.forecastMWh;
+      const policyTarget = policyTargetByMonthsToStart(s.monthsToStart);
+
+      // Top metrics
+      els.hedgeRatio.textContent = `${Math.round(hedgeRatio*100)}%`;
+      els.openMWh.textContent = fmtNum(openMWh);
+      els.timeToStart.textContent = `${s.monthsToStart}`;
+      els.billConf.textContent = `${s.billValidatedPct}%`;
+
+      // Right label
+      els.seasonWindow.textContent = `${s.label} (${s.window})`;
+
+      // Data trust (proxy from bill validated + consumption signal)
+      const trust = Math.max(80, Math.min(98, Math.round((s.billValidatedPct*0.6) + (92*0.4))));
+      els.dataTrust.textContent = `${trust}%`;
+
+      updatePolicyBar(hedgeRatio, policyTarget);
+      updateRiskTags(hedgeRatio, policyTarget, openPct, s.monthsToStart);
+      updateCurveUI(s);
+      updateScenario();
+      updateJoinDots();
+    }
+
+    function setSeason(seasonKey){
+      currentSeasonKey = seasonKey;
+      $$("#seasonTabs .tab").forEach(t => t.classList.toggle("active", t.dataset.season === seasonKey));
+      render();
+    }
+
+    // Mock refresh: slightly perturb values
+    function mockRefresh(){
+      const s = SEASONS[currentSeasonKey];
+
+      // Nudge hedged MWh and curve values a bit (bounded)
+      const nud = (min,max) => Math.floor(Math.random()*(max-min+1))+min;
+
+      s.hedgedMWh = Math.max(0, Math.min(s.forecastMWh, s.hedgedMWh + nud(-350, 350)));
+      s.billValidatedPct = Math.max(85, Math.min(99, s.billValidatedPct + nud(-2, 2)));
+      s.consumptionVsForecast = Math.max(-8, Math.min(8, +(s.consumptionVsForecast + nud(-1,1)*0.6).toFixed(1)));
+
+      // Curve: adjust slightly
+      s.forwardCurve = s.forwardCurve.map(v => v + nud(-2, 3));
+      s.curvePrev = s.curvePrev + nud(-2, 2);
+
+      render();
+    }
+
+    // Copy summary for Paul / Greg / Slack
+    async function copySummary(){
+      const s = SEASONS[currentSeasonKey];
+      const hedgeRatio = s.hedgedMWh / s.forecastMWh;
+      const openMWh = Math.max(0, s.forecastMWh - s.hedgedMWh);
+      const policyTarget = policyTargetByMonthsToStart(s.monthsToStart);
+      const gapPP = Math.round((hedgeRatio - policyTarget) * 100);
+      const delta = Number(els.deltaRange.value);
+      const impact = openMWh * delta;
+
+      const text =
+`Hedge Policy Visibility — ${s.label}
+• Hedge ratio: ${Math.round(hedgeRatio*100)}% (policy target by now: ${Math.round(policyTarget*100)}%, gap: ${gapPP>=0?"+":""}${gapPP}pp)
+• Open exposure: ${openMWh.toLocaleString("en-GB")} MWh
+• Time to delivery: ${s.monthsToStart} months (window: ${s.window})
+• Scenario: ${delta>=0?"+":"-"}£${Math.abs(delta)}/MWh → ${impact<0?"-":"+"}£${Math.abs(Math.round(impact)).toLocaleString("en-GB")} on open exposure
+• Bill validation confidence: ${s.billValidatedPct}%`;
+
+      try{
+        await navigator.clipboard.writeText(text);
+        const old = els.btnCopySummary.innerHTML;
+        els.btnCopySummary.innerHTML = `<span class="icon">check</span>Copied`;
+        setTimeout(()=> els.btnCopySummary.innerHTML = old, 1000);
+      }catch(e){
+        alert("Copy failed (browser permissions). Here it is:\n\n" + text);
+      }
+    }
+
+    // Events
+    els.tabs.addEventListener("click", (e)=>{
+      const tab = e.target.closest(".tab");
+      if (!tab) return;
+      setSeason(tab.dataset.season);
+    });
+
+    els.deltaRange.addEventListener("input", updateScenario);
+    els.btnMockRefresh.addEventListener("click", mockRefresh);
+    els.btnCopySummary.addEventListener("click", copySummary);
+
+    // Keyboard shortcuts
+    document.addEventListener("keydown", (e)=>{
+      if (e.key === "1") setSeason("WINTER_26");
+      if (e.key === "2") setSeason("SUMMER_27");
+      if (e.key === "3") setSeason("CAL_27");
+    });
+
+    // Init
+    render();
+  </script>
+</body>
+</html>
