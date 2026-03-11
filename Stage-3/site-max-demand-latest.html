@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TCR Max Demand Visualiser — True Energy Platform</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── TRUE DESIGN TOKENS ── */
+    :root {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 14px;
+      --bg: #ffffff;
+      --border-subtle: #e4e4e7;
+      --text-main: #111111;
+      --text-muted: #6b7280;
+      --highlight: #F5F5F5;
+      --radius: 12px;
+      --radius-sm: 8px;
+
+      /* Band palette — pink family */
+      --band-1: #DEB4D2;   /* soft lavender pink */
+      --band-2: #C48A9F;   /* muted rose */
+      --band-3: #C04A74;   /* power pink */
+      --band-4: #FF66A2;   /* hot pink */
+      /* 30% tint of each (mixed 70% white) */
+      --band-1-light: #f4e9f0;
+      --band-2-light: #eee0e6;
+      --band-3-light: #ebd0db;
+      --band-4-light: #ffb3d1;
+      --demand-fill: #e5e7eb;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text-main);
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-size: 18px;
+      vertical-align: middle;
+    }
+
+    /* ── TOP HEADER (True style: black bar) ── */
+    .top-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #111111;
+      color: #fff;
+      padding: 14px 28px;
+    }
+    .logo { font-size: 22px; font-weight: 700; }
+
+    /* ── NAV RAIL ── */
+    .nav-rail {
+      position: fixed; top: 0; left: 0; height: 100vh;
+      background: #ffffff;
+      border-right: 1px solid var(--border-subtle);
+      display: flex; flex-direction: column;
+      width: 64px; z-index: 2000;
+    }
+    .nav-rail-top { height: 48px; display: flex; align-items: center; justify-content: center; }
+    .nav-rail-toggle {
+      background: none; border: none; cursor: pointer; padding: 8px; border-radius: 6px;
+    }
+    .nav-rail-links {
+      margin-top: 14px; display: flex; flex-direction: column; gap: 6px; padding: 0 6px;
+    }
+    .nav-rail-links a {
+      display: flex; flex-direction: column; align-items: center; gap: 2px;
+      padding: 10px 0; text-decoration: none; color: #111; border-radius: 8px;
+      font-size: 10px;
+    }
+    .nav-rail-links a:hover { background: #f3f4f6; }
+    .nav-rail-links a.landed {
+      background: #e5e7eb; font-weight: 600; color: #111111; padding: 12px 0;
+    }
+    .nav-rail .material-symbols-outlined {
+      font-size: 22px !important;
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+    }
+
+    /* ── SHIFT CONTENT ── */
+    .top-header, .breadcrumbs, .layout-wrapper { margin-left: 64px; }
+
+    /* ── BREADCRUMBS ── */
+    .breadcrumbs {
+      padding: 12px 28px 0 28px;
+      font-size: 13px; color: #111111;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .breadcrumbs a { color: #111111; text-decoration: none; }
+    .breadcrumbs a:hover { text-decoration: underline; }
+
+    /* ── LAYOUT ── */
+    .layout-wrapper {
+      display: flex; flex-direction: column;
+      gap: 24px; padding: 18px 28px 48px 28px;
+      align-items: flex-start;
+    }
+    .main-content {
+      flex: 1; min-width: 0; max-width: 1280px;
+      margin: 0 auto; padding: 0; width: 100%;
+    }
+
+    /* ── PAGE TITLE ROW ── */
+    .page-title-row {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 24px;
+    }
+    .page-title-left {
+      display: flex; align-items: center; gap: 16px;
+    }
+    .back-btn {
+      display: flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px; border-radius: 8px;
+      border: 1px solid var(--border-subtle); background: #fff;
+      cursor: pointer; text-decoration: none; color: #111;
+    }
+    .page-title-left h1 { font-size: 24px; font-weight: 600; margin: 0; }
+    .env-badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 12px; font-weight: 600; color: #fff;
+      background: #111; padding: 4px 12px; border-radius: 20px;
+    }
+    .ask-ai-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 14px; font-weight: 500; color: #111;
+      background: #fff; border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm); padding: 8px 16px;
+      cursor: pointer; font-family: inherit; text-decoration: none;
+    }
+
+    /* ── CONTROLS BAR ── */
+    .controls-bar {
+      display: flex; align-items: center; gap: 16px;
+      flex-wrap: wrap; margin-bottom: 24px;
+    }
+    .control-label { font-size: 13px; color: var(--text-main); font-weight: 500; }
+    .select-field {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 500; color: #111;
+      background: #fff; border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm); padding: 8px 14px;
+      font-family: inherit; cursor: pointer;
+    }
+    .date-field {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 500; color: #111;
+      background: #fff; border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm); padding: 8px 14px;
+    }
+    .date-field .material-symbols-outlined { font-size: 16px; color: var(--text-main); }
+    .btn-analyse {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #111111; color: #fff;
+      padding: 8px 24px; border-radius: var(--radius-sm);
+      border: none; cursor: pointer; font-family: inherit;
+      font-size: 14px; font-weight: 500;
+    }
+
+    /* ── METRIC CARDS ── */
+    .metrics-row {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 16px; margin-bottom: 24px;
+    }
+    .metric-card {
+      background: #fff; border: 1px solid #111111;
+      border-radius: var(--radius); padding: 16px 20px;
+    }
+    .metric-card-label {
+      font-size: 13px; font-weight: 500; color: var(--text-main);
+      display: flex; align-items: center; gap: 6px;
+      margin-bottom: 8px;
+    }
+    .metric-card-label .material-symbols-outlined { font-size: 16px; }
+    .metric-card-value { font-size: 28px; font-weight: 600; color: #111; }
+    .metric-card-unit { font-size: 13px; font-weight: 300; color: var(--text-main); }
+    .metric-card-sub { font-size: 12px; color: var(--text-main); margin-top: 4px; font-weight: 400; }
+
+    /* ── CHIPS ── */
+    .chip-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 11px; font-weight: 500; color: #111;
+      background: #F5F5F5; padding: 3px 10px; border-radius: 20px;
+      border: 1px solid var(--border-subtle);
+    }
+    .band-badge {
+      display: inline-flex; align-items: center;
+      font-size: 11px; font-weight: 600; color: #fff;
+      padding: 3px 12px; border-radius: 20px;
+      margin-top: 8px;
+    }
+
+    /* ── CHART CARD ── */
+    .chart-card {
+      background: #fff; border: 1px solid var(--border-subtle);
+      border-radius: var(--radius); padding: 24px;
+      margin-bottom: 24px;
+    }
+    .chart-card-head {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .chart-card-head .h3 { font-size: 16px; font-weight: 600; color: #111; }
+    .chart-legend {
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .legend-item {
+      display: flex; align-items: center; gap: 6px; font-size: 12px; color: #111; font-weight: 500;
+    }
+    .legend-dot {
+      display: inline-block; width: 10px; height: 10px; border-radius: 50%;
+    }
+    .legend-line {
+      display: inline-block; width: 18px; height: 2px;
+    }
+    .legend-dashed {
+      display: inline-block; width: 18px; height: 0;
+      border-top: 2px dashed;
+    }
+    .daily-max-toggle {
+      font-size: 13px; font-weight: 500; color: #111;
+      background: #fff; border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm); padding: 6px 14px;
+      cursor: pointer; font-family: inherit;
+    }
+    .chart-placeholder {
+      width: 100%; height: 320px;
+      background: #fff;
+      position: relative; overflow: hidden;
+    }
+    .chart-placeholder svg { width: 100%; height: 100%; }
+
+    /* ── BAND DISTRIBUTION ── */
+    .band-dist-card {
+      background: #fff; border: 1px solid var(--border-subtle);
+      border-radius: var(--radius); padding: 24px;
+      margin-bottom: 24px;
+    }
+    .band-dist-card .h3 {
+      font-size: 16px; font-weight: 600; color: #111; margin-bottom: 20px;
+    }
+    .band-row {
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 14px;
+    }
+    .band-row:last-child { margin-bottom: 0; }
+    .band-label {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 500; color: #111;
+      min-width: 80px;
+    }
+    .band-dot {
+      display: inline-block; width: 10px; height: 10px; border-radius: 50%;
+    }
+    .band-bar-track {
+      flex: 1; height: 10px; background: #F5F5F5;
+      border-radius: 5px; overflow: hidden;
+    }
+    .band-bar-fill {
+      height: 100%; border-radius: 5px;
+    }
+    .band-stat {
+      font-size: 13px; font-weight: 500; color: #111;
+      min-width: 100px; text-align: right;
+    }
+
+    /* ── DATA SOURCES ── */
+    .data-sources { font-size: 12px; color: var(--text-muted); text-align: right; padding: 12px 0; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .metrics-row { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV RAIL -->
+<aside class="nav-rail">
+  <div class="nav-rail-top">
+    <button class="nav-rail-toggle">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+  <nav class="nav-rail-links">
+    <a href="#"><span class="material-symbols-outlined">home</span>Home</a>
+    <a href="#"><span class="material-symbols-outlined">monitoring</span>Monitor</a>
+    <a href="#" class="landed"><span class="material-symbols-outlined">bolt</span>Energy</a>
+    <a href="#"><span class="material-symbols-outlined">eco</span>Sustain</a>
+    <a href="#"><span class="material-symbols-outlined">settings</span>Settings</a>
+  </nav>
+</aside>
+
+<!-- TOP HEADER -->
+<header class="top-header">
+  <div class="logo">True</div>
+  <div style="display:flex; align-items:center; gap:12px;">
+    <span class="material-symbols-outlined" style="font-size:20px; cursor:pointer;">notifications</span>
+    <span class="material-symbols-outlined" style="font-size:20px; cursor:pointer;">account_circle</span>
+  </div>
+</header>
+
+<!-- BREADCRUMBS -->
+<div class="breadcrumbs">
+  <a href="#">Energy</a>
+  <span class="material-symbols-outlined" style="font-size:14px;">chevron_right</span>
+  <a href="#">TCR</a>
+  <span class="material-symbols-outlined" style="font-size:14px;">chevron_right</span>
+  <span style="font-weight:500;">Max Demand Visualiser</span>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="layout-wrapper">
+  <div class="main-content">
+
+    <!-- PAGE TITLE ROW -->
+    <div class="page-title-row">
+      <div class="page-title-left">
+        <a href="#" class="back-btn">
+          <span class="material-symbols-outlined" style="font-size:18px;">arrow_back</span>
+        </a>
+        <h1>TCR Max Demand Visualiser</h1>
+        <span class="env-badge">T0 Production</span>
+      </div>
+      <a href="#" class="ask-ai-btn">
+        <span class="material-symbols-outlined" style="font-size:18px;">auto_awesome</span>
+        Ask AI
+      </a>
+    </div>
+
+    <!-- CONTROLS BAR -->
+    <div class="controls-bar">
+      <div style="display:flex; flex-direction:column; gap:4px;">
+        <span class="control-label">Meter</span>
+        <div class="select-field">
+          Manufacturing H04 Test
+          <span class="material-symbols-outlined" style="font-size:16px;">expand_more</span>
+        </div>
+      </div>
+      <div style="display:flex; align-items:flex-end; gap:12px;">
+        <div style="display:flex; flex-direction:column; gap:4px;">
+          <span class="control-label">Start</span>
+          <div class="date-field">
+            <span class="material-symbols-outlined">calendar_today</span>
+            1 Jan 2026
+            <span class="material-symbols-outlined" style="font-size:14px;">expand_more</span>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:4px;">
+          <span class="control-label">End</span>
+          <div class="date-field">
+            <span class="material-symbols-outlined">calendar_today</span>
+            30 Apr 2026
+            <span class="material-symbols-outlined" style="font-size:14px;">expand_more</span>
+          </div>
+        </div>
+        <button class="btn-analyse">Analyse</button>
+      </div>
+    </div>
+
+    <!-- METRIC CARDS -->
+    <div class="metrics-row">
+      <!-- Site Info Card -->
+      <div class="metric-card">
+        <div class="metric-card-label">
+          <span class="material-symbols-outlined">electric_bolt</span>
+          HV Site Specific Band 4
+        </div>
+        <div class="chip-row">
+          <span class="chip">HH</span>
+          <span class="chip">HV</span>
+          <span class="chip">kVA</span>
+          <span class="chip">1800 kVA</span>
+        </div>
+        <div class="band-badge" style="background: #ef4444;">Band 4</div>
+      </div>
+
+      <!-- Peak -->
+      <div class="metric-card">
+        <div class="metric-card-label">
+          <span class="material-symbols-outlined">trending_up</span>
+          Peak
+        </div>
+        <div class="metric-card-value">1261.4 <span class="metric-card-unit">kVA</span></div>
+      </div>
+
+      <!-- Average -->
+      <div class="metric-card">
+        <div class="metric-card-label">
+          <span class="material-symbols-outlined">functions</span>
+          Average
+        </div>
+        <div class="metric-card-value">945.5 <span class="metric-card-unit">kVA</span></div>
+      </div>
+
+      <!-- P95 -->
+      <div class="metric-card">
+        <div class="metric-card-label">
+          <span class="material-symbols-outlined">speed</span>
+          P95
+        </div>
+        <div class="metric-card-value">1191.0 <span class="metric-card-unit">kVA</span></div>
+      </div>
+    </div>
+
+    <!-- MAX DEMAND vs TCR BANDS CHART -->
+    <div class="chart-card">
+      <div class="chart-card-head">
+        <div>
+          <div class="h3">Max Demand vs TCR Bands</div>
+          <div style="display:flex; align-items:center; gap:16px; margin-top:10px;">
+            <div class="legend-item">
+              <span class="legend-dot" style="background:var(--band-1); border:1.5px solid var(--band-1);"></span>
+              Band 1
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot" style="background:var(--band-2);"></span>
+              Band 2
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot" style="background:var(--band-3);"></span>
+              Band 3
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot" style="background:var(--band-4);"></span>
+              Band 4
+            </div>
+            <div class="legend-item">
+              <span class="legend-line" style="background:#111;"></span>
+              Demand
+            </div>
+            <div class="legend-item">
+              <span class="legend-dashed" style="border-color:var(--text-muted);"></span>
+              RIIO boundary
+            </div>
+          </div>
+        </div>
+        <button class="daily-max-toggle">Daily max</button>
+      </div>
+      <div class="chart-placeholder" style="height:340px;">
+        <svg viewBox="0 0 900 340" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="demandGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#e5e7eb" stop-opacity="0.7"/>
+              <stop offset="100%" stop-color="#e5e7eb" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <!-- Band shading regions -->
+          <!-- Band 4 zone (top) -->
+          <rect x="40" y="10" width="840" height="50" fill="var(--band-4-light)" opacity="0.3"/>
+          <!-- Band 3 zone -->
+          <rect x="40" y="60" width="840" height="70" fill="var(--band-3-light)" opacity="0.3"/>
+          <!-- Band 2 zone -->
+          <rect x="40" y="130" width="840" height="80" fill="var(--band-2-light)" opacity="0.3"/>
+          <!-- Band 1 zone (bottom) -->
+          <rect x="40" y="210" width="840" height="70" fill="var(--band-1-light)" opacity="0.3"/>
+
+          <!-- Band separator lines (white, thick) -->
+          <line x1="40" y1="60" x2="880" y2="60" stroke="#ffffff" stroke-width="3"/>
+          <line x1="40" y1="130" x2="880" y2="130" stroke="#ffffff" stroke-width="3"/>
+          <line x1="40" y1="210" x2="880" y2="210" stroke="#ffffff" stroke-width="3"/>
+          <line x1="40" y1="280" x2="880" y2="280" stroke="#ffffff" stroke-width="3"/>
+
+          <!-- Y axis labels -->
+          <text x="8" y="18" fill="#9ca3af" font-size="10" font-family="Poppins">2,000</text>
+          <text x="8" y="65" fill="#9ca3af" font-size="10" font-family="Poppins">1,500</text>
+          <text x="8" y="135" fill="#9ca3af" font-size="10" font-family="Poppins">1,000</text>
+          <text x="8" y="215" fill="#9ca3af" font-size="10" font-family="Poppins">500</text>
+          <text x="8" y="284" fill="#9ca3af" font-size="10" font-family="Poppins">0</text>
+
+          <!-- Agreed Capacity dashed line — steps up at RIIO boundary (Apr) -->
+          <!-- Jan–Mar: 1800 kVA -->
+          <line x1="40" y1="42" x2="720" y2="42" stroke="var(--band-3)" stroke-width="2" stroke-dasharray="6,4"/>
+          <text x="420" y="36" fill="var(--band-3)" font-size="10" font-family="Poppins" font-weight="500">Agreed Capacity (1800 kVA)</text>
+
+          <!-- Step-up vertical at RIIO boundary -->
+          <line x1="720" y1="42" x2="720" y2="28" stroke="var(--band-3)" stroke-width="2.5"/>
+
+          <!-- Apr onwards: stepped up to ~1950 kVA -->
+          <line x1="720" y1="28" x2="880" y2="28" stroke="var(--band-3)" stroke-width="2" stroke-dasharray="6,4"/>
+          <text x="738" y="22" fill="var(--band-3)" font-size="10" font-family="Poppins" font-weight="600">1950 kVA</text>
+
+          <!-- Step-up callout arrow & label -->
+          <polygon points="708,35 714,28 720,35" fill="var(--band-3)"/>
+          <rect x="636" y="46" width="80" height="20" rx="4" fill="var(--band-3)" opacity="0.15"/>
+          <text x="646" y="60" fill="var(--band-3)" font-size="10" font-family="Poppins" font-weight="600">+150 kVA</text>
+
+          <!-- RIIO-ED2 Period 2 boundary -->
+          <line x1="720" y1="10" x2="720" y2="280" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4,3"/>
+          <text x="726" y="296" fill="#111" font-size="10" font-family="Poppins" font-weight="500">RIIO-ED2 Period 2</text>
+
+          <!-- Demand area fill -->
+          <path d="M60,155 L80,148 L100,160 L120,142 L140,150 L160,138 L180,148 L200,135 L220,145 L240,152 L260,138 L280,148 L300,155 L320,140 L340,130 L360,142 L380,150 L400,138 L420,148 L440,135 L460,145 L480,152 L500,140 L520,148 L540,132 L560,142 L580,150 L600,138 L620,155 L640,145 L660,150 L680,138 L700,148 L720,140 L740,148 L760,135 L780,142 L800,138 L820,145 L840,140 L860,135 L860,280 L60,280 Z" fill="url(#demandGrad)"/>
+
+          <!-- Demand line -->
+          <path d="M60,155 L80,148 L100,160 L120,142 L140,150 L160,138 L180,148 L200,135 L220,145 L240,152 L260,138 L280,148 L300,155 L320,140 L340,130 L360,142 L380,150 L400,138 L420,148 L440,135 L460,145 L480,152 L500,140 L520,148 L540,132 L560,142 L580,150 L600,138 L620,155 L640,145 L660,150 L680,138 L700,148 L720,140 L740,148 L760,135 L780,142 L800,138 L820,145 L840,140 L860,135" fill="none" stroke="#111" stroke-width="1.5"/>
+
+          <!-- X axis -->
+          <line x1="40" y1="280" x2="880" y2="280" stroke="#e5e7eb" stroke-width="1"/>
+          <text x="100" y="300" fill="#9ca3af" font-size="10" font-family="Poppins">Jan '26</text>
+          <text x="310" y="300" fill="#9ca3af" font-size="10" font-family="Poppins">Feb</text>
+          <text x="510" y="300" fill="#9ca3af" font-size="10" font-family="Poppins">Mar</text>
+          <text x="720" y="300" fill="#9ca3af" font-size="10" font-family="Poppins">Apr</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- BAND REDUCTION OPPORTUNITY -->
+    <div style="border:1px solid #111; border-radius:var(--radius); padding:24px; margin-bottom:24px; display:flex; align-items:flex-start; gap:24px;">
+      <div style="flex:1;">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+          <span class="material-symbols-outlined" style="font-size:22px; color:#16a34a;">trending_down</span>
+          <span style="font-size:18px; font-weight:600;">Band Reduction Opportunity</span>
+        </div>
+        <p style="font-size:14px; line-height:1.6; margin-bottom:16px; font-weight:400;">
+          Your demand exceeded the Band 2 ceiling (1,000 kVA) on <strong>14 of 120 days</strong>.
+          The average overshoot was just <strong>61 kVA</strong>. Reducing peak demand on those days
+          could move you from Band 3 to Band 2, saving an estimated <strong>£14,800/yr</strong>.
+        </p>
+        <div style="display:flex; gap:12px;">
+          <div style="background:#F5F5F5; border-radius:var(--radius-sm); padding:12px 20px; text-align:center;">
+            <div style="font-size:12px; font-weight:500; margin-bottom:4px;">Breach Days</div>
+            <div style="font-size:24px; font-weight:700;">14</div>
+            <div style="font-size:11px; font-weight:400; color:var(--text-muted);">of 120 total</div>
+          </div>
+          <div style="background:#F5F5F5; border-radius:var(--radius-sm); padding:12px 20px; text-align:center;">
+            <div style="font-size:12px; font-weight:500; margin-bottom:4px;">Avg. Overshoot</div>
+            <div style="font-size:24px; font-weight:700;">61 <span style="font-size:13px; font-weight:300;">kVA</span></div>
+            <div style="font-size:11px; font-weight:400; color:var(--text-muted);">above Band 2 ceiling</div>
+          </div>
+          <div style="background:#F5F5F5; border-radius:var(--radius-sm); padding:12px 20px; text-align:center;">
+            <div style="font-size:12px; font-weight:500; margin-bottom:4px;">Max Overshoot</div>
+            <div style="font-size:24px; font-weight:700;">134 <span style="font-size:13px; font-weight:300;">kVA</span></div>
+            <div style="font-size:11px; font-weight:400; color:var(--text-muted);">worst single day</div>
+          </div>
+          <div style="background:#F5F5F5; border-radius:var(--radius-sm); padding:12px 20px; text-align:center;">
+            <div style="font-size:12px; font-weight:500; margin-bottom:4px;">Potential Saving</div>
+            <div style="font-size:24px; font-weight:700; color:#16a34a;">£14,800</div>
+            <div style="font-size:11px; font-weight:400; color:var(--text-muted);">per year</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BREACH ANALYSIS CHART -->
+    <div class="chart-card">
+      <div class="chart-card-head">
+        <div>
+          <div class="h3">Daily Peak Demand vs Band 2 Threshold</div>
+          <div style="font-size:13px; color:var(--text-main); font-weight:400; margin-top:4px;">Days exceeding 1,000 kVA are highlighted — these are preventing a band reduction</div>
+        </div>
+      </div>
+      <div class="chart-placeholder" style="height:260px;">
+        <svg viewBox="0 0 900 260" preserveAspectRatio="none">
+          <!-- Band 2 ceiling zone -->
+          <rect x="40" y="10" width="840" height="100" fill="var(--band-3-light)" opacity="0.2"/>
+
+          <!-- Band 2 threshold line -->
+          <line x1="40" y1="110" x2="880" y2="110" stroke="var(--band-3)" stroke-width="1.5" stroke-dasharray="6,4"/>
+          <text x="44" y="104" fill="var(--band-3)" font-size="10" font-family="Poppins" font-weight="500">Band 2 ceiling — 1,000 kVA</text>
+
+          <!-- Y axis labels -->
+          <text x="4" y="18" fill="#9ca3af" font-size="10" font-family="Poppins">1,400</text>
+          <text x="4" y="60" fill="#9ca3af" font-size="10" font-family="Poppins">1,200</text>
+          <text x="4" y="114" fill="#9ca3af" font-size="10" font-family="Poppins">1,000</text>
+          <text x="4" y="160" fill="#9ca3af" font-size="10" font-family="Poppins">800</text>
+          <text x="4" y="210" fill="#9ca3af" font-size="10" font-family="Poppins">600</text>
+
+          <!-- Grid lines -->
+          <line x1="40" y1="55" x2="880" y2="55" stroke="#f1f1f1" stroke-width="1"/>
+          <line x1="40" y1="155" x2="880" y2="155" stroke="#f1f1f1" stroke-width="1"/>
+          <line x1="40" y1="205" x2="880" y2="205" stroke="#f1f1f1" stroke-width="1"/>
+
+          <!-- Daily bars — below threshold (grey) -->
+          <rect x="48" y="130" width="5" height="100" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="55" y="125" width="5" height="105" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="62" y="135" width="5" height="95" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="69" y="140" width="5" height="90" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="76" y="128" width="5" height="102" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <!-- Breach day -->
+          <rect x="83" y="72" width="5" height="158" rx="1" fill="var(--band-3)" opacity="0.8"/>
+          <rect x="90" y="132" width="5" height="98" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="97" y="138" width="5" height="92" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <!-- Breach day -->
+          <rect x="104" y="85" width="5" height="145" rx="1" fill="var(--band-3)" opacity="0.8"/>
+          <rect x="111" y="130" width="5" height="100" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="118" y="145" width="5" height="85" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="125" y="135" width="5" height="95" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="132" y="142" width="5" height="88" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="139" y="128" width="5" height="102" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="146" y="136" width="5" height="94" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <!-- Breach day -->
+          <rect x="153" y="90" width="5" height="140" rx="1" fill="var(--band-3)" opacity="0.8"/>
+          <rect x="160" y="132" width="5" height="98" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="167" y="140" width="5" height="90" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="174" y="125" width="5" height="105" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="181" y="138" width="5" height="92" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <!-- Breach day -->
+          <rect x="188" y="80" width="5" height="150" rx="1" fill="var(--band-3)" opacity="0.8"/>
+          <rect x="195" y="134" width="5" height="96" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="202" y="130" width="5" height="100" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="209" y="142" width="5" height="88" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="216" y="136" width="5" height="94" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="223" y="128" width="5" height="102" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="230" y="132" width="5" height="98" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="237" y="145" width="5" height="85" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <!-- Feb cluster -->
+          <rect x="260" y="135" width="5" height="95" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="267" y="128" width="5" height="102" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <!-- Breach day -->
+          <rect x="274" y="95" width="5" height="135" rx="1" fill="var(--band-3)" opacity="0.8"/>
+          <rect x="281" y="130" width="5" height="100" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="288" y="140" width="5" height="90" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <!-- Breach day -->
+          <rect x="295" y="75" width="5" height="155" rx="1" fill="var(--band-3)" opacity="0.8"/>
+          <rect x="302" y="132" width="5" height="98" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="309" y="125" width="5" height="105" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="316" y="138" width="5" height="92" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <!-- Breach day -->
+          <rect x="323" y="88" width="5" height="142" rx="1" fill="var(--band-3)" opacity="0.8"/>
+          <rect x="330" y="135" width="5" height="95" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="337" y="142" width="5" height="88" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="344" y="130" width="5" height="100" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="351" y="136" width="5" height="94" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="358" y="128" width="5" height="102" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="365" y="140" width="5" height="90" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="372" y="134" width="5" height="96" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="379" y="145" width="5" height="85" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <!-- Breach day -->
+          <rect x="386" y="82" width="5" height="148" rx="1" fill="var(--band-3)" opacity="0.8"/>
+          <rect x="393" y="132" width="5" height="98" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="400" y="138" width="5" height="92" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="407" y="125" width="5" height="105" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="414" y="142" width="5" height="88" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <!-- Mar cluster -->
+          <rect x="440" y="130" width="5" height="100" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="447" y="136" width="5" height="94" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="454" y="140" width="5" height="90" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="461" y="128" width="5" height="102" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <!-- Breach day -->
+          <rect x="468" y="68" width="5" height="162" rx="1" fill="var(--band-3)" opacity="0.8"/>
+          <rect x="475" y="135" width="5" height="95" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="482" y="132" width="5" height="98" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="489" y="142" width="5" height="88" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <!-- Breach day -->
+          <rect x="496" y="92" width="5" height="138" rx="1" fill="var(--band-3)" opacity="0.8"/>
+          <rect x="503" y="138" width="5" height="92" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="510" y="130" width="5" height="100" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="517" y="145" width="5" height="85" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="524" y="134" width="5" height="96" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="531" y="128" width="5" height="102" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <!-- Breach day -->
+          <rect x="538" y="78" width="5" height="152" rx="1" fill="var(--band-3)" opacity="0.8"/>
+          <rect x="545" y="136" width="5" height="94" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="552" y="140" width="5" height="90" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="559" y="132" width="5" height="98" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="566" y="138" width="5" height="92" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="573" y="125" width="5" height="105" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="580" y="142" width="5" height="88" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <!-- Breach day -->
+          <rect x="587" y="86" width="5" height="144" rx="1" fill="var(--band-3)" opacity="0.8"/>
+          <rect x="594" y="135" width="5" height="95" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <!-- Apr cluster -->
+          <rect x="620" y="130" width="5" height="100" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="627" y="136" width="5" height="94" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="634" y="128" width="5" height="102" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="641" y="140" width="5" height="90" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="648" y="132" width="5" height="98" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <!-- Breach day -->
+          <rect x="655" y="94" width="5" height="136" rx="1" fill="var(--band-3)" opacity="0.8"/>
+          <rect x="662" y="138" width="5" height="92" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="669" y="134" width="5" height="96" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="676" y="142" width="5" height="88" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="683" y="128" width="5" height="102" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="690" y="136" width="5" height="94" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="697" y="140" width="5" height="90" rx="1" fill="#d4d4d8" opacity="0.7"/>
+          <rect x="704" y="132" width="5" height="98" rx="1" fill="#d4d4d8" opacity="0.7"/>
+
+          <!-- X axis -->
+          <line x1="40" y1="230" x2="880" y2="230" stroke="#e5e7eb" stroke-width="1"/>
+          <text x="100" y="248" fill="#9ca3af" font-size="10" font-family="Poppins">Jan '26</text>
+          <text x="310" y="248" fill="#9ca3af" font-size="10" font-family="Poppins">Feb</text>
+          <text x="510" y="248" fill="#9ca3af" font-size="10" font-family="Poppins">Mar</text>
+          <text x="660" y="248" fill="#9ca3af" font-size="10" font-family="Poppins">Apr</text>
+
+          <!-- Legend -->
+          <rect x="730" y="240" width="12" height="12" rx="2" fill="#d4d4d8" opacity="0.7"/>
+          <text x="746" y="250" fill="#111" font-size="11" font-family="Poppins" font-weight="500">Within Band 2</text>
+          <rect x="828" y="240" width="12" height="12" rx="2" fill="var(--band-3)" opacity="0.8"/>
+          <text x="844" y="250" fill="#111" font-size="11" font-family="Poppins" font-weight="500">Breach</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- COST COMPARISON TABLE -->
+    <div style="margin-bottom: 24px;">
+      <div style="font-size:16px; font-weight:600; color:#111; margin-bottom:16px;">Cost Comparison</div>
+      <table style="width:100%; border-collapse:collapse; font-size:14px;">
+        <thead>
+          <tr style="border-bottom:2px solid #111;">
+            <th style="text-align:left; padding:10px 16px; font-weight:600;"></th>
+            <th style="text-align:left; padding:10px 16px; font-weight:600;">Band</th>
+            <th style="text-align:right; padding:10px 16px; font-weight:600;">Rate (p/kVA/day)</th>
+            <th style="text-align:right; padding:10px 16px; font-weight:600;">Est. Annual Cost</th>
+            <th style="text-align:right; padding:10px 16px; font-weight:600;">Difference</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border-subtle); background:var(--band-3-light); opacity:0.9;">
+            <td style="padding:12px 16px; font-weight:500;">Current</td>
+            <td style="padding:12px 16px;">
+              <span style="display:inline-flex; align-items:center; gap:8px;">
+                <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:var(--band-3);"></span>
+                Band 3
+              </span>
+            </td>
+            <td style="text-align:right; padding:12px 16px;">0.149</td>
+            <td style="text-align:right; padding:12px 16px; font-weight:600;">£26,306</td>
+            <td style="text-align:right; padding:12px 16px;">—</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border-subtle);">
+            <td style="padding:12px 16px; font-weight:500;">
+              <span style="display:inline-flex; align-items:center; gap:4px;">
+                Target
+                <span class="material-symbols-outlined" style="font-size:14px; color:#16a34a;">arrow_downward</span>
+              </span>
+            </td>
+            <td style="padding:12px 16px;">
+              <span style="display:inline-flex; align-items:center; gap:8px;">
+                <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:var(--band-2);"></span>
+                Band 2
+              </span>
+            </td>
+            <td style="text-align:right; padding:12px 16px;">0.073</td>
+            <td style="text-align:right; padding:12px 16px; font-weight:600;">£11,506</td>
+            <td style="text-align:right; padding:12px 16px;">
+              <span style="display:inline-flex; align-items:center; gap:3px; color:#16a34a; font-weight:600;">
+                <span class="material-symbols-outlined" style="font-size:14px;">savings</span>
+                −£14,800/yr
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- DATA SOURCES -->
+    <div class="data-sources">
+      Demand data sourced from HH Metering · TCR bands from Ofgem published rates
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
